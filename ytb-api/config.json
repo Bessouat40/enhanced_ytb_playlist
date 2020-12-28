@@ -1,0 +1,10 @@
+{
+  "api-key": "Non",
+    
+   "db": {
+        "mongo-url": "localhost",
+        "mongo-port": 27017,
+        "mongo-db-name": "projet",
+        "mongo-collection-name": "channels"
+    }
+}
