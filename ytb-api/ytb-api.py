@@ -39,7 +39,7 @@ class YoutubeAPI:
         json_result = json.loads(req.text)['items']
         channel_info = [{"channel_title":v['snippet']['channelTitle'],
                          "_id": v['snippet']['channelId'],
-                         "description": v['snippet']['description'],
+                         "channel_description": v['snippet']['description'],
                          "img": v['snippet']['thumbnails']['default']['url'],
                          "created": datetime.strptime(v['snippet']['publishTime'], '%Y-%m-%dT%H:%M:%SZ'),
                          "last_update":datetime.now()}  for v in json_result]
