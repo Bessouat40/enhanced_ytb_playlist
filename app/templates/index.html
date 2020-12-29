@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}
+Youtube Playlist Enhanced
+{% endblock %}
+
+{% block content %}
+	<div class="container">
+
+		<div class="mb-3 mt-5 ">
+			
+			<p class="fw-bold text-center fs-1">YouTube Playlist <br> Enhanced</p>
+			
+		</div>
+
+		<div class="mb-3 mt-3">		
+		  	<form>
+			    <label for="searchPlaylist" class="form-label">Search for a playlist</label>
+			    <input class="form-control" id="searchPlaylist" aria-describedby="searchHelp">
+			    <div id="searchHelp" class="form-text">example: python, react ...</div>
+			</form>
+		</div>
+
+		
+		<div class="container mb-3 mt-3" id="div-container">
+		</div>
+
+
+		  
+	</div>
+
+	<script type="text/javascript">
+		
+		const typing = document.getElementById('searchPlaylist')
+
+		typing.addEventListener('input', function (evt) {
+
+
+			elem = document.getElementById('div-container') 
+			elem.innerHTML = ""
+			var val = this.value
+			
+			if (val != '') {
+
+
+
+		        const xhr = new XMLHttpRequest()
+		        xhr.responseType = "json"
+		        xhr.open('GET','HTTP://'+window.location.host +'/api/'+val)
+		       
+		        xhr.onload = function(){ 
+		          
+		          var response = xhr.response ;
+		        
+		          if (response.length>0){
+
+		    		for (var i = 0; i < 7; ++i) {
+		    			
+		  				var htmlString = `<div class="row"> <div class="card mb-3 mt-3"> ${response[i]['channel_title']}<div class="card-body" id="res5"> ${response[i]['description']} </div></div></div>`
+		  				var div = document.createElement('div');
+						div.innerHTML = htmlString.trim();
+		  				elem.appendChild(div.firstChild)
+					}
+				  }
+
+		        }
+		        xhr.send();
+
+		        
+
+
+
+
+
+
+
+
+			}
+    		
+		});
+
+
+	</script>
+{% endblock%}
