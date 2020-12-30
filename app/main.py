@@ -32,7 +32,7 @@ def channel_page(channel_id):
 	return render_template("channel.html",
 		channel_id=data['_id'],
 		channel_title=data['channel_title'],
-		channel_description=data['description'],
+		channel_description=data['channel_description'],
 		channel_img=data['img'])
 
 @app.route('/api/<word>')
@@ -41,10 +41,18 @@ def api_search(word):
 	database = client['projet']
 	collection = database['channels']
 
+	"""
+	Add create index if error
+		db.channels.createIndex(
+		   {
+		     channel_title: "text",
+		     channel_description: "text"
+		   }
+		 )"""
+
 	data=list(collection.find( { '$text' : { '$search': word } }).limit(7))
 	
 	return(jsonify(data))
 	
 if __name__ == "__main__":
 	app.run(debug=True)
-
