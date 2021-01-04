@@ -18,7 +18,7 @@ def recup_bdd_headless(id_chaine) :
     dont ou souhaite récupérer les informations
     arg chaine : string correspondant au nom de la chaîne youtube
     return : dictionnaire comportant plusieurs informations sur la chaîne youtube"""
-    IS_LINUX = False
+ 
 
     CHROME_PATH = "./chromedriver"
 
@@ -66,7 +66,13 @@ def recup_bdd_headless(id_chaine) :
 
             vues = chrome.find_element_by_xpath("//yt-formatted-string[2]").text
             vues = vues.replace('\u202f','')
-            bdd.append({'playlist' : l_title[idx],
+           
+            print(l_url[idx])
+            playlist_id=re.findall(r"list=(\w+)",l_url[idx])[0]
+            print(playlist_id)
+            
+            bdd.append({'_id': playlist_id,
+                    'playlist' : l_title[idx],
                     'nbr_videos' : nbr_videos,
                     'derniere_MAJ' : last_modif,
                     'vues' : vues
