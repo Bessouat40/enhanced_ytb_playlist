@@ -10,8 +10,6 @@ app.config['JSON_AS_ASCII'] = False
 client = pymongo.MongoClient('localhost',27017)
         
 
-
-
 @app.route('/')
 def home():
 	return render_template("index.html")
@@ -40,17 +38,8 @@ def api_search(word):
 	
 	database = client['projet']
 	collection = database['channels']
-	print(collection.index_information())
-	"""
-	Add create index if error
-		db.channels.createIndex(
-		   {
-		     channel_title: "text",
-		     channel_description: "text"
-		   }
-		 )"""
-
-	data=list(collection.find( { '$text' : { '$search': word } }).limit(7))
+	
+	data = list(collection.find( { '$text' : { '$search': word } }).limit(7))
 	
 	return(jsonify(data))
 	
