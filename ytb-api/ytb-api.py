@@ -82,8 +82,7 @@ class YoutubeAPI:
                 print("*********************")    
 
 
-        #collection.create_index([('channel_title','text'),('channel_description', 'text')])
-        collection.create_index( [("$**", "text")])
+        collection.create_index( [("$**", "text")]) # Crée / Vérifie index text
 
 if __name__ == "__main__":
 
