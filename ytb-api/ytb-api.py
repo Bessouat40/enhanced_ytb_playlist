@@ -66,7 +66,7 @@ class YoutubeAPI:
         client = pymongo.MongoClient(self.mongo_url,self.mongo_port)
         database = client[self.mongo_db]
         collection = database[self.mongo_collection]
-                
+        
         for l in data:
             try:
                 collection.insert_many(l)
@@ -82,6 +82,8 @@ class YoutubeAPI:
                 print("*********************")    
 
 
+        #collection.create_index([('channel_title','text'),('channel_description', 'text')])
+        collection.create_index( [("$**", "text")])
 
 if __name__ == "__main__":
 

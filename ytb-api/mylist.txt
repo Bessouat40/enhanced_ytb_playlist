@@ -1,7 +1,2 @@
-python 3
-python flask
-python programming
-javascript
-react framework
-data science
-machine learning
+matplotlib 
+python 3 beginner

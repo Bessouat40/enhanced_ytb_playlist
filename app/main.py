@@ -40,7 +40,7 @@ def api_search(word):
 	
 	database = client['projet']
 	collection = database['channels']
-
+	print(collection.index_information())
 	"""
 	Add create index if error
 		db.channels.createIndex(
