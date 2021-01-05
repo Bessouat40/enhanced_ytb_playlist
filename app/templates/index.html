@@ -4,19 +4,20 @@ Youtube Playlist Enhanced
 {% endblock %}
 
 {% block content %}
+
 	<div class="container">
 
 		<div class="mb-3 mt-5 ">
 			
-			<p class="fw-bold text-center fs-1">YouTube Playlist <br> Enhanced</p>
+			<p class="fw-bold text-center fs-1"><a  href="/" style="color: black;text-decoration:none;"> YouTube Playlist <br> Enhanced </a></p>
 			
 		</div>
 
 		<div class="mb-3 mt-3">		
 		  	<form>
-			    <label for="searchPlaylist" class="form-label">Search for a playlist</label>
+			    <label for="searchPlaylist" class="form-label" style="font-size: 1.05rem;">Search for a playlist</label>
 			    <input class="form-control" id="searchPlaylist" aria-describedby="searchHelp">
-			    <div id="searchHelp" class="form-text">example: python, react ...</div>
+			    <div id="searchHelp" class="form-text" style="font-size: 0.8rem;">example: python, react ...</div>
 			</form>
 		</div>
 
@@ -59,14 +60,14 @@ Youtube Playlist Enhanced
 		  				<div class="row"> 
 		  					<div class="card mb-3 mt-3 ml-3">
 			  					<div class="row">
-				  					<img src="${response[i]['img']}"  class="rounded float-left col-2 mt-2 " style="width: 5rem;">
-				  					<h6 class="card-title col-6 mt-4"> ${response[i]['channel_title']} </h6> 
+				  					<img src="${response[i]['img']}"  class="rounded-circle float-left col-2 mt-2" style="width: 5rem;">
+				  					<h6 class="card-title col-8 mt-4"> ${response[i]['channel_title']} </h6> 
 				  				</div>
 				  				<div class="row">
-			  						<div class="card-body " id="res5"> ${response[i]['channel_description']} </div>
+			  						<div class="card-body"> <p> ${response[i]['channel_description']} </p></div>
 			  					</div>
 			  					<div class="row">
-			  						<div class="float-right"><a role="button" class="btn btn-primary btn-sm col-1 m-2" href="/c/${response[i]['_id']}" >Channel page </a></div>
+			  						<div class="float-right"><a role="button" class="btn btn-primary btn-sm  mb-3" href="/c/${response[i]['_id']}" >Channel page </a></div>
 			  					</div>
 		  					</div>
 		  				</div>`
@@ -94,4 +95,6 @@ Youtube Playlist Enhanced
 
 
 	</script>
+
+
 {% endblock%}
