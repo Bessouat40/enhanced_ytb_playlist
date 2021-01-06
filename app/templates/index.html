@@ -42,8 +42,6 @@ Youtube Playlist Enhanced
 			
 			if (val != '') {
 
-
-
 		        const xhr = new XMLHttpRequest()
 		        xhr.responseType = "json"
 		        xhr.open('GET','HTTP://'+window.location.host +'/api/'+val)
@@ -67,7 +65,7 @@ Youtube Playlist Enhanced
 			  						<div class="card-body"> <p> ${response[i]['channel_description']} </p></div>
 			  					</div>
 			  					<div class="row">
-			  						<div class="float-right"><a role="button" class="btn btn-primary btn-sm  mb-3" href="/c/${response[i]['_id']}" >Channel page </a></div>
+			  						<div class="float-right"><a role="button" class="btn btn-primary btn-sm  mb-3" href="/c/${response[i]['_id']}" >Channel page</a></div>
 			  					</div>
 		  					</div>
 		  				</div>`
