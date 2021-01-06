@@ -1,5 +1,6 @@
 from flask import Flask,redirect,url_for,render_template,jsonify
 import pymongo
+import re
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
@@ -84,7 +85,9 @@ def api_search(word):
 		json_data: data for search bar results as json (rest api)
 
 	"""
-	
+	#Regex to avoid injection or mistakes
+	word = re.sub(r"\W","",word) 
+
 	database = client['projet']
 	collection = database['channels']
 	
