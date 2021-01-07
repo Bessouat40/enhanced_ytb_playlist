@@ -7,18 +7,21 @@ Youtube Playlist Enhanced
 
 	<div class="container">
 
-		<div class="mb-3 mt-5 ">
+
+		<div class="row mb-1 mt-4 ">
 			
 			<p class="fw-bold text-center fs-1"><a  href="/" style="color: black;text-decoration:none; "> YouTube Playlist <br> Enhanced </a></p>
 			
 		</div>
 
-		<div class="mb-3 mt-3">		
-		  	<form>
-			    <label for="searchPlaylist" class="form-label" style="font-size: 1.05rem;">Search for a playlist</label>
-			    <input class="form-control" id="searchPlaylist" aria-describedby="searchHelp">
-			    <div id="searchHelp" class="form-text" style="font-size: 0.8rem;">example: python, react ...</div>
-			</form>
+		<div class="row justify-content-center">
+			<div class="col-md-10 mb-2 mt-1 ">		
+			  	<form>
+				    <label for="searchPlaylist" class="form-label" style="font-size: 1.05rem;">Search for a playlist</label>
+				    <input class="form-control" type='search' id="searchPlaylist" aria-describedby="searchHelp">
+				    <div id="searchHelp" class="form-text" style="font-size: 0.8rem;">example: python, react ...</div>
+				</form>
+			</div>
 		</div>
 
 		
@@ -53,8 +56,8 @@ Youtube Playlist Enhanced
 		    		for (var i = 0; i < response.length; ++i) {
 		    			
 		  				var htmlString = `
-		  				<div class="row"> 
-		  					<div class="card mb-3 mt-3 ml-3 border-0 rounded">
+		  				<div class="row justify-content-center"> 
+		  					<div class="col-md-10 card mb-3 mt-3 ml-3 border-0 rounded shadow-sm">
 			  					<div class="row mt-1">
 				  					<img src="${response[i]['img']}"  class="rounded-circle float-left col-2 mt-1" style="width: 5rem;">
 				  					<h5 class="card-title col-8 mt-4">${response[i]['channel_title']} </h5> 
