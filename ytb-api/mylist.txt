@@ -1,2 +1,8 @@
 matplotlib 
 python 3 beginner
+flask python
+react js
+django python
+datascience
+machine learning
+C++

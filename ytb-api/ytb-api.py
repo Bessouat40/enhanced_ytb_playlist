@@ -54,10 +54,17 @@ class YoutubeAPI:
         
         if ' ' in keyword:
             keyword.replace(' ','%s')
+
+
+
+        lang = 'en' #default language to search
             
         #Formatting the url with parameters   
-        url = "https://youtube.googleapis.com/youtube/v3/search?type=channel&part=snippet&maxResults={n_res}&q={kw}&key={api_key}"
-        url_formatted = url.format(n_res=nb_res,kw=keyword,api_key=self.api_key)
+        url = "https://youtube.googleapis.com/youtube/v3/search?type=channel&part=snippet&maxResults={n_res}&q={kw}&key={api_key}&relevanceLanguage={lang}"
+        url_formatted = url.format(n_res=nb_res,
+                                    kw=keyword,
+                                    api_key=self.api_key,
+                                    lang=lang)
 
         #Sending the GET request to Youtube API
         req = requests.get(url_formatted)
