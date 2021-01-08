@@ -1,4 +1,4 @@
-from flask import Flask,redirect,url_for,render_template,jsonify
+from flask import Flask,redirect,url_for,render_template,jsonify,request
 import pymongo
 import re
 
@@ -7,7 +7,7 @@ app.config['JSON_AS_ASCII'] = False
 
 client = pymongo.MongoClient('localhost',27017)
         
-@app.route('/')
+@app.route('/',methods=['GET', 'POST'])
 def home():
 	"""
 	Home View
