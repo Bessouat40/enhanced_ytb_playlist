@@ -7,7 +7,7 @@ app.config['JSON_AS_ASCII'] = False
 
 client = pymongo.MongoClient('localhost',27017)
         
-@app.route('/',methods=['GET', 'POST'])
+@app.route('/')
 def home():
 	"""
 	Home View
@@ -52,21 +52,22 @@ def channel_page(channel_id):
 
 		channel_description : Description of the channel
 
-
-	
 	"""
-
 	database = client['projet']
 	collection = database['channels']
 
-	data = list(collection.find({"_id":channel_id}))[0]
+	data = collection.find_one({"_id":channel_id})
 	
+	if data:
 
-	return render_template("channel.html",
-		channel_id=data['_id'],
-		channel_title=data['channel_title'],
-		channel_description=data['channel_description'],
-		channel_img=data['img'])
+		return render_template("channel.html",
+			channel_id=data['_id'],
+			channel_title=data['channel_title'],
+			channel_description=data['channel_description'],
+			channel_img=data['img'])
+	else:
+
+		return('404')
 
 
 @app.route('/api/<word>')
