@@ -130,7 +130,8 @@ class YoutubeAPI:
         
         for l in data:
             try:
-                collection.insert_many(l)
+                if l:
+                    collection.insert_many(l)
                 
             # Error log  
             except BulkWriteError as error:

@@ -1,7 +1,5 @@
-python 3 programming tutorial
-flask python tutorial
-react js tutorial
-django python programming
+python programming tutorial
+react js 
 datascience tutorial 
-machine learning tutorial 
-C++ programming
+
+
