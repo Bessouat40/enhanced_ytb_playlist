@@ -1,4 +1,4 @@
 .ipynb_checkpoints/
 scrap_playlist/debug.log
-./ytb-api/config.json
-./ytb-api/mylist.txt
+ytb-api/config.json
+ytb-api/mylist.txt
