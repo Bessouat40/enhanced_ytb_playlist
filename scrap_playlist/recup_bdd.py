@@ -66,7 +66,9 @@ def recup_bdd_headless(id_chaine) :
 
             desc_tag = desc.find_elements_by_tag_name('yt-formatted-string')
 
-
+            video_time = chrome.find_elements_by_class_name('style-scope ytd-thumbnail-overlay-time-status-renderer')
+            video_time = list(filter(None,[v.text for v in video_time]))
+            
             if len(desc_tag)>0:
                 description = desc_tag[0].text
             else:
@@ -104,7 +106,8 @@ def recup_bdd_headless(id_chaine) :
                     'derniere_maj' : last_modif,
                     'vues' : vues,
                     'url_img' : img,
-                    'description': description
+                    'description': description,
+                    'video_time': video_time,
                    })
         
     chrome.quit()
@@ -132,7 +135,7 @@ for i in range(len(liste_ytbeurs)):
         
         data = recup_bdd_headless(liste_ytbeurs[i])
 
-        if len(data)>0:
+        if data:
             try:
                 col_playlist.insert_many(data)
                 print('Inserted')
