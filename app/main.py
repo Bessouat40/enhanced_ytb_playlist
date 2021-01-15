@@ -106,9 +106,9 @@ def api_search(word):
 	#Regex to avoid injection or mistakes
 	word = re.sub(r"\W","",word) 
 
-	collection = database['channels']
+	collection = database['playlist']
 	
-	data = list(collection.find( { '$text' : { '$search': word } }).limit(7))
+	data = list(collection.find( { '$text' : { '$search': word } }).limit(5))
 	json_data = jsonify(data)
 
 	return(json_data)
