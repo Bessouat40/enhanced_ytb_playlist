@@ -6,6 +6,7 @@ app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
 
 client = pymongo.MongoClient('localhost',27017)
+database = client['youtube']
         
 @app.route('/')
 def home():
@@ -53,7 +54,6 @@ def channel_page(channel_id):
 		channel_description : Description of the channel
 
 	"""
-	database = client['projet']
 	collection = database['channels']
 
 	data = collection.find_one({"_id":channel_id})
@@ -89,7 +89,6 @@ def api_search(word):
 	#Regex to avoid injection or mistakes
 	word = re.sub(r"\W","",word) 
 
-	database = client['projet']
 	collection = database['channels']
 	
 	data = list(collection.find( { '$text' : { '$search': word } }).limit(7))

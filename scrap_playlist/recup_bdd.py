@@ -92,13 +92,16 @@ def recup_bdd_headless(id_chaine) :
                 
             vues = chrome.find_element_by_xpath("//yt-formatted-string[2]").text
             vues = vues.replace('\u202f','')
+            
+
+
             id_playlist = re.findall(r'https:\/\/www\.youtube\.com\/playlist\?list=([a-zA-Z0-9-_]*)',i)[0]
 
             bdd.append({ '_id' : id_playlist,
                     'id_youtubeur' : id_chaine,
                     'playlist' : l_title[idx],
                     'nbr_videos' : nbr_videos,
-                    'derniere_MAJ' : last_modif,
+                    'derniere_maj' : last_modif,
                     'vues' : vues,
                     'url_img' : img,
                     'description': description
@@ -110,13 +113,13 @@ def recup_bdd_headless(id_chaine) :
 #ici on commence à créer la bdd Mongo
 client = MongoClient()
 
-db = client['projet']
+db = client['youtube']
 collection = db['channels']
 ytb_list = list(collection.find({}))
 
 liste_ytbeurs = [v['_id'] for v in ytb_list]
-db_test = client['youtube']
-col_playlist = db_test['playlist']
+
+col_playlist = db['playlist']
 data=[]
 
 #liste_ytbeurs = ['UCq6XkhO5SZ66N04IcPbqNcw']
@@ -126,7 +129,9 @@ for i in range(len(liste_ytbeurs)):
     print(liste_ytbeurs[i])
 
     if len(list(col_playlist.find({ 'id_youtubeur': liste_ytbeurs[i]})))==0:
+        
         data = recup_bdd_headless(liste_ytbeurs[i])
+
         if len(data)>0:
             try:
                 col_playlist.insert_many(data)
