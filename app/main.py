@@ -29,8 +29,25 @@ def playlist_page(playlist_id):
 
 		playlist_id: Youtube id of the playlist, used to look in the db 
 	
-	"""
-	return render_template("playlist.html")
+		"""
+	collection = database['playlist']
+
+	data = collection.find_one({"_id":playlist_id})
+	
+	if data:
+
+		return render_template("playlist.html",
+			playlist_id=data['_id'],
+			playlist_title=data['playlist'],
+			playlist_description=data['description'],
+			playlist_img=data['url_img'],
+			channel_id=data['id_youtubeur'],
+			playlist_views=data['vues'],
+			playlist_nb_videos=data['nbr_videos'],
+			playlist_last_update=data['derniere_maj'])
+
+	else:
+		return('404')
 
 @app.route('/c/<channel_id>')
 def channel_page(channel_id):
