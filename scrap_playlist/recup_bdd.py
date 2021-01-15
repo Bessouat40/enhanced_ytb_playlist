@@ -8,9 +8,6 @@ from selenium.webdriver.chrome.options import Options
 #!pip install pymongo
 from pymongo import MongoClient #création de notre collection qui va contenir les infos
 
-#pour l'exemple on initialise une liste de noms de youtubeurs qui va simuler ce qu'on utilisera plus tard
-#liste_ytbeurs = {'id' : ['UCWeg2Pkate69NFdBeuRFTAw','UCI0vQvr9aFn27yR6Ej6n5UA','UCIlUBOXnXjxdjmL_atU53kA','UCMV8ybQXuvInI5lYw2Wzfjw'] ,
-#                 'chaine' : ['squeezie','Real Python', 'Cours Python 3','Python 3 Dersleri']}
 
 #pour que la fonction s'exécute sans erreur, il faut que le fichier chromedriver soit dans le même répertoire que ce fichier python
 def recup_bdd_headless(id_chaine) :
@@ -19,11 +16,9 @@ def recup_bdd_headless(id_chaine) :
     dont ou souhaite récupérer les informations
     
     Arg: 
-
         chaine: string correspondant au nom de la chaîne youtube
     
     Returns: 
-
         dictionnaire comportant plusieurs informations sur la chaîne youtube"""
     
     CHROME_PATH = "./chromedriver"
@@ -56,22 +51,45 @@ def recup_bdd_headless(id_chaine) :
 
     for idx,i in enumerate(l_url) :
         
-        
-        try :
+            last_modif = ''
+            print('url:',i)
             chrome.get(i)
             tag = chrome.find_element_by_id("stats")
             res = []
             for j in tag.find_elements_by_tag_name('span'):
                 res.append(j.text)
-            nbr_videos = res[0]
-            try :
-                last_modif = res[2]+res[3]+res[4]
-                last_modif = last_modif.replace('Mise à jour il y a','')
+            
+            #Obtenir image
+            img = chrome.find_elements_by_css_selector('img')[0].get_attribute('src')
 
-            except :
-                last_modif = res[2]+res[3]
-                last_modif = last_modif.replace('Dernière modification le','')
+            desc = chrome.find_element_by_id('description')
 
+            desc_tag = desc.find_elements_by_tag_name('yt-formatted-string')
+
+
+            if len(desc_tag)>0:
+                description = desc_tag[0].text
+            else:
+                description = ''
+
+            if len(res)>0:
+                nbr_videos = res[0]
+                if len(res)==5:
+                    last_modif = res[2]+res[3]+res[4]
+                    last_modif = last_modif.replace('Mise à jour il y a','')
+
+                if len(res)==4:
+                    last_modif = res[2]+res[3]
+                    last_modif = last_modif.replace('Dernière modification le','')
+                
+                if len(res)==2:
+                    nbr_videos = 0
+                    last_modif = res[1]
+            else:
+                #Si une video la liste est vide
+                nbr_videos = 1
+                last_modif = ''
+                
             vues = chrome.find_element_by_xpath("//yt-formatted-string[2]").text
             vues = vues.replace('\u202f','')
             id_playlist = re.findall(r'https:\/\/www\.youtube\.com\/playlist\?list=([a-zA-Z0-9-_]*)',i)[0]
@@ -81,11 +99,11 @@ def recup_bdd_headless(id_chaine) :
                     'playlist' : l_title[idx],
                     'nbr_videos' : nbr_videos,
                     'derniere_MAJ' : last_modif,
-                    'vues' : vues
+                    'vues' : vues,
+                    'url_img' : img,
+                    'description': description
                    })
-        except:
-            pass
-
+        
     chrome.quit()
     return bdd
 
@@ -100,11 +118,21 @@ liste_ytbeurs = [v['_id'] for v in ytb_list]
 db_test = client['youtube']
 col_playlist = db_test['playlist']
 data=[]
+
+#liste_ytbeurs = ['UCq6XkhO5SZ66N04IcPbqNcw']
 for i in range(len(liste_ytbeurs)):
 
     print(i,'/',len(liste_ytbeurs))
-    data = recup_bdd_headless(liste_ytbeurs[i])
-    try:
-        col_playlist.insert_many(data)
-    except:
-        pass
+    print(liste_ytbeurs[i])
+
+    if len(list(col_playlist.find({ 'id_youtubeur': liste_ytbeurs[i]})))==0:
+        data = recup_bdd_headless(liste_ytbeurs[i])
+        if len(data)>0:
+            try:
+                col_playlist.insert_many(data)
+                print('Inserted')
+            except:
+                import sys
+                print(" \n Unexpected error: \n", sys.exc_info()[0])
+
+col_playlist.create_index( [("$**", "text")])         
