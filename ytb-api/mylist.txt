@@ -1,8 +1,7 @@
-matplotlib 
-python 3 beginner
-flask python
-react js
-django python
-datascience
-machine learning
-C++
+python 3 programming tutorial
+flask python tutorial
+react js tutorial
+django python programming
+datascience tutorial 
+machine learning tutorial 
+C++ programming
