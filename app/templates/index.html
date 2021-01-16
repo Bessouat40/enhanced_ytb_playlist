@@ -59,39 +59,55 @@ Youtube Playlist Enhanced
 		    			
 						var description_string = response[i]['description'];
 						var desc = description_string.split('.'); // ${desc.slice(0,3)} 
+						var views = response[i]['vues'].replace('vues','')
+						var formatted_views = parseInt(views).toLocaleString()
+						console.log(views,formatted_views)
 
 		  				var htmlString = `
 		  				<div class="row justify-content-center"> 
-		  					<div class="col-md-10 card mb-2 mt-3 border-0 rounded shadow-sm">
-			  					<div class="row mt-1">
-				  					<h5 class="card-title col-8 mt-4">${response[i]['playlist']} </h5> 
+		  					<div class="col-md-10 card mb-3 mt-2 border-0 rounded shadow-sm">
+			  					
+			  					<div class="row">
+				  					<h5 class="card-title  mt-2">${response[i]['playlist']} </h5> 
 				  				</div>
 
-				  				<div class="row mb-3 mt-3">
+				  				<div class="row mb-3 mt-2 justify-content-center">
 
 				  					<div class="col-md-4 pr-3">
-				  						<img src="${response[i]['url_img']}"  class="rounded border"  style="width: 15rem;">
+				  						<img src="${response[i]['url_img']}"  class="rounded border"  style="width: 16rem;">
 				  					</div>
 				  					<div class="col-md-2 my-auto">
 				  						
-					  						<p class="text-center align-middle h3" >${response[i]['vues'].replace('vues','')} <i class="material-icons">&#xe8f4;</i></p>
+					  						<p class="text-center align-middle h3" > ${formatted_views} <i class="material-icons">&#xe8f4;</i></p>
 					  						
 					  					
 				  					</div>
 
 				  					<div class="col-md-2 my-auto">
 				  						
-				  						<p class="text-center align-middle h3" >${response[i]['nbr_videos']} <span class="material-icons">video_library</span></p>
+				  						<p class="text-center align-middle h3" >${response[i]['nbr_videos']} <i class="material-icons">video_library</i></p>
 				  						
 				  					</div>
 
+				  					<div class="col-md-2 my-auto">
+				  						
+				  						<p class="text-center align-middle h3" >${response[i]['playlist_duration']} <i class="material-icons">schedule </i></p>
+				  						
+				  					</div>
+
+
 			  					</div>
 			  					
-			  					<div class="row">
-			  						<div class="float-right"><a role="button" class="btn btn-primary  btn-sm  mb-3" href="/p/${response[i]['_id']}" >Channel page</a></div>
-			  					</div>
+			  					
 		  					</div>
 		  				</div>`
+
+		  				// <div class="row">
+			  			//			<div class="float-right"><a role="button" class="btn btn-primary  btn-sm  mb-3" href="/p/${response[i]['_id']}" >Channel page</a></div>
+			  				//</div>  
+
+
+
 		  				var div = document.createElement('div');
 						div.innerHTML = htmlString.trim();
 		  				elem.appendChild(div.firstChild)

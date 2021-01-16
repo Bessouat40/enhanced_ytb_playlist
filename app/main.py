@@ -37,7 +37,7 @@ def playlist_page(playlist_id):
 	data = collection.find_one({"_id":playlist_id})
 	
 	if data:
-		
+
 		return render_template("playlist.html",
 			playlist_id=data['_id'],
 			playlist_title=data['playlist'],
@@ -111,7 +111,10 @@ def api_search(word):
 
 	collection = database['playlist']
 	
-	data = list(collection.find( { '$text' : { '$search': word } }).limit(5))
+	data = list(collection.find( { '$text' : { '$search': word } }).limit(10))
+
+	for el in data:
+		el['playlist_duration'] = sum_duration(el['video_time'])
 	json_data = jsonify(data)
 
 	return(json_data)
