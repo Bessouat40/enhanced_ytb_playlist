@@ -2,6 +2,8 @@ from flask import Flask,redirect,url_for,render_template,jsonify,request
 import pymongo
 import re
 
+from time_tools import sum_duration
+
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
 
@@ -35,7 +37,7 @@ def playlist_page(playlist_id):
 	data = collection.find_one({"_id":playlist_id})
 	
 	if data:
-
+		
 		return render_template("playlist.html",
 			playlist_id=data['_id'],
 			playlist_title=data['playlist'],
@@ -44,7 +46,8 @@ def playlist_page(playlist_id):
 			channel_id=data['id_youtubeur'],
 			playlist_views=data['vues'],
 			playlist_nb_videos=data['nbr_videos'],
-			playlist_last_update=data['derniere_maj'])
+			playlist_last_update=data['derniere_maj'],
+			playlist_duration=sum_duration(data['video_time']))
 
 	else:
 		return('404')
