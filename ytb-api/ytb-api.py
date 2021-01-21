@@ -1,7 +1,7 @@
-import requests,
+import requests
 import json
 import sys
-import getopt
+import argparse
 from datetime import datetime
 
 import pymongo
@@ -109,7 +109,7 @@ class YoutubeAPI:
             print('.txt file not found')
             sys.exit(0)
 
-    def get_video_comments(self,video_id,nb_res='100')
+    def get_video_comments(self,video_id,nb_res='100'):
         
         base_str = 'https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&maxResults={nb_res}&order=relevance&videoId={video_id}&key={api_key}'
 
@@ -135,7 +135,7 @@ class YoutubeAPI:
         return(comments)
 
     
-    def to_mongo(self,data):
+    def to_mongo(self,data,mongo_collection):
         """
 
         Send Data to the Mongo DB registred in config.json
@@ -150,7 +150,7 @@ class YoutubeAPI:
         
         client = pymongo.MongoClient(self.mongo_url,self.mongo_port)
         database = client[self.mongo_db]
-        collection = database[self.mongo_collection]
+        collection = database[mongo_collection]
         
         for l in data:
             try:
@@ -173,26 +173,26 @@ class YoutubeAPI:
 
 if __name__ == "__main__":
 
+    ytb = YoutubeAPI()
+
+    parser = argparse.ArgumentParser(description='Youtube API Wrapper')
+    parser.add_argument('-l','-list')
+    parser.add_argument('-c','-collection')
+    parser.add_argument('-t','-type',default="channels")
+    args = parser.parse_args()
+
+    if args.l:
+        file = args.l
+    else:
+        file = 'None'
+
+    if args.c:
+        collection = args.c 
+
+    if args.t:
+        ressource_type = args.t
     
-    argv = sys.argv[1:]
+    data = ytb.search_from_file(file,ressource_type)
+    ytb.to_mongo(data,collection)
 
-    try:
-        opts, args = getopt.getopt(argv,"hl:")
-
-    except getopt.GetoptError:
-
-       print(help_string)
-       sys.exit(0)
-
-    for opt, arg in opts:
-
-        if opt == '-h':
-            print(help_string)
-            sys.exit(0)
-
-        elif opt == '-l':
-            ytb = YoutubeAPI()
-            results = ytb.search_from_file(arg)
-            ytb.to_mongo(results) 
-
-        
+    
