@@ -1,12 +1,15 @@
-import requests
+import requests,
 import json
-import sys, getopt
+import sys
+import getopt
 from datetime import datetime
 
 import pymongo
 from pymongo.errors import BulkWriteError
 
-help_string = 'ytb.py -l <keywordfile>'
+
+help_string = 'ytb.py -l <keywordfile.txt>'
+
 
 class YoutubeAPI:
     """
@@ -14,13 +17,11 @@ class YoutubeAPI:
 
     """
 
-    
     def __init__(self):
         """
         Initializing using config.json conf file
-        
-        """
-        
+
+        """   
         try:
             f = open('config.json','r') 
             data = json.load(f) 
@@ -36,7 +37,9 @@ class YoutubeAPI:
         self.mongo_db = data['db']['mongo-db-name']
         self.mongo_collection = data['db']['mongo-collection-name']
             
-    def search_channels(self,keyword,nb_res="50"):
+    
+
+    def search_channels(self,keyword,nb_res="50",lang='en'):
         """
             
         Searching for channels 
@@ -52,13 +55,8 @@ class YoutubeAPI:
                 channel_info: list of json channel object 
         """
         
-        if ' ' in keyword:
-            keyword.replace(' ','%s')
+        keyword = re.sub(' ','%s',keyword)
 
-
-
-        lang = 'en' #default language to search
-            
         #Formatting the url with parameters   
         url = "https://youtube.googleapis.com/youtube/v3/search?type=channel&part=snippet&maxResults={n_res}&q={kw}&key={api_key}&relevanceLanguage={lang}"
         url_formatted = url.format(n_res=nb_res,
@@ -71,12 +69,13 @@ class YoutubeAPI:
         json_result = json.loads(req.text)['items']
 
         #Extracting Data from json response
-        channel_info = [{"channel_title":v['snippet']['channelTitle'],
+        channel_info = [{"channel_title": v['snippet']['channelTitle'],
                          "_id": v['snippet']['channelId'],
                          "channel_description": v['snippet']['description'],
                          "img": v['snippet']['thumbnails']['default']['url'],
                          "created": datetime.strptime(v['snippet']['publishTime'], '%Y-%m-%dT%H:%M:%SZ'),
-                         "last_update":datetime.now()}  for v in json_result]
+                         "last_update":datetime.now()
+                         }  for v in json_result]
     
         return(channel_info)
     
@@ -97,7 +96,7 @@ class YoutubeAPI:
                 results: list of list json object
         """
 
-        print(f'Reading from {file}...')
+        print(f'Reading from {file} ...')
 
         results = []
         try:
@@ -109,7 +108,32 @@ class YoutubeAPI:
         except FileNotFoundError:
             print('.txt file not found')
             sys.exit(0)
-            
+
+    def get_video_comments(self,video_id,nb_res='100')
+        
+        base_str = 'https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&maxResults={nb_res}&order=relevance&videoId={video_id}&key={api_key}'
+
+        base_str.format(nb_res=nb_res,
+                        video_id=video_id,
+                        api_key=self.api_key)
+
+        req = requests.get(url_formatted)
+        json_result = json.loads(req.text)['items']
+  
+        comments = [ { '_id':v['id'],
+                        'video_id': v['snippet']['videoId'],
+                        'author_name' : v['snippet']['topLevelComment']['snippet']['authorDisplayName'],
+                        'text' : v['snippet']['topLevelComment']['snippet']['textOriginal'],
+                        'author_profile_picture': v['snippet']['topLevelComment']['snippet']['authorProfileImageUrl'],
+                        'author_id' :  v['snippet']['topLevelComment']['snippet']['authorChannelId']['value'],
+                        'likes' : v['snippet']['topLevelComment']['snippet']['likeCount'],
+                        'date_published' :  datetime.strptime(v['snippet']['topLevelComment']['snippet']['publishedAt'],'%Y-%m-%dT%H:%M:%SZ'),
+                        'date_updated' : datetime.strptime(v['snippet']['topLevelComment']['snippet']['updatedAt'],'%Y-%m-%dT%H:%M:%SZ'),
+                        'replies' : v['snippet']['totalReplyCount'],
+                    }  for v in json_result]
+    
+        return(comments)
+
     
     def to_mongo(self,data):
         """
@@ -135,13 +159,13 @@ class YoutubeAPI:
                 
             # Error log  
             except BulkWriteError as error:
-                z = error.details
+                err = error.details
                 print("*********************")
-                print(z['writeErrors'][0]['errmsg'])
-                print("Inserted : ",z['nInserted'])
-                print("Upserted : ",z['nUpserted'])
-                print("Modified : ",z['nModified'])
-                print("Removed : ",z['nRemoved'])
+                print(err['writeErrors'][0]['errmsg'])
+                print("Inserted : ",err['nInserted'])
+                print("Upserted : ",err['nUpserted'])
+                print("Modified : ",err['nModified'])
+                print("Removed : ",err['nRemoved'])
                 print("*********************")    
 
         #Create Index
@@ -154,7 +178,9 @@ if __name__ == "__main__":
 
     try:
         opts, args = getopt.getopt(argv,"hl:")
+
     except getopt.GetoptError:
+
        print(help_string)
        sys.exit(0)
 
