@@ -90,7 +90,7 @@ def channel_page(channel_id):
 		return('404')
 
 
-@app.route('/api/<word>')
+@app.route('/api/s/<word>')
 def api_search(word):
 	"""
 	API Search View 

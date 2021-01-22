@@ -19,13 +19,12 @@ def second_converter(time_string):
 
 
 	"""
-	
-    time_string = time_string.split(':')
-    time_string.reverse()
-    s = 0
-    for e,v in zip(time_string,[1,60,3600,86400]):
-        s += int(e)*v
-    return(s)
+	time_string = time_string.split(':')
+	time_string.reverse()
+	s = 0
+	for e,v in zip(time_string,[1,60,3600,86400]):
+		s += int(e)*v
+	return(s)
 
 
 def sum_duration(duration_array):
