@@ -11,8 +11,10 @@ Youtube Playlist Enhanced
 		<div class="row mb-1 mt-4 ">
 			
 			<p class="fw-bold text-center fs-1"><a  href="/" style="color: black;text-decoration:none; "> YouTube Playlist <br> Enhanced </a></p>
-			
+			<img src="{{ url_for('static', filename='img/undraw_online_video.svg')}}"  class="mx-auto d-block mt-2"  style="width: 24rem;">
 		</div>
+
+		
 
 		<div class="row justify-content-center">
 			<div class="col-md-10 mb-2 mt-1 ">		
@@ -77,6 +79,7 @@ Youtube Playlist Enhanced
 				  					<div class="col-md-4 pr-3">
 				  						<img src="${response[i]['url_img']}"  class="rounded border"  style="width: 14rem;">
 				  					</div>
+				  					
 				  					<div class="col-md-2 my-auto">
 				  						
 					  						<p class="text-center align-middle h3" > ${formatted_views} <i class="material-icons">&#xe8f4;</i></p>

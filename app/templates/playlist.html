@@ -18,16 +18,47 @@ Youtube Playlist Enhanced
 					<div class="row mt-2">
 				    	<h5 class="card-title mt-3 col-5">{{playlist_title}}</h5>
 					</div>
-					
+					<!--<img src="{{playlist_img}}"  class="float-left col-2" > -->
 					<div class="row">	
 				    	<p class="card-body">{{playlist_description}}</p>
 				    </div>
 
 				    <div class="row">
-				    	<p class="font-weight-bold" style="font-weight: bold;">{{playlist_views}} {{playlist_nb_videos}} videos   Derniere Maj :  {{playlist_last_update}} Durée Totale {{playlist_duration}}</p>			    	
+				    	
+
+				    	<div class="row mb-2 mt-2 justify-content-center">
+				  							
+				  					<div class="col-md-3 my-auto">
+					  					<p class="text-center align-middle h3" > {{playlist_views}} <i class="material-icons">&#xe8f4;</i></p>
+				  					</div>
+
+				  					<div class="col-md-2 my-auto">
+				  						<p class="text-center align-middle h3" >{{playlist_nb_videos}} <i class="material-icons">video_library</i></p>	
+				  					</div>
+
+				  					<div class="col-md-2 my-auto">
+				  						
+				  						<p class="text-center align-middle h3" >{{playlist_duration}} <i class="material-icons">schedule </i></p>
+				  						
+				  					</div>
+
+				  					<div class="col-md-2 my-auto">
+				  						
+				  						<p class="text-center align-middle h3" >{{playlist_last_update}} <i class="material-icons">calendar_today </i></p>
+				  						
+				  					</div>
+
+			  			</div>	
+			  			
+			  			<div class="row mb-3 mt-3 justify-content-center">
+			  				<div class="col-md-6 align-self-center">
+			  					 	
+			  				</div>		    	
+				    	</div>
+				    
 				    </div>
 
-				    <img src="{{playlist_img}}"  class="float-left col-2" >
+				   
 
 				    <div class="row mb-3 mt-3">
 				    	<div class='col-3'>
