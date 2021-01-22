@@ -8,9 +8,6 @@ import pymongo
 from pymongo.errors import BulkWriteError
 
 
-help_string = 'ytb.py -l <keywordfile.txt>'
-
-
 class YoutubeAPI:
     """
     Python Wrapper of Youtube Data API v3
@@ -35,7 +32,7 @@ class YoutubeAPI:
         self.mongo_url = data['db']['mongo-url']
         self.mongo_port = data['db']['mongo-port']
         self.mongo_db = data['db']['mongo-db-name']
-        self.mongo_collection = data['db']['mongo-collection-name']
+        
             
     
 
@@ -146,6 +143,8 @@ class YoutubeAPI:
 
                 data: json data to be inserted in the mongo db
 
+                mongo_collection: name of the collection
+
         """
         
         client = pymongo.MongoClient(self.mongo_url,self.mongo_port)
@@ -173,6 +172,9 @@ class YoutubeAPI:
 
 if __name__ == "__main__":
 
+
+    # CLI Interface
+    
     ytb = YoutubeAPI()
 
     parser = argparse.ArgumentParser(description='Youtube API Wrapper')
@@ -184,15 +186,23 @@ if __name__ == "__main__":
     if args.l:
         file = args.l
     else:
-        file = 'None'
+        print('file not specified')
+        sys.exit(0)
 
     if args.c:
-        collection = args.c 
+        collection = args.c
+    else:
+        print('collection not specified')
+        sys.exit(0)
+
 
     if args.t:
         ressource_type = args.t
+
     
     data = ytb.search_from_file(file,ressource_type)
     ytb.to_mongo(data,collection)
+
+
 
     
