@@ -4,7 +4,6 @@
    "db": {
         "mongo-url": "localhost",
         "mongo-port": 27017,
-        "mongo-db-name": "youtube",
-        "mongo-collection-name": "channels"
+        "mongo-db-name": "youtube"
     }
 }
