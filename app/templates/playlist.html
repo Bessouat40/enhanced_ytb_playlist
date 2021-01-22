@@ -29,7 +29,7 @@ Youtube Playlist Enhanced
 				    	<div class="row mb-2 mt-2 justify-content-center">
 				  							
 				  					<div class="col-md-3 my-auto">
-					  					<p class="text-center align-middle h3" > {{playlist_views}} <i class="material-icons">&#xe8f4;</i></p>
+					  					<p class="text-center align-middle h3" id='nb-views'> {{playlist_views}} <i class="material-icons">&#xe8f4;</i></p>
 				  					</div>
 
 				  					<div class="col-md-2 my-auto">
@@ -70,5 +70,15 @@ Youtube Playlist Enhanced
 	</div>	
 
 </div>
+<script type="text/javascript">
+	
+	var views = document.getElementById('nb-views');
+	var viewsContent = views.innerHTML;
+	var formatted_views = parseInt(viewsContent).toLocaleString() + ' <i class="material-icons">&#xe8f4;</i>';
+	views.innerHTML = formatted_views;
+
+
+</script>
+
 
 {% endblock %}
