@@ -2,6 +2,7 @@ import requests
 import json
 import sys
 import argparse
+import re
 from datetime import datetime
 
 import pymongo
@@ -63,6 +64,7 @@ class YoutubeAPI:
 
         #Sending the GET request to Youtube API
         req = requests.get(url_formatted)
+        print(req.text)
         json_result = json.loads(req.text)['items']
 
         #Extracting Data from json response
@@ -110,9 +112,9 @@ class YoutubeAPI:
         
         base_str = 'https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&maxResults={nb_res}&order=relevance&videoId={video_id}&key={api_key}'
 
-        base_str.format(nb_res=nb_res,
-                        video_id=video_id,
-                        api_key=self.api_key)
+        url_formatted = base_str.format(nb_res=nb_res,
+                                        video_id=video_id,
+                                        api_key=self.api_key)
 
         req = requests.get(url_formatted)
         json_result = json.loads(req.text)['items']
