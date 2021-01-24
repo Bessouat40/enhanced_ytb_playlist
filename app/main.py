@@ -39,14 +39,7 @@ def playlist_page(playlist_id):
 	if data:
 
 		return render_template("playlist.html",
-			playlist_id=data['_id'],
-			playlist_title=data['playlist'],
-			playlist_description=data['description'],
-			playlist_img=data['url_img'],
-			channel_id=data['id_youtubeur'],
-			playlist_views=data['vues'],
-			playlist_nb_videos=data['nbr_videos'],
-			playlist_last_update=data['derniere_maj'],
+			data=data,
 			playlist_duration=sum_duration(data['video_time']))
 
 	else:
@@ -81,10 +74,7 @@ def channel_page(channel_id):
 	if data:
 
 		return render_template("channel.html",
-			channel_id=data['_id'],
-			channel_title=data['channel_title'],
-			channel_description=data['channel_description'],
-			channel_img=data['img'])
+			channel=data)
 	else:
 
 		return('404')
@@ -111,13 +101,26 @@ def api_search(word):
 
 	collection = database['playlist']
 	
-	data = list(collection.find( { '$text' : { '$search': word } }).limit(10))
+	data = list(collection.find({'$text':{'$search':word}}).limit(15))
 
 	for el in data:
 		el['playlist_duration'] = sum_duration(el['video_time'])
 	json_data = jsonify(data)
 
 	return(json_data)
+
+@app.route('/api/p/<channel_id>')
+def api_get_playlist(channel_id):
+
+	collection = database['playlist']
+
+	data = list(collection.find({'id_youtubeur': channel_id}))
+
+	json_data = jsonify(data)
+
+	return(json_data)
+
+
 	
 if __name__ == "__main__":
 	app.run(debug=True)

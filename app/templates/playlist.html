@@ -11,16 +11,16 @@ Youtube Playlist Enhanced
 			<p class="fw-bold text-center fs-1"><a  href="/" style="color: black;text-decoration:none;"> YouTube Playlist Enhanced </a></p>
 			
 	</div>
-
+	
 	<div class="row mt-3">	
 		<div class="card mb-2 mt-5 border-0 rounded shadow-sm">	
 					
 					<div class="row mt-2">
-				    	<h5 class="card-title mt-3 col-5">{{playlist_title}}</h5>
+				    	<h5 class="card-title mt-3 col-5">{{ data['playlist']}}</h5>
 					</div>
 					<!--<img src="{{playlist_img}}"  class="float-left col-2" > -->
 					<div class="row">	
-				    	<p class="card-body">{{playlist_description}}</p>
+				    	<p class="card-body">{{ data['description']}}</p>
 				    </div>
 
 				    <div class="row">
@@ -29,11 +29,11 @@ Youtube Playlist Enhanced
 				    	<div class="row mb-2 mt-2 justify-content-center">
 				  							
 				  					<div class="col-md-3 my-auto">
-					  					<p class="text-center align-middle h3" id='nb-views'> {{playlist_views}} <i class="material-icons">&#xe8f4;</i></p>
+					  					<p class="text-center align-middle h3" id='nb-views'> {{ data['vues']}} <i class="material-icons">&#xe8f4;</i></p>
 				  					</div>
 
 				  					<div class="col-md-2 my-auto">
-				  						<p class="text-center align-middle h3" >{{playlist_nb_videos}} <i class="material-icons">video_library</i></p>	
+				  						<p class="text-center align-middle h3" >{{data['nbr_videos']}} <i class="material-icons">video_library</i></p>	
 				  					</div>
 
 				  					<div class="col-md-2 my-auto">
@@ -42,9 +42,9 @@ Youtube Playlist Enhanced
 				  						
 				  					</div>
 
-				  					<div class="col-md-2 my-auto">
+				  					<div class="col-md-3 my-auto">
 				  						
-				  						<p class="text-center align-middle h3" >{{playlist_last_update}} <i class="material-icons">calendar_today </i></p>
+				  						<p class="text-center align-middle h3" >{{data['derniere_maj']}} <i class="material-icons">calendar_today </i></p>
 				  						
 				  					</div>
 
@@ -62,10 +62,13 @@ Youtube Playlist Enhanced
 
 				    <div class="row mb-3 mt-3">
 				    	<div class='col-3'>
-				    		<a href="https://www.youtube.com/playlist?list={{playlist_id}}" class="btn btn-outline-primary">YouTube Link</a>
-				    		<a href="https://www.youtube.com/channel/{{channel_id}}" class="btn btn-outline-primary">YouTuber Page</a>
+				    		<a href="https://www.youtube.com/playlist?list={{data['_id']}}" class="btn btn-outline-primary">YouTube Link</a>
+				    		<a href="/c/{{ data['id_youtubeur']}}" class="btn btn-outline-primary">YouTuber Page</a>
 				    	</div>
 				    </div>
+
+
+
 		</div>
 	</div>	
 
