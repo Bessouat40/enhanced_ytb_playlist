@@ -7,15 +7,13 @@ Youtube Playlist Enhanced
 <div class="container">
 
 	<div class="mb-2 mt-3 ">
-			
-			<p class="fw-bold text-center fs-1"><a  href="/" style="color: black;text-decoration:none;"> YouTube Playlist Enhanced </a></p>
-			
+		<p class="fw-bold text-center fs-1"><a  href="/" style="color: black;text-decoration:none;"> YouTube Playlist Enhanced </a></p>		
 	</div>
 
 	<div class="row mt-3">	
 		<div class="card mb-3 mt-5 border-0 rounded shadow-sm">	
 					
-					<div class="row mb-3 mt-3">
+					<div class="row mb-3 mt-3 my-auto">
 						<img src="{{channel['img']}}"  class="rounded-circle float-left col-2" style="width: 7rem;">
 				    	<h5 class="card-title mt-3 col-2">{{channel['channel_title']}}</h5>
 					</div>
@@ -24,7 +22,7 @@ Youtube Playlist Enhanced
 				    	<p class="card-body mt-3">{{channel['channel_description']}}</p>
 				    </div>
 
-				    <div class="row mb-3 mt-3">
+				    <div class="row mb-3 mt-3 ">
 				    	<div class='col-2'>
 				    		<a href="https://www.youtube.com/channel/{{channel['_id']}}" class="btn btn-primary">YouTube Page</a>
 				    	</div>
@@ -32,14 +30,11 @@ Youtube Playlist Enhanced
 		</div>
 	</div>	
 
-	<div class="row" id='playlist-container'>
-	</div>
+	<div class="row" id='playlist-container'></div>
 
 </div>
 
-
 <script type="text/javascript">
-
 
 	function createShortPlaylistCard(playlistData){
 
@@ -61,26 +56,18 @@ Youtube Playlist Enhanced
 		return(newCard)
 	}
 	
-
-
 	const test = {{channel['_id']|tojson}};
-	
 	const xhr = new XMLHttpRequest();
 	xhr.responseType = "json";
 	xhr.open('GET','HTTP://'+window.location.host +'/api/p/'+test);
 		       
 	xhr.onload = function(){ 
-
 		var response = xhr.response ;
-		const elem = document.getElementById('playlist-container');
-		
+		const elem = document.getElementById('playlist-container');	
 		response.forEach(result => {
 			elem.append(createShortPlaylistCard(result))
-		});
-
-		
+		});	
  	}
-
  	xhr.send();
 
 </script>

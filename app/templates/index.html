@@ -4,33 +4,22 @@ Youtube Playlist Enhanced
 {% endblock %}
 
 {% block content %}
-
 	<div class="container">
 
-
-		<div class="row mb-1 mt-4 ">
-			
+		<div class="row mb-1 mt-4 ">	
 			<p class="fw-bold text-center fs-1"><a  href="/" style="color: black;text-decoration:none; "> YouTube Playlist <br> Enhanced </a></p>
 			<img src="{{ url_for('static', filename='img/undraw_online_video.svg')}}"  class="mx-auto d-block mt-2"  style="width: 24rem;">
 		</div>
 
-		
-
 		<div class="row justify-content-center">
 			<div class="col-md-10 mb-2 mt-1 ">		
-			  	
-		  	
-				    <label for="searchPlaylist" class="form-label" style="font-size: 1.05rem;">Search for a playlist</label>
-				    <input class="form-control" name="search" type="search" id="searchPlaylist" aria-describedby="searchHelp">
-				    <div id="searchHelp" class="form-text" style="font-size: 0.8rem;">example: python, react ...</div>
-				
-				
+				<label for="searchPlaylist" class="form-label" style="font-size: 1.05rem;">Search for a playlist</label>
+				<input class="form-control" name="search" type="search" id="searchPlaylist" aria-describedby="searchHelp">
+				<div id="searchHelp" class="form-text" style="font-size: 0.8rem;">example: python, react ...</div>
 			</div>
 		</div>
 
-		
-		<div class="container mb-3 mt-3" id="div-container">
-		</div>
+		<div class="container mb-3 mt-3" id="div-container"></div>
 
 	</div>
 
@@ -39,7 +28,6 @@ Youtube Playlist Enhanced
 		const typing = document.getElementById('searchPlaylist')
 
 		typing.addEventListener('input', function (evt) {
-
 
 			elem = document.getElementById('div-container') 
 			elem.innerHTML = ""
@@ -60,7 +48,7 @@ Youtube Playlist Enhanced
 		    		for (var i = 0; i < response.length; i++) {
 		    			
 						var description_string = response[i]['description'];
-						var desc = description_string.split('.'); // ${desc.slice(0,3)} 
+						var desc = description_string.split('.'); 
 						var views = response[i]['vues'].replace('vues','')
 						var formatted_views = parseInt(views).toLocaleString()
 
@@ -105,12 +93,6 @@ Youtube Playlist Enhanced
 			  					
 		  					</div>
 		  				</div>`
-
-		  				// <div class="row">
-			  			//			<div class="float-right"><a role="button" class="btn btn-primary  btn-sm  mb-3" href="/p/${response[i]['_id']}" >Channel page</a></div>
-			  				//</div>  
-
-
 
 		  				var div = document.createElement('div');
 						div.innerHTML = htmlString.trim();
