@@ -39,47 +39,49 @@ Youtube Playlist Enhanced
 
 
 <script type="text/javascript">
+
+
+	function createShortPlaylistCard(playlistData){
+
+		let imgUrl = playlistData['url_img'];
+		let playlistId = playlistData['_id'];
+		let playlistTitle = playlistData['playlist'];
+
+		var newCard = document.createElement("div");
+		newCard.className = 'col-md-3 p-2 mt-2';
+		newCard.innerHTML = `
+			<div class="card">
+				<img class="card-img-top" src="${imgUrl}" alt="Card image cap">
+				<div class="card-body">
+					<p class="card-text">${playlistTitle}</p>
+				</div>
+				<a href="/p/${playlistId}" class="stretched-link"></a>
+			</div>
+		`
+		return(newCard)
+	}
 	
 
 
-
 	const test = {{channel['_id']|tojson}};
-	const xhr = new XMLHttpRequest()
-	xhr.responseType = "json"
-	xhr.open('GET','HTTP://'+window.location.host +'/api/p/'+test)
+	
+	const xhr = new XMLHttpRequest();
+	xhr.responseType = "json";
+	xhr.open('GET','HTTP://'+window.location.host +'/api/p/'+test);
 		       
 	xhr.onload = function(){ 
 
 		var response = xhr.response ;
 		const elem = document.getElementById('playlist-container');
 		
+		response.forEach(result => {
+			elem.append(createShortPlaylistCard(result))
+		});
 
-		for (var i = 0; i < response.length; i++){
-
-			var data = response[i];
-			var newCard = document.createElement("div");
-			newCard.className = 'col-md-3 p-2 mt-2';
-			newCard.innerHTML = 
-			`	
-						<div class="card">
-							<img class="card-img-top" src="${data['url_img']}" alt="Card image cap">
-							<div class="card-body">
-								<p class="card-text"> ${data['playlist']} </p>
-							</div>
-						</div>				
-			`
-		elem.append(newCard);
-
-		}
-	
-
-
+		
  	}
 
  	xhr.send();
 
 </script>
-
-
-
 {% endblock %}
