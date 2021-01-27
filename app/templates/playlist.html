@@ -33,26 +33,24 @@ Youtube Playlist Enhanced
 				  					</div>
 
 				  					<div class="col-md-2 my-auto">
-				  						
 				  						<p class="text-center align-middle h3" >{{playlist_duration}} <i class="material-icons">schedule </i></p>
-				  						
 				  					</div>
 
 				  					<div class="col-md-3 my-auto">
-				  						
 				  						<p class="text-center align-middle h3" >{{data['derniere_maj']}} <i class="material-icons">calendar_today </i></p>
-				  						
 				  					</div>
-
-			  			</div>	
-			  			
-			  			<div class="row mb-3 mt-3 justify-content-center">
-			  				<div class="col-md-6 align-self-center">
-			  					 	
-			  				</div>		    	
-				    	</div>
-				    
+				  				
+			  			</div>
 				    </div>
+
+
+
+				    <div class="row mb-3 mt-5 justify-content-center " id="graph">
+				    	<div class="col-10 mb-3 mt-3 w-50 border rounded m-3 p-5">
+				    		<canvas id="likes_graph"></canvas>
+				    	</div>
+				    </div>
+
 
 				    <div class="row mb-3 mt-3">
 				    	<div class='col-3'>
@@ -66,11 +64,134 @@ Youtube Playlist Enhanced
 
 </div>
 <script type="text/javascript">
-	
+	function HexToRGB(hex_color,trnsprnc){
+
+	  var myRegexp = /#+([a-zA-Z0-9]{2})+([a-zA-Z0-9]{2})+([a-zA-Z0-9]{2})/gm;
+	  var m = myRegexp.exec(hex_color);
+	  var r = parseInt(m[1],16);
+	  var g = parseInt(m[2],16);
+	  var b = parseInt(m[3],16);
+	  
+	  return( "rgb("+r+","+ g+","+b+","+trnsprnc+")")
+
+	}
+
 	var views = document.getElementById('nb-views');
 	var viewsContent = views.innerHTML;
 	var formatted_views = parseInt(viewsContent).toLocaleString() + ' <i class="material-icons">&#xe8f4;</i>';
 	views.innerHTML = formatted_views;
+
+	var data_json = {
+		"labels" : [1,2,3,4,5,6,7],
+		"values": [800,667,324,923,123,345,567],
+		"values2": [512,467,344,563,735,375,156]
+	}
+
+	var ct = createLikesChart('likes_graph',data_json);
+
+	function createLikesChart(canva_name,data){
+
+		var ctx = document.getElementById(canva_name);
+		var color = '#0ec411'
+		var color2 ='#FF0000'
+
+		var myLineChart = new Chart(ctx, {
+	    type: 'line',
+	    data: {
+	    	labels: data['labels'],
+	    	datasets: [
+	    		{
+	    			label: "Likes",
+	    			data: data['values'],
+	    			lineTension: 0.4,
+			        backgroundColor: HexToRGB(color,0), //Area
+			        borderColor: color, //line
+			        borderWidth: 2,
+			        pointRadius: 3.5,
+			        pointBackgroundColor: 'white', //Point
+			        pointBorderColor: color,
+			        pointHoverRadius: 4,
+			        pointHoverBackgroundColor: color,
+			        pointHoverBorderColor: color,
+			        pointHitRadius: 15,
+
+	    		},
+	    		{
+	    			label: "Dislikes",
+	    			data: data['values2'],
+	    			lineTension: 0.4,
+			        backgroundColor: HexToRGB(color2,0), //Area
+			        borderColor: color2, //line
+			        borderWidth: 2,
+			        pointRadius: 3.5,
+			        pointBackgroundColor: 'white', //Point
+			        pointBorderColor: color2,
+			        pointHoverRadius: 4,
+			        pointHoverBackgroundColor: color2,
+			        pointHoverBorderColor: color2,
+			        pointHitRadius: 15,
+
+	    		}
+	    	]
+
+	    },
+	    options: {
+
+	    	scales: {
+			        xAxes: [
+			          {
+			            time: {
+			              unit: "date",
+			            },
+			            gridLines: {
+			              display: false,
+			              drawBorder: false,
+			            },
+			            ticks: {maxRotation: 0,minRotation: 0},
+			          },
+			        ],
+			      yAxes: [{
+			        ticks: {
+			          maxTicksLimit: 8,
+			          padding: 1,
+			          
+			        },
+			        gridLines: {
+			          color: "rgb(234, 236, 244)",
+			          zeroLineColor: "rgb(234, 236, 244)",
+			          drawBorder: false,
+			    
+		        }
+		      }],
+		     },
+
+		     legend: {
+		     	display: true,
+		     	onClick: function(event, legendItem) {}
+  
+		     },
+
+		    tooltips: {
+		        backgroundColor: "rgb(255,255,255)",
+		        bodyFontColor: "#858796",
+		        titleMarginBottom: 10,
+		        titleFontColor: "#6e707e",
+		        titleFontSize: 14,
+		        borderColor: "#dddfeb",
+		        borderWidth: 0.7,
+		        xPadding: 15,
+		        yPadding: 15,
+		        displayColors: false,
+		        intersect: false,
+		        mode: "index",
+		        caretPadding: 10,
+		        
+		    },
+		}
+		});
+	
+	}
+
 
 </script>
 
