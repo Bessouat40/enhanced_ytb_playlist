@@ -24,6 +24,7 @@ def recup_info(lien):
     res = res.split('\n')
     titre = res[0]
     like = res[2]
+    question = re.findall(r'[,]',like)
     if len(question)!=0:
         like = like.replace('K', '00')
         like = like.replace('M', '00000')
@@ -37,8 +38,10 @@ def recup_info(lien):
         like = like.replace('Md', '000000000')
         like = like.replace(' ', '')
         like = int(like)
+
     dislike = res[3]
-    if len(question)!=0:
+    question2 = re.findall(r'[,]',dislike)
+    if len(question2)!=0:
         dislike = dislike.replace('K', '00')
         dislike = dislike.replace('M', '00000')
         dislike = dislike.replace('Md', '00000000')
