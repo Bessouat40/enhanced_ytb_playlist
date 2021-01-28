@@ -1,0 +1,27 @@
+version: '3.3' 
+
+services:
+  
+  mongo:
+    image: mongo
+    container_name: mongodb
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+      - ./data/mongo:/data/db
+    ports:
+        - 27017:27017
+  
+  selenium:
+    image: selenium/standalone-chrome
+    ports:
+      - 4444:4444
+  
+  web:
+    build: .
+    container_name: webapp
+    ports:
+     - "5000:5000"
+    volumes:
+      - ./:/home/dev/code/
