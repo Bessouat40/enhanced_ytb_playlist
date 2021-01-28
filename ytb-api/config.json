@@ -1,9 +1,4 @@
 {
   "api-key": "",
     
-   "db": {
-        "mongo-url": "localhost",
-        "mongo-port": 27017,
-        "mongo-db-name": "youtube"
-    }
 }

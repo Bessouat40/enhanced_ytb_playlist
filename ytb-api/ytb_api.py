@@ -30,10 +30,10 @@ class YoutubeAPI:
             sys.exit(0)
         
         self.api_key = data['api-key']
-        self.mongo_url = data['db']['mongo-url']
-        self.mongo_port = data['db']['mongo-port']
-        self.mongo_db = data['db']['mongo-db-name']
-        
+        self.client = pymongo.MongoClient('mongo')
+        self.db = self.client['youtube']
+
+                
             
     
 
@@ -149,9 +149,8 @@ class YoutubeAPI:
 
         """
         
-        client = pymongo.MongoClient(self.mongo_url,self.mongo_port)
-        database = client[self.mongo_db]
-        collection = database[mongo_collection]
+        
+        collection = self.db[mongo_collection]
         
         for l in data:
             try:
@@ -170,7 +169,7 @@ class YoutubeAPI:
                 print("*********************")    
 
         #Create Index
-        collection.create_index( [("$**", "text")]) # Crée / Vérifie index text
+        collection.create_index([("$**", "text")]) # Crée / Vérifie index text
 
 if __name__ == "__main__":
 

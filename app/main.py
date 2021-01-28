@@ -7,7 +7,7 @@ from time_tools import sum_duration
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
 
-client = pymongo.MongoClient('localhost',27017)
+client = pymongo.MongoClient('mongo')
 database = client['youtube']
         
 @app.route('/')
@@ -123,4 +123,4 @@ def api_get_playlist(channel_id):
 
 	
 if __name__ == "__main__":
-	app.run(debug=True)
+	app.run(host="0.0.0.0",debug=True)
