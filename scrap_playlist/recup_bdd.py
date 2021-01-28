@@ -8,6 +8,7 @@ from selenium.webdriver.chrome.options import Options
 #!pip install pymongo
 from pymongo import MongoClient #création de notre collection qui va contenir les infos
 
+import time
 
 #pour que la fonction s'exécute sans erreur, il faut que le fichier chromedriver soit dans le même répertoire que ce fichier python
 def recup_bdd_headless(id_chaine) :
@@ -21,20 +22,21 @@ def recup_bdd_headless(id_chaine) :
     Returns: 
         dictionnaire comportant plusieurs informations sur la chaîne youtube"""
     
-    CHROME_PATH = "./chromedriver"
+    CHROME_PATH = "./chromedriver_linux"
 
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    chrome = webdriver.Chrome(executable_path=CHROME_PATH,
-                              options=chrome_options
-                             )
+    chrome_options.add_argument("--window-size=640,10500")
+    chrome_options.add_argument('--disable-dev-shm-usage')       
 
+    driver = webdriver.Remote('http://selenium:4444/wd/hub',options=chrome_options)
+    
     #récupération des données
     bdd = []
     lien = 'https://www.youtube.com/channel/{}/playlists?view=1&sort=dd&shelf_id=0'.format(id_chaine)
-    chrome.get(lien)
-    chrome.refresh()
-    tag = chrome.find_elements_by_css_selector('a')
+    driver.get(lien)
+    driver.refresh()
+    tag = driver.find_elements_by_css_selector('a')
     l_url = []
     l_title = []
     for a in tag:
@@ -53,21 +55,29 @@ def recup_bdd_headless(id_chaine) :
         
             last_modif = ''
             print('url:',i)
-            chrome.get(i)
-            tag = chrome.find_element_by_id("stats")
+            driver.get(i)
+            
+
+            tag = driver.find_element_by_id("stats")
             res = []
             for j in tag.find_elements_by_tag_name('span'):
                 res.append(j.text)
             
             #Obtenir image
-            img = chrome.find_elements_by_css_selector('img')[0].get_attribute('src')
+            img = driver.find_elements_by_css_selector('img')[0].get_attribute('src')
 
-            desc = chrome.find_element_by_id('description')
+            desc = driver.find_element_by_id('description')
 
             desc_tag = desc.find_elements_by_tag_name('yt-formatted-string')
+            
 
-            video_time = chrome.find_elements_by_class_name('style-scope ytd-thumbnail-overlay-time-status-renderer')
+            video_time = driver.find_elements_by_class_name('style-scope ytd-thumbnail-overlay-time-status-renderer')
+           
+            #print([v.text for v in video_time])
+            
             video_time = list(filter(None,[v.text for v in video_time]))
+
+         
             
             if len(desc_tag)>0:
                 description = desc_tag[0].text
@@ -79,10 +89,13 @@ def recup_bdd_headless(id_chaine) :
                 if len(res)==5:
                     last_modif = res[2]+res[3]+res[4]
                     last_modif = last_modif.replace('Mise à jour il y a','')
+                    last_modif = re.sub('Updated','',last_modif)
+
 
                 if len(res)==4:
                     last_modif = res[2]+res[3]
                     last_modif = last_modif.replace('Dernière modification le','')
+                    last_modif = re.sub('Last updated on','',last_modif)
                 
                 if len(res)==2:
                     nbr_videos = 0
@@ -92,8 +105,10 @@ def recup_bdd_headless(id_chaine) :
                 nbr_videos = 1
                 last_modif = ''
                 
-            vues = chrome.find_element_by_xpath("//yt-formatted-string[2]").text
+            vues = driver.find_element_by_xpath("//yt-formatted-string[2]").text
             vues = vues.replace('\u202f','')
+            vues = vues.replace('views','')
+            vues = vues.replace(',','')
             
 
 
@@ -110,11 +125,11 @@ def recup_bdd_headless(id_chaine) :
                     'video_time': video_time,
                    })
         
-    chrome.quit()
+    driver.quit()
     return bdd
 
 #ici on commence à créer la bdd Mongo
-client = MongoClient()
+client = MongoClient('mongo')
 
 db = client['youtube']
 collection = db['channels']
@@ -125,7 +140,7 @@ liste_ytbeurs = [v['_id'] for v in ytb_list]
 col_playlist = db['playlist']
 data=[]
 
-#liste_ytbeurs = ['UCq6XkhO5SZ66N04IcPbqNcw']
+liste_ytbeurs = ['UCeVMnSShP_Iviwkknt83cww']
 for i in range(len(liste_ytbeurs)):
 
     print(i,'/',len(liste_ytbeurs))
@@ -138,9 +153,9 @@ for i in range(len(liste_ytbeurs)):
         if data:
             try:
                 col_playlist.insert_many(data)
+                col_playlist.create_index( [("$**", "text")])         
                 print('Inserted')
             except:
                 import sys
                 print(" \n Unexpected error: \n", sys.exc_info()[0])
 
-col_playlist.create_index( [("$**", "text")])         
