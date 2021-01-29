@@ -1,5 +1,4 @@
 python programming tutorial
-react js 
 datascience tutorial 
 
 

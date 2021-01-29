@@ -7,7 +7,7 @@ from time_tools import sum_duration
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
 
-client = pymongo.MongoClient('mongo')
+client = pymongo.MongoClient('mongodb',27017)
 database = client['youtube']
         
 @app.route('/')

@@ -2,7 +2,7 @@ from ytb_api import YoutubeAPI
 import pymongo
 
 ytb = YoutubeAPI()
-client = pymongo.MongoClient('mongo')
+client = pymongo.MongoClient('mongodb',27017)
 
 database = client[ytb.db]
 collection = database['videos']

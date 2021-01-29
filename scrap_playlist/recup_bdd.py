@@ -10,7 +10,7 @@ from pymongo import MongoClient #création de notre collection qui va contenir l
 
 import time
 
-#pour que la fonction s'exécute sans erreur, il faut que le fichier chromedriver soit dans le même répertoire que ce fichier python
+
 def recup_bdd_headless(id_chaine) :
     """ 
     Fonction qui prend en entrée le nom de la chaîne youtube
@@ -22,6 +22,7 @@ def recup_bdd_headless(id_chaine) :
     Returns: 
         dictionnaire comportant plusieurs informations sur la chaîne youtube"""
     
+
     chrome_options = Options()
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--window-size=640,10500")
@@ -137,7 +138,7 @@ def recup_bdd_headless(id_chaine) :
     return bdd
 
 #ici on commence à créer la bdd Mongo
-client = MongoClient('mongo')
+client = MongoClient('mongodb',27017)
 
 db = client['youtube']
 collection = db['channels']
@@ -148,7 +149,7 @@ liste_ytbeurs = [v['_id'] for v in ytb_list]
 col_playlist = db['playlist']
 data=[]
 
-liste_ytbeurs = ['UCeVMnSShP_Iviwkknt83cww']
+#liste_ytbeurs = ['UCeVMnSShP_Iviwkknt83cww'] # Test Value
 for i in range(len(liste_ytbeurs)):
 
     print(i,'/',len(liste_ytbeurs))
