@@ -13,6 +13,12 @@ class YoutubeAPI:
     """
     Python Wrapper of Youtube Data API v3
 
+    Based on Python Requests module 
+
+    
+    Youtube Data API v3
+    https://developers.google.com/youtube/v3/docs
+
     """
 
     def __init__(self,api_key):
@@ -101,6 +107,21 @@ class YoutubeAPI:
             sys.exit(0)
 
     def get_video_comments(self,video_id,nb_res='100'):
+        """
+            
+        Getting comments from a video, based on Id
+
+
+            Args:
+
+                video_id: id of the video 
+
+                nb_res: number of comments to get, in the 1-100 range       
+
+            Return:
+
+                results: list of list json object
+        """
         
         base_str = 'https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&maxResults={nb_res}&order=relevance&videoId={video_id}&key={api_key}'
 
@@ -169,30 +190,29 @@ if __name__ == "__main__":
     # CLI Interface
     
    
-
     parser = argparse.ArgumentParser(description='Youtube API Wrapper')
-    parser.add_argument('-a','-api_key')
-    parser.add_argument('-l','-list')
-    parser.add_argument('-c','-collection')
-    parser.add_argument('-t','-type',default="channels")
+    parser.add_argument('-a','-api_key',help='Youtube API Key',type=str)
+    parser.add_argument('-l','-list',help='Name of the .txt file that contains the list of keyword to use in search',type=str)
+    parser.add_argument('-c','-collection',help='Mongo Collection to use for insert',type=str)
+    parser.add_argument('-t','-type',default="channels",help='Type of the ressource to search',type=str)
     args = parser.parse_args()
 
     if args.a:
         api_key = args.a
     else:
-        print('Youtube Api key not specified')
+        print('Youtube Api key missing')
         sys.exit(0)
 
     if args.l:
         file = args.l
     else:
-        print('file not specified')
+        print('file missing')
         sys.exit(0)
 
     if args.c:
         collection = args.c
     else:
-        print('collection not specified')
+        print('collection missing')
         sys.exit(0)
 
 
