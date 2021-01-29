@@ -1,7 +1,9 @@
 from ytb_api import YoutubeAPI
 import pymongo
 
-ytb = YoutubeAPI()
+API_KEY = ########
+
+ytb = YoutubeAPI(API_KEY)
 client = pymongo.MongoClient('mongodb',27017)
 
 database = client[ytb.db]
@@ -11,6 +13,6 @@ data = list(collection.find({}))
 
 for item in data:
 
-	comments = ytb.get_video_comments(item['_id'],100)
+	comments = ytb.get_video_comments(item['_id'])
 	ytb.to_mongo(comments,'comments')
 

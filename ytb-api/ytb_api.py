@@ -15,21 +15,13 @@ class YoutubeAPI:
 
     """
 
-    def __init__(self):
+    def __init__(self,api_key):
         """
         Initializing using config.json conf file
 
         """   
-        try:
-            f = open('config.json','r') 
-            data = json.load(f) 
-            f.close() 
-        
-        except FileNotFoundError:
-            print('config.json not found')
-            sys.exit(0)
-        
-        self.api_key = data['api-key']
+       
+        self.api_key = api_key
         self.client = pymongo.MongoClient('mongo')
         self.db = self.client['youtube']
 
@@ -176,13 +168,20 @@ if __name__ == "__main__":
 
     # CLI Interface
     
-    ytb = YoutubeAPI()
+   
 
     parser = argparse.ArgumentParser(description='Youtube API Wrapper')
+    parser.add_argument('-a','-api_key')
     parser.add_argument('-l','-list')
     parser.add_argument('-c','-collection')
     parser.add_argument('-t','-type',default="channels")
     args = parser.parse_args()
+
+    if args.a:
+        api_key = args.a
+    else:
+        print('Youtube Api key not specified')
+        sys.exit(0)
 
     if args.l:
         file = args.l
@@ -201,6 +200,7 @@ if __name__ == "__main__":
         ressource_type = args.t
 
     
+    ytb = YoutubeAPI(api_key)
     data = ytb.search_from_file(file,ressource_type)
     ytb.to_mongo(data,collection)
 
