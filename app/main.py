@@ -93,7 +93,7 @@ def api_search(word):
 		
 	Returns:
 		
-		json_data: data for search bar results as json (rest api)
+		json_data: data for search bar results as json (REST Api)
 
 	"""
 	#Regex to avoid injection or mistakes
@@ -111,7 +111,20 @@ def api_search(word):
 
 @app.route('/api/p/<channel_id>')
 def api_get_playlist(channel_id):
+	"""
+	API Get Playlist View 
 
+	View used to retrieve playlist from channel_id
+
+	Args:
+
+		channel_id: youtube id of the channel
+		
+	Returns:
+		
+		json_data: playlist data linked with the channel às json (REST Api)
+
+	"""
 	collection = database['playlist']
 
 	data = list(collection.find({'id_youtubeur': channel_id}))
