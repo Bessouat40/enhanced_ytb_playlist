@@ -22,12 +22,10 @@ def recup_bdd_headless(id_chaine) :
     Returns: 
         dictionnaire comportant plusieurs informations sur la chaîne youtube"""
     
-    CHROME_PATH = "./chromedriver_linux"
-
     chrome_options = Options()
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--window-size=640,10500")
-    chrome_options.add_argument('--disable-dev-shm-usage')       
+    #chrome_options.add_argument('--disable-dev-shm-usage')       
 
     driver = webdriver.Remote('http://selenium:4444/wd/hub',options=chrome_options)
     
@@ -39,6 +37,7 @@ def recup_bdd_headless(id_chaine) :
     tag = driver.find_elements_by_css_selector('a')
     l_url = []
     l_title = []
+
     for a in tag:
         url = a.get_attribute('href')
         try:
@@ -57,12 +56,9 @@ def recup_bdd_headless(id_chaine) :
             print('url:',i)
             driver.get(i)
             
-
             tag = driver.find_element_by_id("stats")
-            res = []
-            for j in tag.find_elements_by_tag_name('span'):
-                res.append(j.text)
-            
+            res = [j.text for j in tag.find_elements_by_tag_name('span')]
+
             #Obtenir image
             img = driver.find_elements_by_css_selector('img')[0].get_attribute('src')
 
@@ -77,8 +73,20 @@ def recup_bdd_headless(id_chaine) :
             
             video_time = list(filter(None,[v.text for v in video_time]))
 
-         
-            
+    
+            video_links = driver.find_elements_by_css_selector('a')
+
+            video_ids = []
+
+            for l in video_links:
+                lien = str(l.get_attribute('href'))
+               
+                if re.match(r'https://www\.youtube\.com/watch\?v=(\S+)&list=\S+&index=\d+',lien):
+
+                    video_ids.append(re.findall(r'https://www\.youtube\.com/watch\?v=(\S+)&list=\S+',lien)[0])
+
+            video_ids = set(video_ids)
+
             if len(desc_tag)>0:
                 description = desc_tag[0].text
             else:
