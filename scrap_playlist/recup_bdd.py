@@ -98,8 +98,8 @@ def recup_bdd_headless(id_chaine) :
                 if len(res)==5:
                     last_modif = res[2]+res[3]+res[4]
                     last_modif = last_modif.replace('Mise à jour il y a','')
-                    last_modif = re.sub('Updated','',last_modif)
-
+                    last_modif = re.sub(r'Updated','',last_modif)
+                    last_modif = re.sub(r'(\d{1,2})(\w*)',last_modif)
 
                 if len(res)==4:
                     last_modif = res[2]+res[3]
