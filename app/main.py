@@ -119,8 +119,6 @@ def api_get_playlist(channel_id):
 	json_data = jsonify(data)
 
 	return(json_data)
-
-
 	
 if __name__ == "__main__":
 	app.run(host="0.0.0.0",debug=True)

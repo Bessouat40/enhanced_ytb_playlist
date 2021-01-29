@@ -27,96 +27,73 @@ Youtube Playlist Enhanced
 		
 		const typing = document.getElementById('searchPlaylist')
 
-
-
 		function createPlaylistCard(playlistData){
 
-			let description = playlistData['description'].split('.');
-		}
+			let playlistDescription = playlistData['description'].split('.');
+			let playlistViews = playlistData['vues'].replace('vues','');
+			let playlistFormattedViews = parseInt(playlistViews).toLocaleString();
+			let playlistId = playlistData['_id'];
+			let playlistTitle = playlistData['playlist'];
+			let playlistImgUrl = playlistData['url_img'];
+			let playlistNbVideos = playlistData['nbr_videos'];
+			let playlistDuration = playlistData['playlist_duration'];
 
-
-		typing.addEventListener('input', function (evt) {
-
-			elem = document.getElementById('div-container') 
-			elem.innerHTML = ""
-			var val = this.value
-			
-			if (val != '') {
-
-		        const xhr = new XMLHttpRequest()
-		        xhr.responseType = "json"
-		        xhr.open('GET','HTTP://'+window.location.host +'/api/s/'+val)
-		       
-		        xhr.onload = function(){ 
-		          
-		          var response = xhr.response ;
-		        
-		          if (response.length>0){
-		          	
-		    		for (var i = 0; i < response.length; i++) {
-		    			
-						var description_string = response[i]['description'];
-						var desc = description_string.split('.'); 
-						var views = response[i]['vues'].replace('vues','')
-						var formatted_views = parseInt(views).toLocaleString()
-
-						var playlist_id = response[i]['_id']
-						
-		  				var htmlString = `
-		  				<div class="row justify-content-center"> 
-		  					
+			let htmlString = `
+		  				<div class="row justify-content-center"> 		  					
 		  					<div class="col-md-10 card mb-3 mt-2 border-0 rounded shadow-sm">
-			  					
-				  					<h5 class="card-title mt-1 mb-2">${response[i]['playlist']} </h5> 
+
+				  				<h5 class="card-title mt-1 mb-2">${playlistTitle} </h5> 
 				  				
 				  				<div class="row mb-2 justify-content-center">
 
 				  					<div class="col-md-4 pr-3">
-				  						<img src="${response[i]['url_img']}"  class="rounded border"  style="width: 14rem;">
+				  						<img src="${playlistImgUrl}"  class="rounded border"  style="width: 14rem;">
 				  					</div>
 				  					
 				  					<div class="col-md-2 my-auto">
-				  						
-					  						<p class="text-center align-middle h3" > ${formatted_views} <i class="material-icons">&#xe8f4;</i></p>
-					  						
-					  					
+					  					<p class="text-center align-middle h3" >${playlistFormattedViews} <i class="material-icons">&#xe8f4;</i></p>					  							
 				  					</div>
 
 				  					<div class="col-md-2 my-auto">
-				  						
-				  						<p class="text-center align-middle h3" >${response[i]['nbr_videos']} <i class="material-icons">video_library</i></p>
-				  						
+				  						<p class="text-center align-middle h3" >${playlistNbVideos} <i class="material-icons">video_library</i></p>
 				  					</div>
 
 				  					<div class="col-md-2 my-auto">
-				  						
-				  						<p class="text-center align-middle h3" >${response[i]['playlist_duration']} <i class="material-icons">schedule </i></p>
-				  						
+				  						<p class="text-center align-middle h3" >${playlistDuration} <i class="material-icons">schedule </i></p>
 				  					</div>
 
-				  				<a href="/p/${playlist_id}" class="stretched-link"></a>
-
+				  					<a href="/p/${playlistId}" class="stretched-link"></a>
 			  					</div>
-			  					
-			  					
+			  			
 		  					</div>
 		  				</div>`
 
 		  				var div = document.createElement('div');
 						div.innerHTML = htmlString.trim();
-		  				elem.appendChild(div.firstChild)
-					}
-				  }
+			return(div)
+		}
 
+		typing.addEventListener('input', function(evt) {
+
+		    elem = document.getElementById('div-container')
+		    elem.innerHTML = ""
+		    var val = this.value
+
+		    if (val != '') {
+
+		        const xhr = new XMLHttpRequest()
+		        xhr.responseType = "json"
+		        xhr.open('GET', 'HTTP://' + window.location.host + '/api/s/' + val)
+
+		        xhr.onload = function() {
+		            var response = xhr.response;
+		            response.forEach(result => {
+		                elem.append(createPlaylistCard(result))
+		            });
 		        }
 		        xhr.send();
-
-		        
-			}
-    		
+		    }
 		});
-
-
 	</script>
 
 
