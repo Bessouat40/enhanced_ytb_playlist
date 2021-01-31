@@ -200,8 +200,11 @@ if __name__ == "__main__":
     if args.a:
         api_key = args.a
     else:
-        print('Youtube Api key missing')
-        sys.exit(0)
+        try:
+            api_key = os.environ['API_KEY']
+        except:
+            print('Youtube Api key missing')
+            sys.exit(0)
 
     if args.l:
         file = args.l

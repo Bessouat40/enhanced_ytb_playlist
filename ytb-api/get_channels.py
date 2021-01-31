@@ -1,6 +1,7 @@
 from ytb_api import YoutubeAPI
+import os
 
-API_KEY = ##########
+API_KEY = os.environ['API_KEY']
 FILE = 'mylist.txt'
 RESSOURCE = 'channels'
 COLLECTION = 'channels'

@@ -4,6 +4,7 @@ RUN mkdir /home/dev/ && mkdir /home/dev/code/
 
 WORKDIR /home/dev/code/
 
+ENV API_KEY=''
 
 RUN pip install --upgrade pip 
 
