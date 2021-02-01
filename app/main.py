@@ -1,6 +1,7 @@
 from flask import Flask,redirect,url_for,render_template,jsonify,request
 import pymongo
 import re
+import urllib.parse
 
 from time_tools import sum_duration
 
@@ -96,8 +97,17 @@ def api_search(word):
 		json_data: data for search bar results as json (REST Api)
 
 	"""
+	
+	word = urllib.parse.unquote(word) 
+	
 	#Regex to avoid injection or mistakes
-	word = re.sub(r"\W","",word) 
+	if re.match(r'[^a-zA-Z\s]+',word) is not None:
+		return(jsonify([]))
+
+
+	quotation = lambda w: re.sub(r'(\w+)','"\g<1>"',w)
+
+	word = ' '.join(list(map(quotation,word.split())))
 
 	collection = database['playlist']
 	
