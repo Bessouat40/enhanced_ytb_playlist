@@ -123,7 +123,7 @@ class YoutubeAPI:
                 results: list of list json object
         """
         
-        base_str = 'https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&maxResults={nb_res}&order=relevance&videoId={video_id}&key={api_key}'
+        base_str = 'https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&maxResults={nb_res}&order=time&videoId={video_id}&key={api_key}'
 
         url_formatted = base_str.format(nb_res=nb_res,
                                         video_id=video_id,
