@@ -107,7 +107,7 @@ def recup_bdd_headless(id_chaine) :
                     last_modif = re.sub('Last updated on','',last_modif)
                 
                 if len(res)==2:
-                    nbr_videos = 0
+                    nbr_videos = 1
                     last_modif = res[1]
             else:
                 #Si une video la liste est vide
