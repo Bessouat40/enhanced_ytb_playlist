@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}
+Youtube Playlist Enhanced
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+	<div class="row mb-5 mt-3 ">	
+		<p class="fw-bold text-center fs-1 mt-3"><a  href="/" style="color: black;text-decoration:none; font-family: 'Open Sans', sans-serif; color: #3A3A3C; font-size: 3rem;"> Youtube Playlist Enhanced </a></p>
+	</div>
+
+	<div class="row justify-content-center">
+		<div class="col-md-10 mt-1 ">		
+			<label for="searchPlaylist" class="form-label" style="font-size: 1.4rem;">Look for a playlist info</label>
+		</div>
+
+		<div class='row justify-content-center'>
+
+			<div class='col-md-8 p-1'>
+				<input class="form-control" name="search" type="search" id="searchPlaylist" aria-describedby="searchHelp" placeholder="Enter a playlist url">
+			</div>
+
+			<div class='col-md-2 p-1'>
+				<button class="btn btn-primary" type="button" id='scrapBtn'>Search</button>
+			</div>
+		</div>
+		
+
+		<div class="row mb-3 mt-3 justify-content-center" id='content'>
+			
+		</div>
+
+	</div>
+
+</div>
+
+<script>
+
+	document.getElementById("scrapBtn").addEventListener("click", function() {
+  		console.log('click')
+
+  		let input = document.getElementById('searchPlaylist');
+  		let url = input.value
+  		console.log(url)
+
+		var myRegexp = /https:\/\/www\.youtube\.com\/playlist\?list=(?<id>\S+)/gm;
+	  	var m = myRegexp.exec(url);
+	  	var playlist_id = m.groups.id
+		const xhr = new XMLHttpRequest()
+		xhr.responseType = "json"
+
+
+		xhr.open('GET', 'HTTP://' + window.location.host + '/livescraper/'+playlist_id )
+
+		xhr.onload = function(){
+		        console.log(xhr.response)
+		        document.getElementById('content').innerHTML=  xhr.response['id']
+		}
+		
+		document.getElementById('content').innerHTML = '<div class="spinner-border text-primary" role="status"></div>'
+		xhr.send();
+		
+  	});
+
+
+
+
+
+</script>
+
+
+{% endblock %}

@@ -87,12 +87,22 @@ def channel_page(channel_id):
 		return('404')
 
 
-@app.route('/livescraper')
+@app.route('/livescraper/')
 def livescraper():
 
 	return render_template('livescraper.html')
-	
 
+@app.route('/livescraper/<playlist_id>')
+def livescraper_search(playlist_id):
+
+	data = { 'id':playlist_id}
+
+	for i in range(100000000):
+		pass
+
+
+	return jsonify(data)
+	
 
 @app.route('/api/s/<word>')
 def api_search(word):
