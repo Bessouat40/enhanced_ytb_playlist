@@ -16,14 +16,29 @@ def recup_info(lien):
     chrome.get(lien)
     time.sleep(1)
     tag = chrome.find_elements_by_id('info')
-    res = tag[0].find_elements_by_tag_name('span')[0].text
-    vues = res.replace('\u202f','')
-    vues = vues.replace('vues', '')
-    vues = int(vues)
-    res = tag[0].text
-    res = res.split('\n')
-    titre = res[0]
-    like = res[2]
+
+    if tag[0].text[0] == '#':
+        res = tag[0].text.split('\n')[2].split('vues')[0]
+        vues = res.replace('\u202f','')
+        vues = vues.replace('vues', '')
+        vues = int(vues)
+        res2 = tag[0].text
+        res2 = res2.split('\n')
+        titre = res2[1]
+        like = res2[3]
+        dislike = res2[4]
+
+    else :
+        res = tag[0].text.split('\n')[1].split('vues')[0]
+        vues = res.replace('\u202f','')
+        vues = vues.replace('vues', '')
+        vues = int(vues)
+        res2 = tag[0].text
+        res2 = res2.split('\n')
+        titre = res2[0]
+        like = res2[2]
+        dislike = res2[3]
+
     question = re.findall(r'[,]',like)
     if len(question)!=0:
         like = like.replace('K', '00')
@@ -39,7 +54,6 @@ def recup_info(lien):
         like = like.replace(' ', '')
         like = int(like)
 
-    dislike = res[3]
     question2 = re.findall(r'[,]',dislike)
     if len(question2)!=0:
         dislike = dislike.replace('K', '00')
