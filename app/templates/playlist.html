@@ -45,19 +45,17 @@ Youtube Playlist Enhanced
 				  					</div>
 				  				
 			  			</div>
-			  		<div class="row">
-					    <div class="row mb-3 mt-5 justify-content-center " id="graph">
-					    	<div class="col-md-5 border rounded m-3 p-4" id='views_container'>
-					    		<canvas id="views_graph"></canvas>
-					    	</div>
-					    	<div class="col-md-5  border rounded m-3 p-4 justify-content-center " id='likes_container'>
-					    		<canvas id="likes_graph"></canvas>
-					    	</div>
-					    	
-					    	
-					    	
-					    </div>
-					</div>
+
+				  		<div class="row">
+						    <div class="row mb-3 mt-5 justify-content-center " id="graph">
+						    	<div class="col-md-5 border rounded m-3 p-4" id='views_container'>
+						    		<canvas id="views_graph"></canvas>
+						    	</div>
+						    	<div class="col-md-5  border rounded m-3 p-4 justify-content-center " id='likes_container'>
+						    		<canvas id="likes_graph"></canvas>
+						    	</div>	
+						    </div>
+						</div>
 
 				    </div>
 
@@ -74,7 +72,7 @@ Youtube Playlist Enhanced
 </div>
 
 <script type="text/javascript">
-	
+
 	var views = document.getElementById('nb-views');
 	var viewsContent = views.innerHTML;
 	var formatted_views = parseInt(viewsContent).toLocaleString() + ' <i class="material-icons">&#xe8f4;</i>';
