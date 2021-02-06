@@ -3,41 +3,51 @@ import re
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import time
+import pymongo
 from pymongo import MongoClient
 
 def recup_info(lien):
-    CHROME_PATH = "./chromedriver"
+
+    url = f"https://www.youtube.com/watch?v={lien}"
+
+    '''CHROME_PATH = "./chromedriver"
+                
+                    chrome_options = Options()
+                    chrome_options.add_argument("--headless")
+                    chrome = webdriver.Chrome(executable_path=CHROME_PATH,
+                                              options=chrome_options
+                                             )'''
 
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    chrome = webdriver.Chrome(executable_path=CHROME_PATH,
-                              options=chrome_options
-                             )
-    chrome.get(lien)
-    time.sleep(1)
+    chrome_options.add_argument("--window-size=640,1080")
+    #chrome_options.add_argument('--disable-dev-shm-usage')       
+
+    chrome = webdriver.Remote('http://selenium:4444/wd/hub',options=chrome_options)
+
+    chrome.get(url)
+    time.sleep(2)
     tag = chrome.find_elements_by_id('info')
 
-    if tag[0].text[0] == '#':
-        res = tag[0].text.split('\n')[2].split('vues')[0]
-        vues = res.replace('\u202f','')
-        vues = vues.replace('vues', '')
-        vues = int(vues)
-        res2 = tag[0].text
-        res2 = res2.split('\n')
-        titre = res2[1]
-        like = res2[3]
-        dislike = res2[4]
+    
+    info = tag[0].text.split('\n')
+    
+    if not info:
+        return(None)
 
-    else :
-        res = tag[0].text.split('\n')[1].split('vues')[0]
-        vues = res.replace('\u202f','')
-        vues = vues.replace('vues', '')
-        vues = int(vues)
-        res2 = tag[0].text
-        res2 = res2.split('\n')
-        titre = res2[0]
-        like = res2[2]
-        dislike = res2[3]
+    info.remove('SHARE')
+    info.remove('SAVE')
+    
+    if 'Unlisted' in info:
+        info.remove('Unlisted')   
+    
+    dislike = info[-1]
+    like = info[-2]
+    titre = info[-4]
+
+
+    vues = list(filter(None,[t.text for t in chrome.find_elements_by_id('count')]))[0]
+    vues = vues.replace('\u202f','').replace('views', '').replace(',','')
 
     question = re.findall(r'[,]',like)
     if len(question)!=0:
@@ -69,12 +79,37 @@ def recup_info(lien):
         dislike = dislike.replace('Md', '000000000')
         dislike = dislike.replace(' ', '')
         dislike = int(dislike)
-    bdd = ({'titre' : titre,
-                    'likes' : like,
-                    'dislikes' : dislike,
-                    'vues' : vues
-                   })
+    
+    #duration = chrome.find_elements_by_class_name('ytp-time-duration')[0].text 
+    # Not working because of ads
+    
+    bdd = { 
+            'titre' : titre,
+            'likes' : like,
+            'dislikes' : dislike,
+            'vues' : vues,
+            }
+
+    print(bdd)
+
+    chrome.quit()
+
     return bdd
 
-if '__name__' == '__main__':
-    pass
+if __name__ == '__main__':
+
+    client = pymongo.MongoClient('mongodb',27017)
+    db = client['youtube']
+    collection = db['videos']
+    video_list = list(collection.find({}))
+
+    for v in video_list:
+        print(v)
+        data = None
+        while data is None:
+            data = recup_info(v['_id'])
+        
+        collection.update_one({'_id':v['_id']},{"$set": data })
+       
+
+

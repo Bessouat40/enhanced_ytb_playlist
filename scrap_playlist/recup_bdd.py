@@ -5,10 +5,11 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 #importation bibliothèque bdd Mongo
-#!pip install pymongo
+import pymongo
 from pymongo import MongoClient #création de notre collection qui va contenir les infos
 
 import time
+import sys
 
 
 def recup_bdd_headless(id_chaine) :
@@ -67,10 +68,7 @@ def recup_bdd_headless(id_chaine) :
 
             desc_tag = desc.find_elements_by_tag_name('yt-formatted-string')
             
-
             video_time = driver.find_elements_by_class_name('style-scope ytd-thumbnail-overlay-time-status-renderer')
-           
-            #print([v.text for v in video_time])
             
             video_time = list(filter(None,[v.text for v in video_time]))
 
@@ -99,7 +97,7 @@ def recup_bdd_headless(id_chaine) :
                     last_modif = res[2]+res[3]+res[4]
                     last_modif = last_modif.replace('Mise à jour il y a','')
                     last_modif = re.sub(r'Updated','',last_modif)
-                    last_modif = re.sub(r'(\d{1,2})(\w*)',last_modif)
+                    last_modif = re.sub(r'(\d{1,2})(\w*)',"\1 \2",last_modif)
 
                 if len(res)==4:
                     last_modif = res[2]+res[3]
@@ -135,11 +133,14 @@ def recup_bdd_headless(id_chaine) :
                    })
         
     driver.quit()
-    return bdd
 
-if '__name__' == '__main__':
+    video_data = [{'_id':v_id, 'id_playlist':id_playlist} for v_id in video_ids]
+
+    return bdd,video_data
+
+if __name__ == '__main__':
     #ici on commence à créer la bdd Mongo
-    client = MongoClient('mongodb',27017)
+    client = pymongo.MongoClient('mongodb',27017)
 
     db = client['youtube']
     collection = db['channels']
@@ -148,7 +149,7 @@ if '__name__' == '__main__':
     liste_ytbeurs = [v['_id'] for v in ytb_list]
 
     col_playlist = db['playlist']
-    data=[]
+    col_videos = db['videos']
 
     #liste_ytbeurs = ['UCeVMnSShP_Iviwkknt83cww'] # Test Value
     for i in range(len(liste_ytbeurs)):
@@ -158,14 +159,23 @@ if '__name__' == '__main__':
 
         if len(list(col_playlist.find({ 'id_youtubeur': liste_ytbeurs[i]})))==0:
             
-            data = recup_bdd_headless(liste_ytbeurs[i])
+            playlist_data,video_data = recup_bdd_headless(liste_ytbeurs[i])
 
-            if data:
+            if playlist_data:
                 try:
-                    col_playlist.insert_many(data)
+                    col_playlist.insert_many(playlist_data)
                     col_playlist.create_index( [("$**", "text")])         
                     print('Inserted')
                 except:
-                    import sys
+                    
                     print(" \n Unexpected error: \n", sys.exc_info()[0])
 
+            if video_data:
+                try:
+                    col_videos.insert_many(video_data)
+                    col_videos.create_index( [("$**", "text")])         
+                    print('Inserted')
+
+                except:
+
+                    print(" \n Unexpected error: \n", sys.exc_info()[0])
