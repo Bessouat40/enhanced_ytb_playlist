@@ -23,7 +23,7 @@ class YoutubeAPI:
 
     def __init__(self,api_key):
         """
-        Initializing using config.json conf file
+        Initializing 
 
         """   
        
