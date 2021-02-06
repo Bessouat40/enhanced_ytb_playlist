@@ -7,7 +7,7 @@ Youtube Playlist Enhanced
 <div class="container">
 	
 	<div class="mb-2 mt-3 ">	
-		<p class="fw-bold text-center fs-1"><a  href="/" style="color: black;text-decoration:none;"> YouTube Playlist Enhanced </a></p>		
+		<p class="fw-bold text-center fs-1"><a  href="/" style="color: black;text-decoration:none; font-family: 'Open Sans', sans-serif; color: #3A3A3C; font-size: 2.5rem;"> Youtube Playlist Enhanced </a></p>		
 	</div>
 	
 	<div class="row mt-3">	
@@ -75,7 +75,6 @@ Youtube Playlist Enhanced
 
 <script type="text/javascript">
 	
-
 	var views = document.getElementById('nb-views');
 	var viewsContent = views.innerHTML;
 	var formatted_views = parseInt(viewsContent).toLocaleString() + ' <i class="material-icons">&#xe8f4;</i>';
@@ -97,15 +96,4 @@ Youtube Playlist Enhanced
 	var LC = createLikesChart('likes_graph',data2,'likes_container');
 	
 </script>
-
-<style type="text/css">
-.dot {
-  height: 8px;
-  width: 8px;
-  background-color: red;
-  border-radius: 50%;
-  display: inline-block;
-
-}
-</style>
 {% endblock %}
