@@ -5,6 +5,12 @@ import urllib.parse
 
 from time_tools import sum_duration
 
+import sys
+
+sys.path.append('.') # Adds higher directory to python modules path.
+from scrap_playlist import recup_bdd_headless,recup_info
+
+
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
 
@@ -81,6 +87,13 @@ def channel_page(channel_id):
 		return('404')
 
 
+@app.route('/livescraper')
+def livescraper():
+
+	return render_template('livescraper.html')
+	
+
+
 @app.route('/api/s/<word>')
 def api_search(word):
 	"""
@@ -142,6 +155,7 @@ def api_get_playlist(channel_id):
 	json_data = jsonify(data)
 
 	return(json_data)
-	
+
+
 if __name__ == "__main__":
 	app.run(host="0.0.0.0",debug=True)

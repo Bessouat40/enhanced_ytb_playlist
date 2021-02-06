@@ -61,3 +61,6 @@ def recup_info(lien):
                     'vues' : vues
                    })
     return bdd
+
+if '__name__' == '__main__':
+    pass

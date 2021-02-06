@@ -137,34 +137,35 @@ def recup_bdd_headless(id_chaine) :
     driver.quit()
     return bdd
 
-#ici on commence à créer la bdd Mongo
-client = MongoClient('mongodb',27017)
+if '__name__' == '__main__':
+    #ici on commence à créer la bdd Mongo
+    client = MongoClient('mongodb',27017)
 
-db = client['youtube']
-collection = db['channels']
-ytb_list = list(collection.find({}))
+    db = client['youtube']
+    collection = db['channels']
+    ytb_list = list(collection.find({}))
 
-liste_ytbeurs = [v['_id'] for v in ytb_list]
+    liste_ytbeurs = [v['_id'] for v in ytb_list]
 
-col_playlist = db['playlist']
-data=[]
+    col_playlist = db['playlist']
+    data=[]
 
-#liste_ytbeurs = ['UCeVMnSShP_Iviwkknt83cww'] # Test Value
-for i in range(len(liste_ytbeurs)):
+    #liste_ytbeurs = ['UCeVMnSShP_Iviwkknt83cww'] # Test Value
+    for i in range(len(liste_ytbeurs)):
 
-    print(i,'/',len(liste_ytbeurs))
-    print(liste_ytbeurs[i])
+        print(i,'/',len(liste_ytbeurs))
+        print(liste_ytbeurs[i])
 
-    if len(list(col_playlist.find({ 'id_youtubeur': liste_ytbeurs[i]})))==0:
-        
-        data = recup_bdd_headless(liste_ytbeurs[i])
+        if len(list(col_playlist.find({ 'id_youtubeur': liste_ytbeurs[i]})))==0:
+            
+            data = recup_bdd_headless(liste_ytbeurs[i])
 
-        if data:
-            try:
-                col_playlist.insert_many(data)
-                col_playlist.create_index( [("$**", "text")])         
-                print('Inserted')
-            except:
-                import sys
-                print(" \n Unexpected error: \n", sys.exc_info()[0])
+            if data:
+                try:
+                    col_playlist.insert_many(data)
+                    col_playlist.create_index( [("$**", "text")])         
+                    print('Inserted')
+                except:
+                    import sys
+                    print(" \n Unexpected error: \n", sys.exc_info()[0])
 
