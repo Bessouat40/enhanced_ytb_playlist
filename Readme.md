@@ -34,6 +34,7 @@ Par exemple nous pourrions imaginer d'autres catégories telles que la cuisine, 
  - Front-End : Bootstrap, ChartJS & Vanilla JS
  - Back-End : Flask (Python)
  - Scraping : Selenium (Python)
+ - Base de Données : MongoDB
  - DevOps : Docker 
  - Versioning : Git
  - Machine Learning : Scikit Learn (Python)
