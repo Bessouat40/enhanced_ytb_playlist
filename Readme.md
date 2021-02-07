@@ -63,7 +63,7 @@ Nous avons mis à votre disposition la documentation concernant les différentes
 - [recup_bdd](https://github.com/Bessouat40/enhanced_ytb_playlist/tree/main/doc/doc_recup_bdd.md)
 - [recup_data_video](https://github.com/Bessouat40/enhanced_ytb_playlist/tree/main/doc/doc_recup_data_video.md)
 - [machine-learning](https://github.com/Bessouat40/enhanced_ytb_playlist/blob/main/doc/doc_ml.md)
-
+- [MongoDB](https://github.com/Bessouat40/enhanced_ytb_playlist/blob/main/doc/doc_mongo.md)
 ## Comment remplir la BDD si besoin
 > :warning: Il est nécessaire d'obtenir une clé d'API Youtube.
 
