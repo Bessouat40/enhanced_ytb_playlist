@@ -2,7 +2,7 @@ from ytb_api import YoutubeAPI
 import pymongo
 import os
 
-API_KEY = 'AIzaSyAlEfDoSddhLkIqXngNhJEzSBnmmpouS7I' #os.environ['API_KEY']
+API_KEY = os.environ['API_KEY']
 
 ytb = YoutubeAPI(API_KEY)
 client = pymongo.MongoClient('mongodb',27017)
