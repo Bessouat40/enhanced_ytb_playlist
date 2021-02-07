@@ -64,10 +64,14 @@ def playlist_page(playlist_id):
 	dates = []
 
 	for v in data2:
-		likes.append(v['likes'])
-		dislikes.append(v['dislikes'])
-		views.append(v['vues'])
-		dates.append(v['post_date'].strftime("%d/%m/%Y"))
+		try:
+			likes.append(v['likes'])
+			dislikes.append(v['dislikes'])
+			views.append(v['vues'])
+			dates.append(v['post_date'].strftime("%d/%m/%Y"))
+		except KeyError:
+			pass
+
 	
 	data['graph_data']={
 		'dates': dates,
