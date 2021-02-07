@@ -75,8 +75,8 @@ Il y a 4 principales fonctions :
  - Ouvrir l'invite de commandes du conteneur webapp
  - Taper ``` bash ``` pour accèder au prompt bash
  - Entrer cd ytb-api puis si besoin modifier les mots clés à utiliser pour la recherche en éditant le fichier mylist.txt
- - Lancer la recherche et remplir la DB de chaîne utiliser l'outil en ligne de commande (cf doc) ou lancer le script get_channels.py avec 'python get_channels.py'
- - Revenir en arrière avec  cd .. 
- - Aller dans le dossier du scraper avec cd scrap_playlist 
- - Lancer le scraper de playlist pour remplir la collection playlist de la DB : python recup_bdd.py 
- - Puis lancer le scraper de vidéo pour remplir la collection vidéo de la DB : python recup_data_video.py
+ - Lancer la recherche et remplir la DB de chaîne utiliser l'outil en ligne de commande (cf doc) ou lancer le script get_channels.py avec ```python get_channels.py```
+ - Revenir en arrière avec  ```cd ..``` 
+ - Aller dans le dossier du scraper avec ```cd scrap_playlist``` 
+ - Lancer le scraper de playlist pour remplir la collection playlist de la DB : ```python recup_bdd.py```
+ - Puis lancer le scraper de vidéo pour remplir la collection vidéo de la DB : ```python recup_data_video.py```
