@@ -130,20 +130,23 @@ class YoutubeAPI:
                                         api_key=self.api_key)
 
         req = requests.get(url_formatted)
-        json_result = json.loads(req.text)['items']
-  
-        comments = [ { '_id':v['id'],
-                        'video_id': v['snippet']['videoId'],
-                        'author_name' : v['snippet']['topLevelComment']['snippet']['authorDisplayName'],
-                        'text' : v['snippet']['topLevelComment']['snippet']['textOriginal'],
-                        'author_profile_picture': v['snippet']['topLevelComment']['snippet']['authorProfileImageUrl'],
-                        'author_id' :  v['snippet']['topLevelComment']['snippet']['authorChannelId']['value'],
-                        'likes' : v['snippet']['topLevelComment']['snippet']['likeCount'],
-                        'date_published' :  datetime.strptime(v['snippet']['topLevelComment']['snippet']['publishedAt'],'%Y-%m-%dT%H:%M:%SZ'),
-                        'date_updated' : datetime.strptime(v['snippet']['topLevelComment']['snippet']['updatedAt'],'%Y-%m-%dT%H:%M:%SZ'),
-                        'replies' : v['snippet']['totalReplyCount'],
-                    }  for v in json_result]
-    
+        
+        try:
+            json_result = json.loads(req.text)['items']
+            comments = [ { '_id':v['id'],
+                            'video_id': v['snippet']['videoId'],
+                            'author_name' : v['snippet']['topLevelComment']['snippet']['authorDisplayName'],
+                            'text' : v['snippet']['topLevelComment']['snippet']['textOriginal'],
+                            'author_profile_picture': v['snippet']['topLevelComment']['snippet']['authorProfileImageUrl'],
+                            'author_id' :  v['snippet']['topLevelComment']['snippet']['authorChannelId']['value'],
+                            'likes' : v['snippet']['topLevelComment']['snippet']['likeCount'],
+                            'date_published' :  datetime.strptime(v['snippet']['topLevelComment']['snippet']['publishedAt'],'%Y-%m-%dT%H:%M:%SZ'),
+                            'date_updated' : datetime.strptime(v['snippet']['topLevelComment']['snippet']['updatedAt'],'%Y-%m-%dT%H:%M:%SZ'),
+                            'replies' : v['snippet']['totalReplyCount'],
+                        }  for v in json_result]
+        except KeyError:
+            comments = None
+       
         return(comments)
 
     
