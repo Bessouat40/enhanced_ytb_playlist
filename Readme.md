@@ -63,6 +63,7 @@ Il y a 4 principales fonctions :
 - [Flask Webapp](https://github.com/Bessouat40/enhanced_ytb_playlist/tree/main/doc/doc_appli_flask.md)
 - [recup_bdd](https://github.com/Bessouat40/enhanced_ytb_playlist/tree/main/doc/doc_recup_bdd.md)
 - [recup_data_video](https://github.com/Bessouat40/enhanced_ytb_playlist/tree/main/doc/doc_recup_data_video.md)
+- [machine-learning](https://github.com/Bessouat40/enhanced_ytb_playlist/blob/main/doc/doc_ml.md)
 
 ## Comment remplir la BDD si besoin
 > :warning: Il est nécessaire d'obtenir une clé d'API Youtube.
