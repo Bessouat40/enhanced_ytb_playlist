@@ -63,3 +63,18 @@ Il y a 4 principales fonctions :
 - [recup_bdd](https://github.com/Bessouat40/enhanced_ytb_playlist/tree/main/doc/doc_recup_bdd.md)
 - [recup_data_video](https://github.com/Bessouat40/enhanced_ytb_playlist/tree/main/doc/doc_recup_data_video.md)
 
+## Comment remplir la BDD si besoin
+> :warning: Il est nécessaire d'obtenir une clé d'API Youtube .
+> :warning: Avec une clé gratuite le nombre de requête à l'API Youtube est limité .
+> :warning: Le scraper de playlist prend beaucoup de temps à s'éxecuter et peut prendre jusqu'a 2GO de RAM et 100% du CPU.
+ 
+ - Avant de construire l'image Docker, obtenir une clef d'API Youtube auprès de Google et la placer entre les quotes de la variable d'environnement dans le Dockerfile
+ - Construire et le conteneur
+ - Ouvrir l'invite de commandes du conteneur webapp
+ - Taper ``` bash ``` pour accèder au prompt bash
+ - Entrer cd ytb-api puis si besoin modifier les mots clés à utiliser pour la recherche en éditant le fichier mylist.txt
+ - Lancer la recherche et remplir la DB de chaîne utiliser l'outil en ligne de commande (cf doc) ou lancer le script get_channels.py avec 'python get_channels.py'
+ - Revenir en arrière avec  cd .. 
+ - Aller dans le dossier du scraper avec cd scrap_playlist 
+ - Lancer le scraper de playlist pour remplir la collection playlist de la DB : python recup_bdd.py 
+ - Puis lancer le scraper de vidéo pour remplir la collection vidéo de la DB : python recup_data_video.py
