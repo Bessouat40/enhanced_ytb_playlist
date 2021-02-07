@@ -64,13 +64,8 @@ def recup_info(lien):
     vues = int(vues)
 
     post_date = chrome.find_element_by_id('date').text
-    
-    f = open("log.txt", "a")
-    f.write(str(post_date)+'\n')
-    f.close()
 
     
-
     post_date = re.sub('•','',post_date)
     post_date = re.sub('Premiered\s','',post_date)
     post_date = re.sub('Streamed live on\s','',post_date)
@@ -81,10 +76,6 @@ def recup_info(lien):
         post_date = datetime.datetime.strptime(post_date,'%b %d, %Y')
     else:
         post_date = datetime.datetime.strptime(post_date,'%b %d %Y')
-
-    f = open("log.txt", "a")
-    f.write(str(post_date)+'\n')
-    f.close()
 
 
     question = re.findall(r'[,]',like)
