@@ -23,7 +23,7 @@ Nous proposons aussi une analyse des commentaires les plus pertinents de certain
 Notre application permettra aussi à l'utilisateur de récupérer des informations en temps réel sur une vidéo qu'il aura lui-même sélectionné.
 
 ## Possibilités d'améliorations
-
+ 
 Dans le futur, nous pourrions élargir notre base de données pré-existante à l'aide de contenus qui diffèrent de tutoriels de programmation. 
 Par exemple nous pourrions imaginer d'autres catégories telles que la cuisine, des programmes sportifs, ...
 
