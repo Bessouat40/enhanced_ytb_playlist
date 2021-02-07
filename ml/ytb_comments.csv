@@ -1,0 +1,774 @@
+text,label
+"Still not sure why this channel is so underrated, these are some of the best cs videos I've seen on youtube. Keep up the good work :)",1
+Ctrl + L to clear the screen. He did that at 4:26,1
+Actually the one thingwhich I really wanted to do on windows is using linux commands but not able to find the steps to do it 😊 finally this video made my day,1
+As i learn programming on my windows machine I notice every single tutorial/course/lesson the teacher is on a macbook pro? 3600$ just to get in a bash environment? Corey you helped me get with the cool kids this time! Thanks!,1
+"for some reason it keeps saying this when i do a  sudo apt-get install command: E: ""Unable to locate package ________""",0
+"bash tip: instead of:
+$ nano ~/.bashrc
+$ source ~/.bashrc
+
+you can do:
+$ nano ~/.bashrc
+$ source !$
+
+The `!$` is a shortcut equivalent to ""use the same argument that you used in the previous bash command"".",1
+This video saved me from switching my entire life to Mac. Thanks a ton!,1
+"First step: being a hacker 😭, all those codes.",0
+I was having issues with the first step. This article helped: https://developerinsider.co/stepwise-guide-to-enable-windows-10-subsystem-for-linux/,0
+I am crying right now!! This saves my life. I am searching good tutorial for months.,1
+Looking forward to learn Django python.Please make videos on this topic.tq,1
+"I think this is the best tutorial for this topic i have encountered so far! Thanks, man! You are awsome!",1
+"Amazing tutorials, love them so much.",1
+I never knew that bash can be run on windows. Thanks for the tutorial mate!,1
+"Thanks for your help, just one thing more. Can you tell me where do I get these commands?",1
+"this is incredibly helpful, ty!!",1
+Another great tutorial. I followed along (successfully) on my Win10 installation which happens to be a VM running on my Mac. I'm starting to wonder how many layers of virtualisation and abstraction you can apply before the machine stops working.,1
+Thanks so much! This was way easier than using cygwin,1
+"Can you help me please when I try to install windwos subsystem linux, the pc restarts and says unloadings changes. could not install the updates. This happens everytime. I do not know what am I doing wrong.",1
+"AHHHHH THANK YOU SO MUCH!!!!!
+Now i can re-do exercices at home!!",1
+After install I cant find my user name in the Users directory. Do I need to install one more time?,0
+"Wherever you're on window explorer, hold shift and right click, you'll see the linux.",1
+Great video. I'll definitely be using bash for Windows from now on.,1
+This man is a saint.,1
+"Hey corey ,nice video. I was wondering does this applies to all Distros available or only some chosen????",1
+"This is really good, bro. Thanks you for the nice and quick tutorial.",1
+"i dont have ""Windows subsystem fr linux"" on my pc why?",0
+I love your tutorials! Have helped me so much. Thanks to you I've been able to make secure and access many server projects and my home is now safer and running linux for almost everything!!!,1
+"Thank you so much for this video. I am teaching myself many skills I need to make the jump from academia to data science, and this has always been one of the most obscure CS topics for me. I've always used windows machines and having the possibility to use a bash inside windows without the need of a virtual machine is incredibly useful.",1
+Damn you really captured this on 150% display scale with 36 font size...! 🤣,1
+"Hey guys! Help!!
+What would be the best follow video for this one that would help in the practice of logging in, and learning straight after this? Thank you.
+Please let me know.",0
+"Corey! Man, you never disappoint :)",1
+can I install playonlinux on win windows10 using Linux subsystem ? (i have some old windows software which only runs in xp or wine),0
+when i try downloading things it says invalid operation and when i do touch test.txt it says i dont have permission,0
+"Just installed all of this prior to watching your video and as always, your videos are the best ones that explain all of this. You are a godsend!",1
+"when I use the cd Users/ command it says no such file or directory !
+please help.",0
+"You are the game-changer of my day, it's working :)",1
+"Why systemd doesnt works on Windows Subsystem for Linux ? How to run command ""sudo systemd daemon-reload"" in Windows Subsystem for Linux ?",0
+"Hi! I get the following error: touch: cannot touch 'test.txt': Permission denied, even when using sudo first. why?",0
+Does it make any diffrences between this Linux feature in Windows and installing Linux os?? Plz reply eagerly waiting for reply sir😊😊,0
+Thank you very much for making amazing tutorials! My best wishes!,1
+The video is informational and incredibly useful. The speed was a little fast and the screen not optimized at all times to see what's going on. Paaaaaause!,0
+How can i configure my Ubuntu CLI to access to gcloud Docker and kubectl etc which are installed on my windows?,0
+"This was great.  yes, please do a video on grep.  Love your videos.",1
+can I install playonlinux on win windows10 using Linux subsystem ? (i have some old windows software which only runs in xp or wine),1
+Finally Microsoft figured out how to make windows a good product... just turn it into Linux....,1
+YESS finally I can do Linux work on Windows YEEES,1
+Request from my side : Can u put the dedicated series for Python programming and setup environment stuffs using ubuntu terminal (WSL),1
+Thank you for this. I was dual booting into Ubuntu but this gives me another option. Now if i get xfce or even gnome running this way i will be happy as a pig in mud. Thanks,1
+"Does that mean that i can convert my. Py and. Kv file to apk without installing the virtual machine??
+Is that so?",1
+This is definitely what I am searching for 0_0. Thanks for making the life easier...,1
+do you have a mind-reading ability? ... this came exactly when I need it !!  :D ... but what about git bash?,1
+Still waiting on the how to create vertical search engines with python videos. 😉,1
+Thanks for a great job! How to download quantum espresso via linux/bash on windows 10,1
+I thought this was how to get Linux OS :(,0
+"can i install composer for my windows from this terminal ?  and if it can,where the composer folder will be?",0
+loved it !... Can't thank u enough for this and all other videos. <3 <3 <3,1
+"how do you clear a command prompt?
+I keep seeing you using it but feel sad coz I can't follow.",0
+Can I install programs that are Linux on Windows?,1
+How many ads you gotta have dude like i almost dont even wanna watch,0
+"Trust me guys, this single video is enough to help you to start with linux on your windows (Btw build essential part was only thing missing)",1
+Thanks for your videos. I use Virtualbox and have many VMs with various distros. It's a nice way to try other distros and create environments for specific purposes and languages.,1
+"Thanks for sharing this valuable info. Are you aware of anything similar where you can use sudo apt-get, grep, etc. for windows 8.1?",1
+You saved the day.  This is very helpful.  Thanks for helping me out.,1
+"Great video, Thank you~~",1
+Amazing. Thank you.,1
+"u are my CS teacher <3
+
+thanks a lot",1
+I'm rebooting now! Thanks.,1
+"Very nice tutorial! however, I keep getting the error: 'Permission denied' when trying to create any script with the touch command (even with sudo). Do you know what's wrong with my WSL? I will appreciate the help. Thanks in advance¡",0
+How do I install sublime? Or how do I link my already installed sublime text 3 application to my ubuntu terminal?,0
+I spent all day trying to figure out how to get to my desktop with forums and nobody mentioned /mnt/. THANK YOU!,1
+"Sir Corey, It is an incredible video. Thank you so much.",1
+"sudo apt install tree not working in my ubuntu bash system, It shows the connection failed.",1
+"hi corey ,thanks for the useful videos.i did install ubuntu on my windows 10 and its working great ,but there is a small prroblem that ubuntu can only see my hard drive partitions but ubuntu couldn't  mount my server drive .if you have any idea how to solve this problem ,it would be great if you can share it with us.
+Thank you in advance",0
+"Hey Corey. 
+How do I get the gnome-terminal here instead of the bash which comes with cmd type functionalities?",0
+"Hi Guys, can anyone help me here?  I can't create a touch file it says permission denied!  I am doing everything as Corey is explaining",0
+"How much time taken to installing, ubuntu it says few minutes",0
+"hi i am new to all this and have to say your vid was very helpful, i had to spend 4 hours looking for a simple mistake i made, a / i did not type....hahaha thank you really want to learn linux",1
+Why is my computer taking so long to restart after enabling the windows Linux sub thing?,0
+You need to go a lot faster!,0
+"Hello can u help me  i m facing problem while intalling and packages through base ....i m getting an Error
+
+E:Unable to locate package brew ???
+
+How could it solved it",0
+Installed the ubuntu subsys and tried ls and nothing happened. Then found here 4:45 came here for this. thanks so  much. now I'm a subscriber.,1
+Great introduction to Linux on Windows. Glad to be a Patreon subscriber.,1
+Awesome tutorial!!! Helped me so much as a BASH beginner,1
+Great understandable and i really need this for work so thanks again corey,1
+u can also just simply install git thou,0
+Thanks for the awesome tutorial. But how to uninstall it?,1
+"what about if I want to run a daily task in a crontab... I mean, do I have to have the ubuntu or bash terminal always open in the w10 host or there is a way to do it in the back ground as it should be in a linux server?",1
+Thank you <3,1
+Corey you are an explanation guru :p allways fast simple and to the point with good examples and possible problems solutions.,1
+thank you for increasing the font size.  Thank you,1
+Thank you very much Corey. Finally found a video that actually solved my problem,1
+Awesome tutorial Corey!,1
+What did you record this on,1
+"good video
+but I am getting permission denied while creating the file at 7.25 as shown in your video.
+can you please help me with it",0
+please how to do i locate folders and files installed via linux for windows,0
+"You, man, you answer to questions I would've never imagined. You won't stop on basic stuff, you try to make our lives easier <3
+I'm actually learning to program a bit (python) with you and your videos are insanely good. I'll stick with your videos for bash too, after python! You're a great teacher, keep it up!",1
+"Great video Corey. 
+
+Quick question can you install Linux/Bash on Windows 7 as well? I believe you can.",1
+It says their are too many arguments when I do user@[redacted]:/mnt/c/Users$ cd my user,0
+"Will setting up and working with DeepLearning Frameworks (Keras, based on TensorFlow for instance) work out like this, too. Can I install CUDA, the libraries, an appropriate graphic cards driver and so on with this?
+Only doing this in Linux was not a easy task. But now, performing this accross two operating system simultaneous sounds like a lot of trouble... Anyone any experience on that?",1
+"Hope you enjoy! This is obviously geared toward people learning React. I have a React project playlist for more project based videos as well as a few Udemy courses. I will also be updating my Vue, Angular crash courses and many others",1
+Man you’re just a blessing to this world,1
+"I love the guest hosts, but I was surprised and delighted to hear brad himself!!!!",1
+"Wow! Every year I wait for crash course updates, more than movies hahah.",1
+Brad I was missing you badly . Your voice motivates me to code more . Please comeback as soon as possible. Get well soon Other devs are good but traversy media is incomplete without Brad . 👍👍,1
+WOW! Brad is back with a React Crash Course! WHOA! Just cancelled lunch plans with my family. This is a big moment for me instead! lol,1
+TRAVERSY is a LEGEND!! There are going to be books written about this guy when he's done!,1
+"Brad, we really can't thank you enough!",1
+Am 16 I can’t finish thanking you Brad you changed my life ❤️,1
+I swear man i just wished today that traversy media should upload a crash course on react too and here u r making my wish true thank you so much traversy media,1
+Are you serious? I was just planning to start learning React! haha this is awesome 😄,1
+Just as i was reading the official react document this video popped up. Brad knows it ahead of time cheers!,1
+love you brad <3,1
+so happy to see this was the first recommended video when i was looking up react tutorials,1
+"1:30:00 on second task lost ""i"" in ""id""",0
+Legend is back 🙌,1
+"""Brad releases a React crash course""
+Me experienced in React watching it 😂",1
+I've been eagerly waiting for this updated version. I can't thank you enough.,1
+"WOW! Great Content as always, thanks for sharing it!",1
+"Great tutorial as always, Brad! I hope you've been feeling better lately, definitely noticed the uptick of content on the channel. A couple years ago I dealt with what I assume is very similar to the vertigo shit that you've been going through. After about 4-5 months it wasn't so debilitating and then just disappeared forever. Have a great weekend man",1
+You sir are an angel. Just when I needed a refresher course in react. Bless you Brad,1
+"49:06 :))) Why we love you. These little things, like a cherry on the top.",1
+This course is just *PERFECT* Thank you!,1
+"Great seeing you back, I am loving react & redux! I hope you are doing well, my man!",1
+thanks Brad! your timing couldnt be better! i've been needing a touch-up on my React skill! Hope you're doing well!,1
+"Haha wow what a perfect timing,  Yesterday I just got into React and now you upload a updated video on this ! Thanks man.",1
+I've been watching all your react videos for the past week in preparation for a potential job interview and then this comes along at the perfect time.,1
+I was really sad when he didn't add the dark background back :((,0
+<3,1
+❤️❤️❤️,1
+"wow, amazing!
+kindly upload a similar kind of crash course for react-native.",1
+holy shit!!! i decided to learn react today and this was uploaded,1
+A light of happiness during covid time when saw Brad’s video.,1
+"Great video, just what I was looking for to refresh on React after a little time away.",1
+"Wow. Right at time when I needed it most, You are really blessing Brad!",1
+I literally just finished watching your React Crash Course from 2019 and then I see this haha,1
+So glad you're back! I loved all the guests; my sub-list is a mess now!,1
+Legend ❤,1
+This is amazing. 2 hours well spent. Thanks 🙏,1
+"thanks for the memory refresh, React router is so unintuitive",1
+I always lust to watch your videos. so waiting your upcoming tutorial. Love💕 you Brad sir.,1
+"Oh maanh, u post it on right time 😍
+I just wanted some revision to React since I liet touch with it..",1
+"I just love your courses!  So detailed, clean and clear. You made life easy . Thank you and god bless you. 👍🏼😊",1
+"Really helpful, and I managed to get through the tutorial without having to copy much from your repo other than the css (bc I'm lazy). The only question I have is , how do I know when to use ()  vs {} in some cases where you want to deal with a component? (I saw you doing it on the Button in header at the end, and in  when displaying the tasks through the Route component).  Thank you!",0
+when you are going to upload the full react course?,1
+Could you do a tutorial on a fullstack website with react?,1
+"Mind Blow!
+
+Thank you for awesome course brad, react is awesome, but you're the best :)",1
+"I'm not commenting videos often but man, you're inspiring so much, thanks!",1
+"Thank you for the tutorial Brad. I have a question though, what's your take on tabnine vscode extension? Should I use it? Is it good?, Is it safe?",1
+Welcome back Brad.. waiting for Vue 3 course <3,1
+"Lmao I needed this literally now, I'll watch this and then buy the course",1
+Just bought your udemy course. The way you teach is impressive. Thank you!,1
+I love you so much brad.. it happened that im learning react now..,1
+"Great 🔥 react for me, in this moment is the best. Thanks Brad 😜",1
+"Damn, I had watched your React Crash Course the day before you released this video",1
+Thank you so much! Your Legend!,1
+Thank you so much ❤️,1
+Awesome! Always appreciated your work. Thank you man.,1
+Bruhhhh you read my mind. I was just thinking about when you were going to drop a react js crash course 😂,1
+"Am starting React now let me see what I can accomplish at the end of this tutorial.
+Otherwise Thanks Brad .
+God bless you!!",1
+thank you just finished it. just a newbie question how can i deploy react build along with json server on heroku?,1
+I just have started on learning React since couple of days ago and your video brings me a whole world :) Thank you a lot <3,1
+"Just what I was looking for! Man, you save lives.",1
+No time wasted! It gladdens my heart anytime I see upload from Traversy.. God bless you always .,1
+"Thank you for the video, and glad to hear you are back Brad!",1
+"Thanks for this! I've been using Gatsby, and it's great. But I'd like to learn more about React :)",1
+Thank you Brad. Would you please make full stack react tutorial with Authentication.,1
+"Thank you Brad, one of my goals this year was to learn React and having you as a teacher makes everything better",1
+The first 10 minutes is one of the best explanations of React I've ever heard.,1
+Thank you so much for the content. I really appreciate it. Just want you to know that I watch and review your material every day almost religiously.,1
+43:43,-1
+"Brad, you're truly a legend!",1
+"1:25:20 , missing i for id , i am  following closely",0
+Great ....take love and RESPECT ❤️,1
+You create some of the best tutorial videos on YouTube ❤️,1
+Wow ! I was waiting for this😭😭😭so long ..u heard it💖,1
+You're a rockstar Mr. Brad! Thank you again for a great course!,1
+"Thank you Brad, this is a fantastic tutorial -- keep up the good work and thanks again!",1
+"Great tutorial, thanks for making it. Have a quick question regarding a part of the syntax that appears, at 54:00 in the video, while you’re adding onDelete to Task.js I believe when you saved that code, {‘ ‘} was added right after {task.text} within the h3 element, if you could, please explain what that is for me. Thank you.",1
+I needed this. Thank you.,1
+Such an awesome tutorial! Could you also do a React with TypeScript project based tutorial? Maybe build the same react app with TypeScript?,1
+Brad Bro Rocks 🔥 Already a good starting of the year,1
+Literally yesterday I just wished there was an updated version xD,1
+"Great tutorial! About to start a job as a junior dev with React, good material for revision!",1
+"I already know React, watching this anyways : P",1
+Brad! Thank you so much for all the effort!,1
+"Thanks for the great roundup of the last couple of years of changes to React, Brad! Plenty of experienced devs would be wise to spend the 90 minutes.",1
+"Hello Brad, thanks for your effort man. I hope you can make a ReactNative version of this crash course, that would be amazign as well. Take care :)",1
+We love you Brad❤️,1
+"As always, thank you so much Brad. Don't need this, but so happy to see you helping the new guys and girls. We're all in this together. Best of luck to everyone in 2021!",1
+Glad you’re back Brad! I’m going to be learning React later this year so I’ll come back to this 😅,1
+hey man thanks for the awesome tutorials im only 12 and trying to learn coding and you have helped me out a lot with your crash courses thank you and keep making awesome content,1
+"Hi,  Traversy Media! I would like to thank you for the content and years of dedication, I really love and enjoy all the content of teh channel.
+Thanks and stay safe and healthy:)))",1
+Thank you brad ✌🏾,1
+"Looking for React Crash Course , and see The God just dropped one ❤️❤️🔥",1
+🙌🙌,1
+Perfect timing! Thanks,1
+Wow! Just wanted to watch your previous react crash course and you've released a new one. Thanks a lot!,1
+"You're a legend, man!",1
+Thank you so much Brad for this awesome video.. :),1
+"▶️ Watch Entire Kivy Playlist                                             ✅ Subscribe To My YouTube Channel: 
+       https://bit.ly/37LrJ27                                                           http://bit.ly/2IGzvOR    
+▶️ See More At:                                                                    ✅ Join My Facebook Group: 
+       https://Codemy.com                                                             http://bit.ly/2GFmOBz 
+▶️ Learn to Code at https://Codemy.com                        ✅ Buy a Codemy T-Shirt!
+      Take $30 off with coupon code: youtube1                         http://bit.ly/2VC9WUN
+▶️ Get The Code
+       http://bit.ly/2MmXJRk",-1
+"Hey, how can i make a rounded button, with a border?",1
+"I was waiting for this one.
+Thanks...",1
+"Hello Codemy, these videos are very helpful for completing my senior design project. Could you do a video on  implementing a virtual keyboard? 
+Thanks.",1
+"Thanks, I really needed this",1
+I don't know why your tutorial are so underrated by the way love your tutorial ❤️👍🏻,1
+"Thank u for this , love always ur playlist",1
+Very useful and excellent💚💜,1
+Hi! Does sublime ide work with android ..if not what ide or editor works with adroid beside adroidstudios,1
+Thanks Sir,1
+Very good one💙. But can we Use one class function property in another class function?,1
+Just something worth mentioning: += is for a sequential animation while &= would animate in parallel,1
+Can. I ask what method u used too home ur skills .read books youtube videos.  Self learn with. Both youtube videos and books,1
+can this be done in tkinter??,1
+Very cool 😸,1
+Very cool!,1
+Hi,1
+Should improve video quality and add more inforamtion BAD ONE,0
+"Below is an outline of this video.
+
+Also, a few tips:
+1. Here is the playlist for this series: https://goo.gl/4dQMsJ
+2. If you want to learn faster than I talk, I’d recommend 1.25x or 1.5x speed :)
+3. Download the sample files here to follow along (they are Jupyter Notebook files): https://www.csdojo.io/python1
+4. Have fun! If anything is unclear, please let me know in a comment.
+
+0:00: Introduction
+0:17: Who’s this tutorial for?
+0:30: An outline of this video
+1:18: What is Python and what can you do with it?
+2:01: What is IDE and why I chose Jupyter Notebook
+3:09: How Jupyter Notebook works
+4:19: How to install Python and Jupyter (through Anaconda)
+5:58: Launching Jupyter
+7:59: The print() function
+10:24: Introduction to variables
+13:08: What are variables (in Python)?
+16:42: Assigning a variable to another variable
+19:03: A practice problem - swapping two variables
+20:40: Solutions to the practice problem - swapping two variables",1
+Shout out to every one learning programming during quarantine,1
+"i want to learn python.
+teachers in my country: pay me
+asian programmers: i got you son.",1
+The ironic part is that he “quit” working for google and yet he’s still getting paid by google XD,1
+"This man has a folder name ""Why I left Google"" I love it",1
+After watching this I feel like my brain has increased by 101%,1
+I'm just starting to learn programming during quarantine!! WHO ELSE IS WITH ME?? IM NOT CRAZY! LOOK MOM I CAN TYPE HELLO WORLD ;-; are you proud,1
+"In the moment when he says ""Jupyter Notebook"" my brain runs 5 times quicker, and than gets to the normal.",1
+I got a freaking ad saying I’m wasting my time trying to code,1
+When i had to switch the variables was really confusing but when he explained it with temp = v1 i got it instantly. i like that he showed multiple ways!!,1
+"me: print(""hello world"")
+       mom I am a programmer now!",1
+so my dad wanted me to do something with my computer so I finally decided to learn some sort of programming language and it is really helping,1
+I love he says he's the founder of this channel,1
+He explains it so simple that even a baby can understand it. I've been on other tutorials and this is the best one on YouTube.,1
+"Nobody on YouTube can explain better then him , Thanks CS Dojo",1
+"Coronavirus outbreak starts:
+
+People: lets learn programming!",1
+Anybody else was doing well and got confused as fuck at the end,0
+How is it when am not in school that I figure out what I want to do in life and actually learn,1
+I got confused when swapping variables,0
+He left the google's job now he is getting much less money than before so i just have an request that plzz watch even 2-3 ads so that he gets paid ....,1
+Starting my journey to learn programming and this was such an easy tutorial to follow! Thank you so much!,1
+I just started teaching myself to code today. I literally have no experience in coding or what it means. This has been an excellent video to get me started. I never felt like I didn't understand what was happening and it was easy to stay engaged. Thank you for making this resource.,1
+I already know print print(“Oof”),1
+When he said ‘ ahhhhh’ I literally crack up lol,0
+Seeing his hard work I am even Watching the ads fully so that he gets paid,1
+when a 25 mins video is better than your 2.5 hrs introduction class in cs,1
+"So next year I'm going to a school that has a computer science class, and this will hopefully get me a head start on things. Thank you!",1
+"So far, his teaching seems to be the best. I was able to understand things much better than other people's tutorials.",1
+"Thanks, man! Decided to learn Python and found your playlist. Looking forward to the whole series!",1
+raise ur hand if u watchin' during quarantine,1
+"I'm feeling so happy when click and see this channel, thx!",1
+"Thanks for the simple tutorial, most other beginners tutorials are very fast and hard to follow. You make it very easy and take the time to explain slowly, thank you!",1
+"I was quite surprised when I solved the problem that you gave at last in my first trial😱😲.Because it is my first time learning a  programming language.So,thanks a lot for being a wonderful teacher.
+
+PS:And of course thanks to the  corona virus and the quarantine.",1
+"i find this extremely useful, thank you so much for taking your time to create this tutorial. i just took my first step in learning how to code. others kept beating about the bush instead of teaching first step",1
+Wonderful video to learn Python Thanks for uploading from durgasoftware,1
+thank u for being there when everyone in uni courses pretend we already know how code python,1
+wonderful!! i am new to this and been looking for so long and finally found it. subscribed it and lovin it. thanks a lot CS Dojo for starting from a scratch!!,1
+"Who else is like ""What did I just watch? Am brain ded""",1
+This guy explained it so much better than my teacher! Thank you very much.,1
+"I came here because of “start up” kdrama ,anyone same with me?",1
+"I am trying to learn the basics of programming even though, my major is Engineering Science so can I really Python for free?",1
+"12:45
+print(c)
+print(""General Kenobi"")",1
+"I was recommended to Joes_lock on I.G
+The best  programmer I have ever seen",1
+"I may be a bit late into the ""Let's learn programming during quarantine"" party but I assure you we will all come out of this with fruitful results. Stay safe everyone <3",1
+"I was recommended to Joes_lock on I.G
+The best  programmer I have ever seen",1
+now im getting a ton of adds about coding academy's ._.,0
+"YK, I have learning disabilities and autism
+
+This was incredibly easy to follow, thank you so much.",1
+i  just want to learn how to make a screaming roomba,1
+"""Just click 'agree with everything'""
+Spoken like a true Google programmer.",1
+"Yeah, I remember that pointless thing we did almost a decade back! What? The Python I learnt yesterday? Don't remember it.",1
+I love how easy this video to understand as a beginner. Thanks a bunch!,1
+"This was extremely helpful. I have spent 2 days on codecademy confused out of my mind following the steps. But this tutorial here was well thought out, and well explained. Thank you @DS Dojo",1
+"i have been looking into coding for awhile now and finally and trying to learn it, this video was really helpful! Thank you.",1
+"Thank you so much for this! I have been contemplating learning code for almost a year now. 
+Very concise, easy to follow and grasp.
+
+Now I'm excited!!!",1
+pls im just 14 i didnt signed up for this why is this 20 percent of my final exam,0
+"Whenever i try to break a line, it runs what i have written instead. How do i fix this?",0
+"One of my wish is to learn a lot, how to make Coding then perfectly Run.
+Programming language, really difficult for me. mostly my classmates called me Slow learner.😢
+
+thank you po",1
+"Me: I've always wanted to learn how to code, now would be a great time!
+Ad: hey you, yeah you, you suck at programming, buy my course.",1
+This is awesome! I love how you mark the time points and name each of them - soooo easy to navigate and makes learning on YouTube more efficient!,1
+I MADE IT ADD VARIABLES!!! Hahaha I’m a genius! SOON I SHALL RULE THE WOOOOOOOOORLD!!!,1
+"[a,b]=[b,a]. I expected to see this moment when author mentioned swapping variables.",1
+"I have literally just have watched 2 videos about programming, and I am already getting ads for it",1
+"Great resource! Thanks for explaining things in simple, easy-to-understand ways! Do you have a recommendation of good Python Discord servers to join?",1
+Lol I came up with the solution of creating 2 temp variables and I was so proud until I saw I could do it with just 1 :’(,1
+Plot twist: Juypiter was coded in java 🤷‍♂️,1
+"Woww...thanks, you revived a lot of my memories of learning this. I forgot most of the things i learnt last year when i was a 9th grader.. i need to finish a project that is really important. So this thing is really useful 😌",1
+"That satisfied feel when you've understood everything...
+Thank you.",1
+"Hey CS Dojo, you make amazing videos! I'm a bit concerned that when I downloaded Anaconda many other apps, such as something called 'Spyder', got installed as well. So is it supposed to be like this?
+Many thanks,
+Fury Sid",1
+I just  started learning python a couple days ago. I spent 2 years working on learning C++ and J++ in homeschool but that was like 13 years ago and I never could understand it. This is a language that finally makes sense to me.,1
+how did you automatically created the parenthesis and quotation mark at once and put the cursor in the middle???,0
+been wanting to learn python or c amazing channel would recommend to anyone watching i understood this very well! overall 10/10!,1
+i'm regretting the time i spent searching for tutorials before finding this awsome channel on 2020,1
+Just Amazing Tutorial....I studied chemistry throughout my school & college life but I wanna learn python and I understand everything you said in this video...,1
+Thanks for the playlist. I am a beginner in programming and this is a good introductory course for me.,1
+"24:06 Hello CS Dojo I tried this Swapping Two Variables on my own computer and then came up like a first string like that? How is it possible that there
+is second  string on your video? what is the point of v1 refering to v2?",0
+Learning this cause I’m failing and idk what my teacher is saying 😂,0
+Please make the whole series of python 👍and also make machine learning video series!!,1
+9:58 he is indeed part of the 9 Trey bloods.,1
+Noooo.. now that corona has come everyone is smarter than me.,0
+This guy is amazing 🙌🏿. Thanks for this content! I know I'm 2 years late 😂,1
+"Wow, I enjoyed this 24minute video I can't believe myself. 😍 I wanna learn more, this is more interesting than some of the subjects they discuss in school 😁",1
+You are a gift from the programming gods,1
+Wow all the other channels that cover this topic make it sound way harder than it is your the best teacher I've ever seen 👍 👏 Edit: now I don't have to write everything down on a white board that's nowhere near big enough,1
+"oof, i hab dum, i thought the first string was going to be            Console.WriteLine(""bla bla"");",0
+Thank you for this tutorial! It was very straight forward and I hope to learn more about python! Do you have any recommendations on where I can take the course for beginners online?,1
+You’re great at explaining 🙌🏽 Thankyou so much for these videos :’)),1
+I'm really appreciating your work Yk I just downloaded anaconda I was into java but I realized python gon be better since I'm a beginner and u are my best teacher now thanks alot,1
+"Hloooooo..... I watched every vedio after watching one of your vedio .I loved watching and very understanding ,I saw your article about how to get jobs at big companies and following steps it was soo understanding  .sooo, I want to recommand that u your subscribers need an article about python and how to become a pythonier ......",1
+"I'm just starting, but looking forward to the series.  Thanks, CS Dojo!",1
+"I am having a trouble with launching the anaconda navigator on my windows 7, any advice?",1
+I love how I got a ad for python while watching this,1
+I loved it! OMG THANK YOU SO MUCH!!! This will help me to progress to become a programmer like i have wanted to be for the past year! Btw i liked and subbed.,1
+"About first lecture- this ws more exciting to me as i want to learn  tq so much sir ,the of teaching is too good to understand",1
+"Me trying to figure out what coding is 
+YouTube ads: so u want to become a software engineer at google",1
+"a=“this tutorial was awesome!!!”
+print(a)
+
+this tutorial was awesome!!!",1
+Have just  started to learn now may the almighty God help me to understand this 🙏,1
+Bruh this guy explains too nicely. I understood every word of him.,1
+This video is so helpful and let me just notice that cutie stuff toy hanging in there. 😊,1
+I have Windows 7 professional with 0kbps-30kbps network speed and my parents dont allow money in these they recommend free things I made my offline website in notepad ;-;,0
+"Hi, I m new in BSCS 
+I want to know where from I start to watch your learning videos?",1
+you pressed the butt XD,0
+"To clarify, the ""self.b1.clicked.connect(self.clicked)"" line is a bit misleading. Tim made a method called ""clicked"" referenced in self.clicked but the QPushButton also has a clicked attribute.
+So, self.clicked references Tim's created method, while the .clicked attribute is built into self.b1. He probably should have renamed his method to avoid this confusion. Hope this helps someone.",0
+"Thanks Tim !.. your tutorials are very clear, with a slow , easy & understandable English for non-native english spoken users!...",1
+2:40 Is it an anonymous function using the `lambda` keyword?,1
+"Damn, interesting.. thank you for the tutorial",1
+"Phenomenal series, thank you so much!",1
+Next tutorial on pwa with python or python with react/react native☺️☺️  great work👍,1
+Could you do a tutorial on docker after this series. I would really appreciate it because there aren’t a lot of tutorials on docker and you can explain things really clearly and effective.,1
+dude!its Giving error of tab error. some type space indention!! please help using sublime text 3 editor for this,0
+"HELP When I run the exact same program @ 1:53 it says this:
+'PyQt5.QtCore.pyqtBoundSignal' object has no attribute 'connnect'",0
+Nice tutorials Tim. I appreciate that you showed the raw code first BEFORE demoing the designer.,1
+You're a dawg for creating this content for free. You're helping so many people become better man. Thank you.,1
+"Does this app run on Android?? Thanks, your tutorials rock.",1
+"Your tutorials are so useful and clear and easy to follow. Great work, man! Thank you so much!",1
+"Hi, thank you for sharing, please, what about if I want to button to behave like a calculator, when I click it shows up the number in a separet windows? Sorry for my broken English, Iam angolan and we Speak Portuguese.",1
+"that's amazing, great thanks!",1
+"Nice one pal. I was waiting for some GUI tutorial on python and yours is exactly what I was expecting from a tutorial: simple, clear and easy enough to understand (so long, at least). Keep up the good work",1
+"Hi Tim. Your content is amazing. Easy to follow and well structured. Thanks. If this point has not been brought up, you could nest your clicked function under your window function. This way your clicked function has access to all the variables under your window function as they are in the same scope. That is if you don't want to define a class.",1
+🔥,1
+"Hey, I'm from Brazil, my english is not too good, but I can understand you perfectly, good job, thanks. <3",1
+"Robust tutorial :)
+Looking forward to learn more PyQt5 from you!",1
+"thank you very much, this was very clear and concise",1
+Yes! I've been waiting all day for another pyqt5 video,1
+"In order to pass the label, you can use the lambda function and then refer it as  a parameter for the function.",0
+Thanks for your tutorial. I was eagerly wanted to learn  PyQt5 but i was not having any source to learn from. Your tutorials are very easy to follow.,1
+hey tim. When did you start to press your butt. ;  ),1
+"I get warning for defining instance attribute outside the __init__ function by pylint, maybe you need to put them back to the __init__ function to follow best practice.",0
+Great video !! Why does the label x and y seem to change when you click the button ? It looks like the new label shows a bit higher!?!,1
+Add action to a button 01:04,1
+so if we have multiple buttons we have to create separate update functions for them?,1
+You're awesome! it was great.,1
+Thanks for yours videos they helps me a lot !!!,1
+YOU ARE THE BEST. Tomorrow is my contest submission date and you saved my life. Bro <3,1
+"Although all the OOP stuff is great, it seems to me that you would have to keep doing this labor intensive work every time you used Designer to tweak your GUI. Could you somehow pass the reference to QMainWindo (""win"") to other methods that need access? Actually.... I'm not even sure if b1 is a member of the win class.... so maybe that won't work.",0
+thanks.,1
+Awesome vids. Simple and efficient.,1
+How to upload image n save the path in database,1
+"How to Add buttons via with at method?  To Create a dynamic UI?
+
+Nice Vid btw :)",1
+i wrote everything at the exact same place and i always get this error: unindent does not match any outer indentation level,0
+"Hi Tim,  thanks for your python tutorials that help me and my team to learn it in simple way.
+I am facing problem with  'designer'. I did pip for PyQt5-tools l, however 8 did find the designer under folder. Please help.",1
+"What is the difference between:
+super(Myw=Window,self).__init__() 
+&
+super(QMainWindow).__init__() ?",1
+"thanks mate, can you make more videos' on this GUI please",1
+Nice tut,1
+great video!!,1
+Gracias Tim.,1
+Why have you deleted the pyopengl tutorials??,0
+"hey Tim, thanks for putting in the effort on explaining, how python and qt works. 
+
+After following the tutorial, everything works fine, except that MyWindow doesn't refresh without focusing another application on my Mac first, so even if the event of the clicked button is recognised accordingly which can be seen with print in terminal, the button / labels do no show the new values. Switching to Safari and going then back to the Python Application, the label shows the new value.
+
+Do you have any idea, why it doesn't refresh on the button event?",-1
+"PyQt vs tkinter
+
+Fight!",1
+"Please number your tutorials. I only have date to sort by, and that only works in YouTube official.",0
+Nice video.  What color theme are you using if you don't mind my asking?,1
+"If you have already imported QtWidgets from PyQt5, why are you importing QApplication and QMainWindow separately?",0
+"How do I use this for an exit button?
+os.system(cmd)
+QtCore.QCoreApplication.instance().quit()
+OR self.close() don't seem to work when put into def quitAction(self) and invoked through quitbtn.clicked.connect(self.quitAction)",1
+"Hi Tim, your videos are great, and y ou are an exceptionally talented young man. My question is....how do you personally go about learning this stuff? Do you read through the documentation on the PyQt website? Follow other tutorials? I'd love to learn the same way you learn.",1
+"Hey Tim I feel as though you should inform everyone that if you don't tab things correctly while using sublime it can make the script fail. I spent about an hour copying your code trying to figure out why mine wasn't working, just to realize I had a few tabs off. Thanks for these videos so far!",1
+Your videos teach and explain more than all the other videos I watch. I think Im gonna have to buy a Tim mug.,1
+Pozdrawiam Pana Piotra Kozierskiego :),-1
+In the next video you will show us how to change the button's position?,1
+Nice video man 👍,1
+i guess i love you,1
+We could also use lamda right?,1
+a very usefull information!!!,1
+"Where did this ""connect"" came from? I tried using DIR, HELP, searching the documentation etc and i didn't find it. Thus, PyCharm won't auto-complete this. (Really beginner here sry)",0
+Could you just add the self.label.adjustSize() directly to the clicked method instead of creating an update method?,1
+What do you prefer pyQt5 or tkinter?,1
+"I got ""Process finished with exit code -1073740791 (0xC0000409)""
+
+Tried to fix it but couldn't do it, hopefully, it won't ruin the next tutorials.",0
+your tutorials are great,1
+Why not show the code from the designer?,0
+"couldn't understand the line 8,
+super(Mywindow,self).__init__()
+can anyone explain?",0
+You are the best.,1
+"Hi Tim . Your videos are awesome, but I am having an issue in running the code in Python 3.7, Microsoft Visio. I am using Pylinter here. The error I am getting is "" illegal target for annotation python(parser-16) 3.7"" near  self,
+def__init__(self):
+        super(MyWindow, self).def__init__()
+        self.setGeometry(100, 100, 300, 300)
+        self.setWindowTitle(""Roy's Test"")
+        self.initUI()
+
+
+please advise",0
+"dude.. can u help me out.. i mean like..  some tips and resources ... on how you self study .. a video maybe? please? .. it'd be really helpful.  
+
+thank you",-1
+"if you think Tim's video is not enough try reading the documentation, it have a lot more fun stuffs in it. https://www.riverbankcomputing.com/static/Docs/PyQt5/index.html",1
+"Hey I need to store a returned value when a button is clicked that calls a method. Here is the code that I tried but I am not able to store the returned variable.
+
+device_id_chk_x = 1
+
+class GUIWindow(qtw.QWidget):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.ui = Ui_Form()
+        self.ui.setupUi(self)
+
+        device_id = self.ui.radio_lm_x_button.clicked.connect(self.choose_device_id)
+
+    def choose_device_id(self):
+        if self.ui.radio_lm_x_button.isChecked():
+            device_id = device_id_lm_x
+            print(device_id)
+            return device_id
+How do I store the device_id that is returned from the method. Thanks in advance",-1
+Is tkinter better or PQt5 or kivy??,1
+Matplolib pls,1
+very good tutorial,1
+from where did you learned PyQt5?,1
+why doesnt my button work,1
+Hey guys please how i can make this button work more times ? I mean click button 3 times and label will change 3 times to something else. Is that possible ?,1
+"Hi Tim, there is a error I got when close windows click over ""X"" right up window:
+An exception has occurred, use %tb to see the full traceback.
+
+SystemExit: 0
+
+
+c:\users\danni\appdata\local\programs\python\python37-32\lib\site-packages\IPython\core\interactiveshell.py:3304: UserWarning: To exit: use 'exit', 'quit', or Ctrl-D.
+  warn(""To exit: use 'exit', 'quit', or Ctrl-D."", stacklevel=1)",0
+"Love your tutorials!With this GUI knowledge ia am building a app to store your accounts(passwords, usernames etc) iwth facial detection to login in.",1
+"Hello, w
+When I run this code in visual code this error appears:
+ cannot import name 'QMainwindow' from 'PyQt5.QtWidgets'",0
+"I get an import error when I run my python programs since I installed Anaconda, I need your help",0
+What is your full name?,1
+"Can someone explain b1.clicked.connect(clicked)
+
+
+
+
+is connect() a function or a method? which class is this found under?",0
+"My label's text won't change, and I have the exact same code as you. Please help me out.",1
+"Hey guys. My label was not updating unless I manually resized the window... I'm using a mac and this problem was solved by adding self.update() after the self.update() line. 
+
+Found the solution here --> https://stackoverflow.com/questions/57506101/qlabel-is-not-updated-unless-the-mainwindow-is-unfocused
+
+Hope this helps.",-1
+"Tim, you are my Python professor. I learned a lot from you. Thank you very much.
+And would you please make a video about how to make a stand-alone executable file out of a whole project?",1
+"My button won’t change the label’s text. I tried changing the clicked function to print to the console and that works fine, just I can’t change the label’s text.",0
+very very  good . thanx,1
+"without ""class MyWindow(QMainWindow):"" it worked. May be because in python everything is an object. Your videos good. Keep it up.
+import sys
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QApplication, QMainWindow
+
+count = 0
+
+def window():
+    def clicked(label):
+        global count
+        count += 1
+        label.setText(f""Clicked {count}"")
+        label.adjustSize()
+
+    app = QApplication(sys.argv)
+
+    win = QMainWindow()
+    win.setGeometry(100, 100, 200, 200)
+    win.setWindowTitle(""Main window"")
+
+    label = QtWidgets.QLabel(win)
+    label.move(50, 50)
+    label.setText(""Display."")
+    label.adjustSize()
+
+    btn1 = QtWidgets.QPushButton(win)
+    btn1.setText(""Click me."")
+    btn1.clicked.connect(lambda : clicked(label))
+
+    win.show()
+    sys.exit(app.exec_())
+
+window()",0
+"No offense but at minute 5:34 when you're passing self as the argument on your initUI method in your MyWindow class, ""when you say if this is confusing , I really don't know what to say"", well programmers that don't come from an OOP background like myself, (I'm an embedded software developer and firmware developer I use C mainly), where the concept of classes, objects  and encapsulation is non-existing and down right unnecessary,  pushing the argument that writing your GUI in classes is better for readability proposes and then you come across some syntax you can't explain, when making  a tutorial that is kinda bad man, you're not transmitting confidence on what you're saying, therefore I can't really see your point of making a class My Window, for your main window, when you're only going to instance a main window once. Again no offense but you're complicating something that should be simpler to understand because you can't explain why you defend that writing your GUI, in an OO manner is better.",0
+"My first label doesn't update when I press the button
+I have to go to another window to update it manually
+I am on mac and this is the code:
+
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QApplication, QMainWindow
+import sys
+
+
+
+
+class MyWindow(QMainWindow):
+    def __init__(self):
+        super(MyWindow, self).__init__()
+        self.setGeometry(200, 200, 300, 300)
+        self.setWindowTitle(""Tech With Tim!"")
+        self.initUI()
+
+
+    def initUI(self):
+        self.label = QtWidgets.QLabel(self)
+        self.label.setText(""My first label"")
+        self.label.move(50, 50)
+
+
+        self.b1 = QtWidgets.QPushButton(self)
+        self.b1.setText(""Click me"")
+        self.b1.clicked.connect(self.clicked)
+
+
+    def clicked(self):
+        self.label.setText(""You've pressed the button."")
+        self.update()
+    
+
+
+    def update(self):
+        self.label.adjustSize()
+
+
+
+
+
+
+def window():
+    app = QApplication(sys.argv)
+    win = MyWindow()
+    win.show()
+    sys.exit(app.exec_())
+
+
+window()",0
+"you can pass in arguments to the function by using lambda, for e.g:
+pushButton.clicked.connect(lambda: clicked(""hello""))
+instead of having to create classes and stuff",-1
+"How are you going to place  widgets, in the first video you said that we can do this by using our mouse but it seems like you are going to use commands, and there is a question: Why are using Qt if there is Tkinter? As a beginner, I'm a little confused)",0
+"Tears from my eyes when I finally understood what ""self"" keyword here is all about. Thank You!!",1
+Absolutely superb presentation! Worlds better (and more useful) than Udemy!,1
+"Aristotle once said, “Knowing self is the beginning of all wisdom.” . My fear of classes has been replaced by understanding. Thanks Corey.",1
+This video is 4 years old and still the best OOP tutorial in Python.,1
+"In my 3 years of trying to learn object-oriented Python, not a single teacher adequately explained what the ""self"" keyword was for -- until now. Thank you again Mr. Schafer!",1
+"""""SELF"""" the biggest mystery finally solved",1
+"University professors should learn from you regarding "" how to teach students"". Love from India, sir.",1
+I learnt more in this 15mins video than in my entire semester,1
+"I don't know you but before recording this video, it is crystal clear that you asked yourself how can I be explaining better the concept of class/object to novice learners and you just nailed it. Huge thanks for great work man. We all humans should consider of adding perfectness to our professions. Cheers from Istanbul!",1
+My work-colleague told me about your tutorials on Youtube. I am gonna buy that colleague a coffee.,1
+This is the most amazing tutorial/ explanation on introduction to classes in python on the whole of YouTube. Thank you so much <3,1
+A month of confusion fixed in 15 minutes. Excellent job. Subbed.,1
+Not all heros wear capes. Corey you are the man!,1
+You made a 14 year old understand what 'self ' is after 2 months of confusion. Thank you so much. Liked and subbed.,1
+"Literally I was crying when I finally understand actual work of ""self"" keyword. 
+Saviour !!!",1
+I teach CS and Cory's channel is always my recommendation when a students needs supplemental material. Cory is my go to guy when I can't quite get through a particular student.  Thank you Mr. Schafer for saving my butt more than a few times. Ironic note. I actually have a dog named Brooklyn lol,1
+"He explains why there is ""self"" while defining the method in the class at 8:05",1
+I've just shown this video to my teacher. Now he's my student.,1
+"This was great, you’re so easy to understand!",1
+"I can't believe it, impossible became possible. I now understood what is ""self"" thanks a lot man. Can't thank you enough.",1
+"thanks a lot bro!!! I finally understood what ""self"" keyword is.",1
+"OMG. I have been struggling to wrap my brain around all this, and you explained it so well! It's actually coming together now. Thank you so much!",1
+"Happy Guru Poornima, Corey!
+(It's the day we salute our Teacher's for there efforts to make us knowledgeable).",1
+I feel like i can learn Python.....Thank god for making Corey a human being,1
+"after many trials to learn that ""self"" thingy, now i understand it after watching your video. my 3 remaining brain cells thank you",1
+This is hands down the best OOP tutorial that has ever been created. Superb job!,1
+"Without a doubt, the best explanation I have heard on class creation/usage in Python (or other OO languages), and how/why 'self' is used.  
+Most of the other videos/lessons I've gone through simply state something like, ""Do it this way...because that's how it's done"". 
+Your 15 minute explanation surpasses everything else I've seen on learning Python / OO programming.  
+Liked & Subscribed!",1
+"finally!! someone explained the mystery of ""self""🤗",1
+This is literally the best python tutorial ever on Youtube. Thank you!!!,1
+The best tutorial of OOP I have ever seen! Thank you so much!:D,1
+"These guides are absolutely amazing, thank you!",1
+"YES! THIS IS IT, I FINALLY UNDERSTOOD WHAT ""SELF"" keyword IS ALL ABOUT !
+thank you so much !",1
+"The ""self"" explanation is what makes the video more valuable. 😊",1
+loving it. I just started learning python and its my first programming language. I love how this guy explains new words like classes and instances in such a clear way!! thank you,1
+You are better organized than some paid courses. Bravo !,1
+best  free content ever!! that self keyword explanation is really awesome. I was not able to understand it since a long time,1
+"Amazing! I got stuck with these concepts when I was learning classes in Python today at www.codecademy.com. In Myanmar, I have never found even a single youtuber teaching Python. Thanks a lot!",1
+"Thank you so much, this video taught me more than my professors 3 hour lecture!",1
+I have struggled with OOP programming for years. Always worked around it. This made me understand Classes finally! Thank you very much.,1
+I honestly wish I just sat in my room and watched your videos rather than going to university. Much clearer and much cheaper and less stress.,1
+"Comparing this to JS was helpful to me. ""If you're coming from another language, the init method is similar to constructor()""",1
+"my teachers couldn't explain  this in hours ,but he did in minutes thanks a lot sir .4",1
+Great job explaining these concepts. Just what I needed! Thanks!,1
+"The most well explained lesson about classes and instances, i've ever heard. i finally got it
+Thanks Corey...u'r the best",1
+"Coming from the Java side of the lake, the 'self'  keyword always confused me until now. Thanks!",1
+Best explanation of `self` I've ever read/watched. Excellent - thanks.,1
+"You, sir, have a gift!! Super clear. And you covered everything perfectly without making it feel overwhelming at all. Awesome! Thank you!",1
+"You're a better teacher than my CompSci Prof, dude! THANK YOU!!",1
+"4:33 That multiple line editing kinda blew my mind, it's done by holding alt if anyone is interested",1
+"i literally started dancing when that explanation for self keyword finished, can't really thank you enough!",1
+"Bro, I'm taking a Python Class and you have taught me more than my instructor has. Lol thank you sir",1
+Just made a donation! Thank you so much Corey.,1
+Thanks for that last part. I always get confused why and where to place self. The argument emp_2 is getting passed into the class function and thats why itll give an error if you dont put self in your class method,1
+"I wish I could give a double-like to this video. Thank you so much! I was so scared of 'Classes' till today and with your explanation, it does not look that difficult!",1
+"you are amazing... Finally i understood what ""self"" means... whoa",1
+Perfect. I'm going through a statistics course using Python and this has helped me figure out how to read their code that uses classes,1
+"Whoa! That was a great explanation of self and class. I'll be honest; I was struggling with the idea even with my professor who is a good guy.  But yeah, this makes a lot of sense. Classes are like functions were they further compartmentalize code  to be repeated much like what functions are but on a broader scale if that's correct?",1
+this is amazing i think ill just stick with this channel for the rest of semester hahahaa big thanks!!,1
+finally i understood what is classes init keyword and self thing. Bless you from pakistan <3,1
+Firstly I really appreciate your work in making this video \n my question is how can I import a value from a class as a useful tool in another python file....?,1
+"print(""thank you"")",1
+"So, to speak abstractly, classes are just methods built into a language to avoid repetition and organize those schemes of avoiding repetition so they can be easily moved, built upon and called upon?",1
+"how did you rename ""emp_1 to emp_2 quickly""?cool tutorial..thanks",1
+"I finally understand ""self"" thank you!
+Great tutorial series",1
+"This video helped me a lot. I've been in search of such explaining video for long time and I found this. Honestly saying, adequate video to understand object- oriented programming in Pyhton.",1
+"before 2 month ago, I try to learn OOPS, but I can not, Now I really like this matter. Thanks a lot master Corey Schafer",1
+"thanks for making this video, really helpful! :)",1
+"Very well explained, especially how ""Self"" works.. Even explained difference between a function and a method. Thanks a lot.",1
+"Thank you, this saved my life and my grades!! <3",1
+Watching all the ads so you never stop making videos.. Thanks so much for the great content!!,1
+"Very helpful, accurate and clear explanations, much appreciated! Saved me a premium subscription to codecademy.com!",1
+"How could you give this video a 'thump down'? It's an amazing tutorial, thank you Corey Schafer",1
+"Thank you for explaining this in such a clear manner. I’m finally understanding object oriented programming! And believe me, I’ve been around for a long time, but have avoided object oriented programming! Now I have a new lease on life! Lol",1
+Thank-you! I am at the end of the Codecademy Python 3 course and was really struggling with OOP concepts and wrapping my mind around it. Your explanation here was crystal clear.,1
+"This was so helpful, I finally understand classes thankyou!",1
+"Sir, I can't explain in words, how clean and clear your walkthrough was. 
+Thank you very very very much. Subscribing",1
+"I am right now fully understanding python oop. 
+very thank you to the founder of this video because you made one of the greatest lesson I really want to learn.",1
+Gladly subscribed “Corey” what a teacher!!!!,1
+"I love how well Python classes are explained in this video, thank you! My current challenge is that the data I have is in the form of a list of dictionaries and I would like to pass them onto a class.",1
+"Thank you this was so very helpful! I was glued to the screen for the entire duration of the video, very interesting :D",1
+"Corey, you explanation on ""self"" is fantabulous. Long live!",1
+you are too good to resist.. made simple to understand the concept which took years to know,1
+"waw it's so amazing how you make things easy to understand that it's actually dangerous lol halfway into the video i thought if you don't fully understand by the end. you just need to start selling cars or deliver pizza.
+thank you sir.",1
+"Thank you Corey, very clear. The presentation has also a very adequate pace, not too slow, nor too fast.",1
+"I’ve watched a few videos trying to get my head around classes and objects, and you make it so simple. Thanks so much for your clear explanation",1
+"Great explanation, Corey! One of the best I've seen so far, thanks :) Greetings from Brazil",1
+My teacher took whole semester for this still I wanted to withdraw but this guy here.......did that in 15 min Dayum!,1
+"can we print out email from class Employee, I'm getting attribute error",0
+"self, I HAVE FINALLY UNDERSTOOD YOU! HA! thx corey!",1
+"So that's what ""self"" really means!",1
+"I love this, short informative and I did understand the English well, very satisfied, thank you.",1
+Clearest explanation I've seen.  Thank you!,1
+This tutorial is so good. I just can't believe it is available for free. Graaacias! 😄🤓,1
+thanks so much!!! your explanation for the 'self' is amazing! I learned Java first thus I am kinda confused why there is a self inside the arguments. Thanks!!,1
+"Finally understood Class, In a way I could remember for a lifetime.  Thank you!",1
+"So ""self"" is basically ""this"" in Javascript! thanks",1
+"The explanation of 'self' releases a lot of confusion, thank you Corey.",1
+I never thought I'll understand what 'self' actually means before watching this video. THANKS!,1
+"watching in 2019, I am in shock as how well I understood this man <3",1
+Thanks for clarifying my thoughts in this Python journey to becoming a Software Developer. I've always had a doubt in this career until I started this very first video.,1
