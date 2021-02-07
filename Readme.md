@@ -31,15 +31,15 @@ Par exemple nous pourrions imaginer d'autres catégories telles que la cuisine, 
 
 Tout d'abord il faut cloner le repo
 
-```  git clone https://github.com/Bessouat40/enhanced_ytb_playlist.git 
+``` 
+git clone https://github.com/Bessouat40/enhanced_ytb_playlist.git 
 ```
-
 Puis construire les images 
 
-.. code-block:: bash
+```
    docker-compose build
    docker-compose -up -d
-.. code-block:: bash
+```
 
 ## Documentation
 
