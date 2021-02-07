@@ -25,5 +25,34 @@ Notre application permettra aussi à l'utilisateur de récupérer des informatio
 ## Possibilités d'améliorations
 
 Dans le futur, nous pourrions élargir notre base de données pré-existante à l'aide de contenus qui diffèrent de tutoriels de programmation. 
-Par exemple nous pourrions imaginer d'autres catégories telles que la cuisine, des programmes sportifs, etc
+Par exemple nous pourrions imaginer d'autres catégories telles que la cuisine, des programmes sportifs, ...
+
+## Requirements
+
+Afin de bien faire fonctionner notre programme, vous devez avoir installé :
+- Docker,
+- Python
+
+En ce qui concerne les librairies python, vous devez avoir installé les librairies :
+- flask,
+- pymongo,
+- re,
+- urllib.parse,
+- time_tools,
+- time,
+- selenium,
+- sys,
+- requests,
+- json,
+- argparse,
+- datetime,
+- os,
+
+## Documentation
+
+Nous avons mis à votre disposition la documentation concernant les fonctions que nous utilisons dans notre programme.
+Il y a 3 principales fonctions :
+- [recup_bdd](https://github.com/Bessouat40/enhanced_ytb_playlist/tree/main/doc/doc_recup_bdd.md),
+- [API-YTB](https://github.com/Bessouat40/enhanced_ytb_playlist/tree/main/doc/doc_API_ytb.md),
+- [appli_flask](https://github.com/Bessouat40/enhanced_ytb_playlist/tree/main/doc/doc_appli_flask.md)
 
