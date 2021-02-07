@@ -55,7 +55,8 @@ Youtube Playlist Enhanced
 
 		xhr.onload = function(){
 		        console.log(xhr.response)
-		        document.getElementById('content').innerHTML=  xhr.response['id']
+		        document.getElementById('content').innerHTML = '';
+		        document.getElementById('content').append(createPlaylistCard(xhr.response))
 		}
 		
 		document.getElementById('content').innerHTML = '<div class="spinner-border text-primary" role="status"></div>'
@@ -63,6 +64,8 @@ Youtube Playlist Enhanced
 		
   	});
 
+
+  	
 
 
 

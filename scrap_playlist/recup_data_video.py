@@ -2,6 +2,7 @@ import selenium
 import re
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.common.exceptions import NoSuchElementException 
 import time
 import pymongo
 from pymongo import MongoClient
@@ -20,20 +21,32 @@ def recup_info(lien):
 
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--window-size=640,1080")
+    chrome_options.add_argument("--window-size=1080,720")
     #chrome_options.add_argument('--disable-dev-shm-usage')       
 
     chrome = webdriver.Remote('http://selenium:4444/wd/hub',options=chrome_options)
 
     chrome.get(url)
-    time.sleep(2)
+    #time.sleep(1)
+
     tag = chrome.find_elements_by_id('info')
 
-    
     info = tag[0].text.split('\n')
-    
-    if not info:
+
+    f = open("log.txt", "a")
+    f.write(url + '\n' +str(info)+'\n')
+    f.close()
+
+    if len(info)==1:
+        chrome.quit()
         return(None)
+
+
+    if "Private video" in info:
+        chrome.quit()
+        return(None)
+
+   
 
     info.remove('SHARE')
     info.remove('SAVE')
@@ -54,13 +67,14 @@ def recup_info(lien):
         like = like.replace('K', '00')
         like = like.replace('M', '00000')
         like = like.replace('Md', '00000000')
-        like = like.replace(',','')
+        like = like.replace('.','')
         like = like.replace(' ', '')
         like = int(like)
     else :
         like = like.replace('K', '000')
         like = like.replace('M', '000000')
         like = like.replace('Md', '000000000')
+        like = like.replace('.','')
         like = like.replace(' ', '')
         like = int(like)
 
@@ -69,7 +83,7 @@ def recup_info(lien):
         dislike = dislike.replace('K', '00')
         dislike = dislike.replace('M', '00000')
         dislike = dislike.replace('Md', '00000000')
-        dislike = dislike.replace(',','')
+        dislike = dislike.replace('.','')
         dislike = dislike.replace(' ', '')
         dislike = int(dislike)
 
@@ -77,6 +91,7 @@ def recup_info(lien):
         dislike = dislike.replace('K', '000')
         dislike = dislike.replace('M', '000000')
         dislike = dislike.replace('Md', '000000000')
+        dislike = dislike.replace('.','')
         dislike = dislike.replace(' ', '')
         dislike = int(dislike)
     

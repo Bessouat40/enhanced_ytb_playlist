@@ -57,7 +57,7 @@ def recup_playlist_from_channels(id_chaine) :
     return(l_title,l_url)
 
     
-def get_playlist_data(title,url,id_chaine):
+def get_playlist_data(url,id_chaine=None,id_playlist=None):
 
     chrome_options = Options()
     chrome_options.add_argument("--headless")
@@ -66,10 +66,16 @@ def get_playlist_data(title,url,id_chaine):
 
     driver = webdriver.Remote('http://selenium:4444/wd/hub',options=chrome_options)
     
-        
-    last_modif = ''
+    if id_playlist is not None:
+        url = f'https://www.youtube.com/playlist?list={id_playlist}'
+    
+    else:
+        id_playlist = re.findall(r'https:\/\/www\.youtube\.com\/playlist\?list=([a-zA-Z0-9-_]*)',url)[0]
+    
     print('url :',url)
     driver.get(url)
+
+    title = driver.find_element_by_id('title').text
             
     tag = driver.find_element_by_id("stats")
     res = [j.text for j in tag.find_elements_by_tag_name('span')]
@@ -104,6 +110,9 @@ def get_playlist_data(title,url,id_chaine):
     else:
         description = ''
 
+
+    last_modif = ''
+
     if len(res)>0:
         nbr_videos = res[0]
         if len(res)==5:
@@ -131,8 +140,7 @@ def get_playlist_data(title,url,id_chaine):
     vues = vues.replace(',','')
             
 
-
-    id_playlist = re.findall(r'https:\/\/www\.youtube\.com\/playlist\?list=([a-zA-Z0-9-_]*)',url)[0]
+  
 
     data = {'_id' : id_playlist,
             'id_youtubeur' : id_chaine,
@@ -184,7 +192,7 @@ if __name__ == '__main__':
                 url = playlist_urls[i]
                 title = playlist_title[i]
 
-                playlist_data,video_data = get_playlist_data(title,url,id_chaine)
+                playlist_data,video_data = get_playlist_data(url,id_chaine)
 
                 if playlist_data:
                     try:

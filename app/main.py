@@ -95,12 +95,16 @@ def livescraper():
 @app.route('/livescraper/<playlist_id>')
 def livescraper_search(playlist_id):
 
-	data = { 'id':playlist_id}
+	
+	data,videos_data = get_playlist_data(url=None,id_playlist=playlist_id)
 
-	for i in range(100000000):
-		pass
+	video_info=[]
 
+	for v in videos_data:
+		video_info.append(recup_info(v['_id']))
 
+	data['video_data'] = video_info
+	
 	return jsonify(data)
 	
 
