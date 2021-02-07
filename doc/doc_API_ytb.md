@@ -4,6 +4,8 @@ Il s'agit ici d'un wrapper partiel de l'API [Youtube Data  API v3](https://devel
 
 L'API nous est utile pour récupérer les identifiants des chaînes en lien avec la programmation ainsi que des commentaires présents sous les vidéos
 
+> :warning: Il est nécessaire d'obtenir une clé API pour l'utiliser.
+
 Ce wrappeur peut être utilisé en ligne de commande :
 
 ```bash
@@ -31,7 +33,7 @@ import os
 API_KEY = os.environ['API_KEY']
 FILE = 'mylist.txt'
 RESSOURCE = 'channels'
-COLLECTION = 'channels'
+
 
 
 ytb = YoutubeAPI(API_KEY)
