@@ -8,7 +8,7 @@ from time_tools import sum_duration
 import sys
 
 sys.path.append('.') # Adds higher directory to python modules path.
-from scrap_playlist import recup_bdd_headless,recup_info
+from scrap_playlist import get_playlist_data,recup_info
 
 
 app = Flask(__name__)

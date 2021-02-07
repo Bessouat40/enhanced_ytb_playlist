@@ -81,7 +81,7 @@ def recup_info(lien):
         dislike = int(dislike)
     
     #duration = chrome.find_elements_by_class_name('ytp-time-duration')[0].text 
-    # Not working because of ads
+    #Not working because of ads
     
     bdd = { 
             'titre' : titre,
