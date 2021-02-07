@@ -18,4 +18,8 @@ Elle comporte deux types de fonctions :
   
   - livrescraper_search : renvoit les données issus du scrapping de la playlist dont l'ID est passé en paramètre. Dans un premier temps, on scrap la page de la playlist pour récupérer des informations (vues,nombre de vidéos, durées, id des vidéos), puis les pages des vidéos pour récupérer les informations type like, dislike, vues. Les données récoltés sont ensuite misent en forme au format json et triée chronologiquement.
   
+  - api_search : renvoit les données pour la fonction de recherche de playlist, les mots clés sont isolés  et nettoyés avant de faire une requête dans la base de données Mongo et de renvoyer le résultat avec un pre-processing pour calculer la durée totale (qui aurait aussi pu être réalisé en javascript)
+  
+  - api_get_playlist : renvoit les données des playlists associées à une chaine, à travers une requête Mongo.
+  
   
