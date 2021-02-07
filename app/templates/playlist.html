@@ -78,17 +78,20 @@ Youtube Playlist Enhanced
 	var formatted_views = parseInt(viewsContent).toLocaleString() + ' <i class="material-icons">&#xe8f4;</i>';
 	views.innerHTML = formatted_views;
 
+
+	const graph_data = {{data['graph_data']|tojson}};
+	
 	var data1 = {
-		"labels" : [1,2,3,4,5,6,7,8,9],
-		"values": [74500,66347,32872,32343,12423,32245,52267,35344,16324],	
+		"labels" : graph_data['dates'],
+		"values": graph_data['views'],	
 	}
 
 	var VC = createViewChart('views_graph',data1,'views_container');
 
 	var data2 = {
-		"labels" : [1,2,3,4,5,6,7],
-		"values": [800,667,324,923,123,345,567],
-		"values2": [512,467,344,563,735,375,156]
+		"labels" : graph_data['dates'],
+		"values": graph_data['likes'],
+		"values2": graph_data['dislikes'],
 	}
 
 	var LC = createLikesChart('likes_graph',data2,'likes_container');

@@ -43,7 +43,39 @@ def playlist_page(playlist_id):
 	collection = database['playlist']
 
 	data = collection.find_one({"_id":playlist_id})
+
+	collection2 = database['videos']
+
+	data2 = list(collection2.aggregate([
+	  {"$match": {"id_playlist": playlist_id}},
+	  {"$project": {
+	      "likes": 1,
+	      "dislikes": 1,
+	      "vues": 1,
+	      "post_date": 1, 
+	    }
+	  },
+	  {"$sort": {"post_date": 1 ,"vues": -1}}
+	]))
+
+	likes = []
+	dislikes = []
+	views = []
+	dates = []
+
+	for v in data2:
+		likes.append(v['likes'])
+		dislikes.append(v['dislikes'])
+		views.append(v['vues'])
+		dates.append(v['post_date'].strftime("%d/%m/%Y"))
 	
+	data['graph_data']={
+		'dates': dates,
+		'likes' : likes,
+		'dislikes' : dislikes,
+		'views' : views,
+	}
+
 	if data:
 
 		return render_template("playlist.html",
