@@ -27,26 +27,18 @@ Notre application permettra aussi à l'utilisateur de récupérer des informatio
 Dans le futur, nous pourrions élargir notre base de données pré-existante à l'aide de contenus qui diffèrent de tutoriels de programmation. 
 Par exemple nous pourrions imaginer d'autres catégories telles que la cuisine, des programmes sportifs, ...
 
-## Requirements
+## Installation avec Docker
 
-Afin de bien faire fonctionner notre programme, vous devez avoir installé :
-- Docker,
-- Python
+Tout d'abord il faut cloner le repo
+.. code-block:: bash
+   git clone https://github.com/Bessouat40/enhanced_ytb_playlist.git 
+.. code-block:: bash
 
-En ce qui concerne les librairies python, vous devez avoir installé les librairies :
-- flask,
-- pymongo,
-- re,
-- urllib.parse,
-- time_tools,
-- time,
-- selenium,
-- sys,
-- requests,
-- json,
-- argparse,
-- datetime,
-- os,
+Puis construire les images 
+.. code-block:: bash
+   docker-compose build
+   docker-compose -up -d
+.. code-block:: bash
 
 ## Documentation
 
