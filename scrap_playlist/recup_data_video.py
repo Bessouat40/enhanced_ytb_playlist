@@ -6,6 +6,7 @@ from selenium.common.exceptions import NoSuchElementException
 import time
 import pymongo
 from pymongo import MongoClient
+import datetime
 
 def recup_info(lien):
 
@@ -27,7 +28,7 @@ def recup_info(lien):
     chrome = webdriver.Remote('http://selenium:4444/wd/hub',options=chrome_options)
 
     chrome.get(url)
-    time.sleep(1)
+    time.sleep(2)
 
     tag = chrome.find_elements_by_id('info')
 
@@ -58,9 +59,21 @@ def recup_info(lien):
     like = info[-2]
     titre = info[-4]
 
-
     vues = list(filter(None,[t.text for t in chrome.find_elements_by_id('count')]))[0]
     vues = vues.replace('\u202f','').replace('views', '').replace(',','')
+    vues = int(vues)
+
+    post_date = chrome.find_element_by_id('date').text
+    post_date = re.sub('•','',post_date)
+    post_date = re.sub('Premiered\s','',post_date)
+    post_date = re.sub('Streamed live on\s','',post_date)
+
+    post_date =  datetime.datetime.strptime(post_date,'%b %d, %Y')
+
+    f = open("log.txt", "a")
+    f.write(str(post_date)+'\n')
+    f.close()
+
 
     question = re.findall(r'[,]',like)
     if len(question)!=0:
@@ -103,6 +116,7 @@ def recup_info(lien):
             'likes' : like,
             'dislikes' : dislike,
             'vues' : vues,
+            'post_date': post_date
             }
 
     print(bdd)
