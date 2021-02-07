@@ -70,6 +70,14 @@ Il y a 4 principales fonctions :
 
 > :warning: Le scraper de playlist prend beaucoup de temps à s'éxecuter et peut prendre jusqu'a 2GO de RAM et 100% du CPU.
  
+ #### Méthode Automatique
+ - Avant de construire l'image Docker, obtenir une clef d'API Youtube auprès de Google et la placer entre les quotes de la variable d'environnement dans le Dockerfile
+ - Construire et le conteneur
+ - Ouvrir l'invite de commandes du conteneur webapp
+ - Taper ``` bash ``` pour accèder au prompt bash
+ - exécuter le script bash de remplissage avec ```bash ./fill_db.sh```
+ 
+ #### Méthode Manuelle
  - Avant de construire l'image Docker, obtenir une clef d'API Youtube auprès de Google et la placer entre les quotes de la variable d'environnement dans le Dockerfile
  - Construire et le conteneur
  - Ouvrir l'invite de commandes du conteneur webapp
