@@ -18,7 +18,7 @@ Les critères que nous avons choisi de retenir sont :
 - la durée totale de la playlist
 - l'évolution du nombre de vues au cours des vidéos de la playlist.
 
-Nous proposons aussi une analyse des commentaires les plus pertinents de certaines vidéos de la playlist afin que l'utilisateur se fasse une idée de l'avis des personnes qui ont regardé le contenu avant lui.
+Nous proposons aussi une analyse des commentaires de certaines vidéos de la playlist afin que l'utilisateur se fasse une idée de l'avis des personnes qui ont regardé le contenu avant lui. Cette analyse est mise en place sous la forme d'une moyenne sur la répartition de commentaires positif et négatif, classifié selon un algorithme de Machine Learning (cf documentation)
 
 ## Outil Livescraper
 
@@ -26,6 +26,7 @@ Notre application permettra aussi à l'utilisateur de récupérer des informatio
 
 ## Possibilités d'améliorations
  
+Pour l'instant la base de données compte 54 chaînes, 134 playlist, 1708 vidéos et 48189 commentaires, touchant principalement au langage Python.
 Dans le futur, nous pourrions élargir notre base de données pré-existante à l'aide de contenus qui diffèrent de tutoriels de programmation. 
 Par exemple nous pourrions imaginer d'autres catégories telles que la cuisine, des programmes sportifs, ...
 
@@ -72,14 +73,14 @@ Il y a 4 principales fonctions :
  
  #### Méthode Automatique
  - Avant de construire l'image Docker, obtenir une clef d'API Youtube auprès de Google et la placer entre les quotes de la variable d'environnement dans le Dockerfile
- - Construire et le conteneur
+ - Construire le conteneur (cf Installation)
  - Ouvrir l'invite de commandes du conteneur webapp
  - Taper ``` bash ``` pour accèder au prompt bash
  - exécuter le script bash de remplissage avec ```bash ./fill_db.sh```
  
  #### Méthode Manuelle
  - Avant de construire l'image Docker, obtenir une clef d'API Youtube auprès de Google et la placer entre les quotes de la variable d'environnement dans le Dockerfile
- - Construire et le conteneur
+ - Construire le conteneur  (cf Installation)
  - Ouvrir l'invite de commandes du conteneur webapp
  - Taper ``` bash ``` pour accèder au prompt bash
  - Entrer cd ytb-api puis si besoin modifier les mots clés à utiliser pour la recherche en éditant le fichier mylist.txt
