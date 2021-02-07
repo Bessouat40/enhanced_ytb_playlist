@@ -20,7 +20,7 @@ Les critères que nous avons choisi de retenir sont :
 
 Nous proposons aussi une analyse des commentaires les plus pertinents de certaines vidéos de la playlist afin que l'utilisateur se fasse une idée de l'avis des personnes qui ont regardé le contenu avant lui.
 
-## Bonus Livescraper
+## Outil Livescraper
 
 Notre application permettra aussi à l'utilisateur de récupérer des informations sur la playlist qu'il aura séléctionner, en copiant l'url de cette dernière dans l'outil de scraping.
 
