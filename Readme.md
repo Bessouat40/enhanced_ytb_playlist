@@ -56,8 +56,7 @@ docker-compose -up -d
 
 ## Documentation
 
-Nous avons mis à votre disposition la documentation concernant les fonctions que nous utilisons dans notre programme.
-Il y a 4 principales fonctions :
+Nous avons mis à votre disposition la documentation concernant les différentes parties/services.
 
 - [ytb-api](https://github.com/Bessouat40/enhanced_ytb_playlist/tree/main/doc/doc_API_ytb.md)
 - [Flask Webapp](https://github.com/Bessouat40/enhanced_ytb_playlist/tree/main/doc/doc_appli_flask.md)
