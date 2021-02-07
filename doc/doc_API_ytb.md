@@ -7,7 +7,8 @@ L'API nous est utile pour récupérer les identifiants des chaînes en lien avec
 Ce wrappeur peut être utilisé en ligne de commande :
 
 ```bash
- # python ytb_api.py -h
+ python ytb_api.py -h
+ 
  usage: ytb_api.py [-h] [-a A] [-l L] [-c C] [-t T]
 
 Youtube API Wrapper
