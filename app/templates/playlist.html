@@ -29,19 +29,23 @@ Youtube Playlist Enhanced
 				    	<div class="row mb-2 mt-2 justify-content-center">
 				  							
 				  					<div class="col-md-3 my-auto border rounded m-3">
-					  					<p class="text-center align-middle h3 my-4 " id='nb-views'> {{ data['vues']}} <i class="material-icons">&#xe8f4;</i></p>
+					  					<p class="text-center align-middle h3 my-3 " id='nb-views'> {{ data['vues']}} <i class="material-icons">&#xe8f4;</i></p>
+					  					<div class="form-text text-center mb-2" style="font-size: 0.8rem;">Views</div>
 				  					</div>
 
 				  					<div class="col-md-2 my-auto border rounded m-3">
-				  						<p class="text-center align-middle h3 my-4 " >{{data['nbr_videos']}} <i class="material-icons">video_library</i></p>	
+				  						<p class="text-center align-middle h3 my-3 " >{{data['nbr_videos']}} <i class="material-icons">video_library</i></p>
+				  						<div class="form-text text-center mb-2" style="font-size: 0.8rem;">Videos</div>	
 				  					</div>
 
 				  					<div class="col-md-2 my-auto border rounded m-3">
-				  						<p class="text-center align-middle h3 my-4" >{{playlist_duration}} <i class="material-icons">schedule </i></p>
+				  						<p class="text-center align-middle h3 my-3" >{{playlist_duration}} <i class="material-icons">schedule </i></p>
+				  						<div class="form-text text-center mb-2" style="font-size: 0.8rem;">Duration</div>	
 				  					</div>
 
 				  					<div class="col-md-3 my-auto border rounded m-3">
-				  						<p class="text-center align-middle h3 my-4" >{{data['derniere_maj']}} <i class="material-icons">calendar_today </i></p>
+				  						<p class="text-center align-middle h3 my-3" >{{data['derniere_maj']}} <i class="material-icons">calendar_today </i></p>
+				  						<div class="form-text text-center mb-2" style="font-size: 0.8rem;">Last update</div>	
 				  					</div>
 				  				
 			  			</div>
@@ -89,7 +93,7 @@ Youtube Playlist Enhanced
 	document.getElementById('sentiment_container').innerHTML = `
 	<h3 class='text-center'> Playlist Quality Score * </h3> 
 	<h3 class='text-center'>${sentimentScore.toFixed(3)}</h3>
-	<div  class="form-text text-center" style="font-size: 0.8rem;">*based on comments analysis, from 0 to 1</div>`;
+	<div class="form-text text-center" style="font-size: 0.8rem;">*based on comments analysis, from 0 to 1</div>`;
 
 	const graph_data = {{data['graph_data']|tojson}};
 	
