@@ -36,6 +36,7 @@ def recup_playlist_from_channels(id_chaine) :
     lien = 'https://www.youtube.com/channel/{}/playlists?view=1&sort=dd&shelf_id=0'.format(id_chaine)
     driver.get(lien)
     driver.refresh()
+    time.sleep(1)
     tag = driver.find_elements_by_css_selector('a')
     l_url = []
     l_title = []
@@ -74,6 +75,7 @@ def get_playlist_data(url,id_chaine=None,id_playlist=None):
     
     print('url :',url)
     driver.get(url)
+    time.sleep(1)
 
     title = driver.find_element_by_id('title').text
             
@@ -112,6 +114,10 @@ def get_playlist_data(url,id_chaine=None,id_playlist=None):
 
 
     last_modif = ''
+    f = open("log2.txt", "a")
+    f.write(url + '\n' +str(res)+'\n')
+    f.close()
+
 
     if len(res)>0:
         nbr_videos = res[0]
@@ -121,12 +127,12 @@ def get_playlist_data(url,id_chaine=None,id_playlist=None):
             last_modif = re.sub(r'Updated','',last_modif)
             last_modif = re.sub(r'(\d{1,2})(\w*)',"\1 \2",last_modif)
 
-        if len(res)==4:
+        elif len(res)==4:
             last_modif = res[2]+res[3]
             last_modif = last_modif.replace('Dernière modification le','')
             last_modif = re.sub('Last updated on','',last_modif)
                 
-        if len(res)==2:
+        elif len(res)==2:
             nbr_videos = 1
             last_modif = res[1]
         else:

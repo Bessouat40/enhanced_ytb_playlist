@@ -27,7 +27,7 @@ def recup_info(lien):
     chrome = webdriver.Remote('http://selenium:4444/wd/hub',options=chrome_options)
 
     chrome.get(url)
-    #time.sleep(1)
+    time.sleep(1)
 
     tag = chrome.find_elements_by_id('info')
 
