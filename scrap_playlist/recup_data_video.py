@@ -28,7 +28,7 @@ def recup_info(lien):
     chrome = webdriver.Remote('http://selenium:4444/wd/hub',options=chrome_options)
 
     chrome.get(url)
-    time.sleep(2)
+    time.sleep(2.5)
 
     tag = chrome.find_elements_by_id('info')
 
@@ -64,11 +64,23 @@ def recup_info(lien):
     vues = int(vues)
 
     post_date = chrome.find_element_by_id('date').text
+    
+    f = open("log.txt", "a")
+    f.write(str(post_date)+'\n')
+    f.close()
+
+    
+
     post_date = re.sub('•','',post_date)
     post_date = re.sub('Premiered\s','',post_date)
     post_date = re.sub('Streamed live on\s','',post_date)
-
-    post_date =  datetime.datetime.strptime(post_date,'%b %d, %Y')
+    
+    
+    
+    if ',' in post_date:
+        post_date = datetime.datetime.strptime(post_date,'%b %d, %Y')
+    else:
+        post_date = datetime.datetime.strptime(post_date,'%b %d %Y')
 
     f = open("log.txt", "a")
     f.write(str(post_date)+'\n')
@@ -130,15 +142,17 @@ if __name__ == '__main__':
     client = pymongo.MongoClient('mongodb',27017)
     db = client['youtube']
     collection = db['videos']
-    video_list = list(collection.find({}))
+    video_list = list(collection.find({'titre': { "$exists": False }}))
 
     for v in video_list:
         print(v)
-        data = None
-        while data is None:
-            data = recup_info(v['_id'])
         
-        collection.update_one({'_id':v['_id']},{"$set": data })
+        data = recup_info(v['_id'])
+        
+        if data is not None:
+            collection.update_one({'_id':v['_id']},{"$set": data })
+        else:
+            print('cant be accessed')
        
 
 
