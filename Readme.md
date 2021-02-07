@@ -25,5 +25,5 @@ Notre application permettra aussi à l'utilisateur de récupérer des informatio
 ## Possibilités d'améliorations
 
 Dans le futur, nous pourrions élargir notre base de données pré-existante à l'aide de contenus qui diffèrent de tutoriels de programmation. 
-Par exemple nous pourrions imaginer d'autres catégories telles que la cuisine, des programmes sportifs, ...
+Par exemple nous pourrions imaginer d'autres catégories telles que la cuisine, des programmes sportifs, etc
 
