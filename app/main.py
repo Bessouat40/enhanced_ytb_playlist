@@ -10,7 +10,7 @@ from datetime import datetime
 
 sys.path.append('.') # Adds higher directory to python modules path.
 from scrap_playlist import get_playlist_data,recup_info
-
+from ml import analyse_sentiment
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
@@ -40,31 +40,25 @@ def playlist_page(playlist_id):
 		playlist_id: Youtube id of the playlist, used to look in the db 
 	
 		"""
-	collection = database['playlist']
+	data = database['playlist'].find_one({"_id":playlist_id})
 
-	data = collection.find_one({"_id":playlist_id})
-
-	collection2 = database['videos']
-
-	data2 = list(collection2.aggregate([
-	  {"$match": {"id_playlist": playlist_id}},
-	  {"$project": {
-	      "likes": 1,
-	      "dislikes": 1,
-	      "vues": 1,
-	      "post_date": 1, 
-	    }
-	  },
-	  {"$sort": {"post_date": 1 ,"vues": -1}}
+	videos_data = list(database['videos'].aggregate([
+		  {"$match": {"id_playlist": playlist_id}},
+		  {"$project": {
+		      "likes": 1,
+		      "dislikes": 1,
+		      "vues": 1,
+		      "post_date": 1, 
+		    }
+		  },
+		  {"$sort": {"post_date": 1 ,"vues": -1}}
 	]))
 
-	likes = []
-	dislikes = []
-	views = []
-	dates = []
+	video_ids,likes,dislikes,views,dates = [],[],[],[],[]
 
-	for v in data2:
+	for v in videos_data:
 		try:
+			video_ids.append(v['_id'])
 			likes.append(v['likes'])
 			dislikes.append(v['dislikes'])
 			views.append(v['vues'])
@@ -72,13 +66,19 @@ def playlist_page(playlist_id):
 		except KeyError:
 			pass
 
-	
 	data['graph_data']={
 		'dates': dates,
 		'likes' : likes,
 		'dislikes' : dislikes,
 		'views' : views,
 	}
+
+	comments = database['comments'].find({'video_id':{ '$in':video_ids }},{'text':1,'_id':0})
+
+	rm_accol = lambda x: x['text']
+
+	liste_comments = list(map(rm_accol,list(comments)))
+	data['sentiment_score'] = analyse_sentiment(liste_comments)
 
 	if data:
 
@@ -229,7 +229,6 @@ def api_get_playlist(channel_id):
 	json_data = jsonify(data)
 
 	return(json_data)
-
 
 if __name__ == "__main__":
 	app.run(host="0.0.0.0",debug=True)

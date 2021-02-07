@@ -46,6 +46,12 @@ Youtube Playlist Enhanced
 				  				
 			  			</div>
 
+			  			<div class="row justify-content-center">
+			  				<div class="col-md-5 border rounded m-3 p-4 justify-content-center" id='sentiment_container'>
+						    		
+						    	</div>
+			  			</div>
+
 				  		<div class="row">
 						    <div class="row mb-3 mt-5 justify-content-center " id="graph">
 						    	<div class="col-md-5 border rounded m-3 p-4" id='views_container'>
@@ -78,6 +84,12 @@ Youtube Playlist Enhanced
 	var formatted_views = parseInt(viewsContent).toLocaleString() + ' <i class="material-icons">&#xe8f4;</i>';
 	views.innerHTML = formatted_views;
 
+	var sentimentScore = {{data['sentiment_score']|tojson}}
+
+	document.getElementById('sentiment_container').innerHTML = `
+	<h3 class='text-center'> Playlist Quality Score * </h3> 
+	<h3 class='text-center'>${sentimentScore.toFixed(3)}</h3>
+	<div  class="form-text text-center" style="font-size: 0.8rem;">*based on comments analysis, from 0 to 1</div>`;
 
 	const graph_data = {{data['graph_data']|tojson}};
 	

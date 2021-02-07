@@ -5,10 +5,10 @@ import re
 from joblib import dump, load
 
 def analyse_sentiment(liste):
-   
+
     
-    classifier = load('model_saved.joblib')
-    vectorizer = load('vectorizer_saved.joblib')
+    classifier = load('ml/model_saved.joblib')
+    vectorizer = load('ml/vectorizer_saved.joblib')
    
     df = pd.DataFrame(data=liste,columns=['text'])
   
@@ -24,7 +24,7 @@ def analyse_sentiment(liste):
     
     
     X = vectorizer.transform(df['text']).toarray()
-   
+    
     predict = pd.DataFrame(classifier.predict_proba(X),columns=['neg','pos'])
    
     seuil = 0.85
