@@ -64,8 +64,10 @@ Il y a 4 principales fonctions :
 - [recup_data_video](https://github.com/Bessouat40/enhanced_ytb_playlist/tree/main/doc/doc_recup_data_video.md)
 
 ## Comment remplir la BDD si besoin
-> :warning: Il est nécessaire d'obtenir une clé d'API Youtube .
-> :warning: Avec une clé gratuite le nombre de requête à l'API Youtube est limité .
+> :warning: Il est nécessaire d'obtenir une clé d'API Youtube.
+
+> :warning: Avec une clé gratuite le nombre de requête à l'API Youtube est limité.
+
 > :warning: Le scraper de playlist prend beaucoup de temps à s'éxecuter et peut prendre jusqu'a 2GO de RAM et 100% du CPU.
  
  - Avant de construire l'image Docker, obtenir une clef d'API Youtube auprès de Google et la placer entre les quotes de la variable d'environnement dans le Dockerfile
