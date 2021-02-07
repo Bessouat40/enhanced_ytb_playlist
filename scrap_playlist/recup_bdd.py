@@ -21,7 +21,7 @@ def recup_playlist_from_channels(id_chaine) :
         chaine: string correspondant au nom de la chaîne youtube
     
     Returns: 
-        dictionnaire comportant plusieurs informations sur la chaîne youtube"""
+        liste des titres des playlists, liste de leurs urls"""
     
 
     chrome_options = Options()
