@@ -4,25 +4,25 @@
 
 Cette fonction permet de récupérer les url et titres des playlists d'une chaine à partir de l'id de cette dernière.
 
-  Arguments: 
+Arguments: 
   
-     - string correspondant au nom de la chaîne youtube
+  - string correspondant au nom de la chaîne youtube
     
-  Returns: 
+Returns: 
   
-     - liste des titres des playlists, liste de leurs urls
+- liste des titres des playlists, liste de leurs urls
  
  ### get_playlist_data
  
  Cette fonction permet de récupérer les informations d'une playlist à partir de son url ou id
  
- Arguments:
+Arguments:
  
-    - string correspond à l'url de la playlist
-    - (facultatif) id de la chaine si on souhaite sauvegarder cette information
-    - id de la playlist si on ne posséde pas l'url
+- string correspond à l'url de la playlist
+- (facultatif) id de la chaine si on souhaite sauvegarder cette information
+- id de la playlist si on ne posséde pas l'url
    
- Returns:
+Returns:
  
-    - dictionnaire contenant les informations de la playlist
-    - dictionnaire content les id des vidéos de la playlist
+- dictionnaire contenant les informations de la playlist
+- dictionnaire content les id des vidéos de la playlist
