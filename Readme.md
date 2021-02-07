@@ -1,4 +1,4 @@
-# Enhanced playlist
+# Youtube Playlist Enhanced
 
 ## Introduction
 
@@ -7,13 +7,13 @@ Mais il y a un problème qui se pose... Bien souvent, il existe beaucoup de yout
 
 ## Solution proposée
 
-C'est pourquoi nous avons imaginé une application web : **Enhanced youtube playlist**, qui permettra aux personnes de présenter les différents tutoriels présents sur la plateforme de manière à mieux diriger leurs choix.
+C'est pourquoi nous avons imaginé une application web : **Youtube Playlist Enhanced**, qui permettra aux personnes de présenter les différents tutoriels présents sur la plateforme de manière à mieux diriger leurs choix.
 Notre présentation se fera selon plusieurs critères qui sont susceptibles d'être pertinents aux yeux de l'utilisateur. 
 
 Les critères que nous avons choisi de retenir sont :
-- le nombre de vues de chaque playlist,
-- le nombre de like et de dislikes de la playlist,
-- la durée de la playlist,
+- le nombre de vues de chaque playlist
+- le nombre de like et de dislikes de la playlist
+- la durée de la playlist
 - l'évolution du nombre de vues au cours des vidéos de la playlist.
 
 Nous proposons aussi une analyse des commentaires les plus pertinents de certaines vidéos de la playlist afin que l'utilisateur se fasse une idée de l'avis des personnes qui ont regardé le contenu avant lui.
@@ -27,6 +27,15 @@ Notre application permettra aussi à l'utilisateur de récupérer des informatio
 Dans le futur, nous pourrions élargir notre base de données pré-existante à l'aide de contenus qui diffèrent de tutoriels de programmation. 
 Par exemple nous pourrions imaginer d'autres catégories telles que la cuisine, des programmes sportifs, ...
 
+## Technologies Utilisées
+
+ - Front-End : Bootstrap, ChartJS & Vanilla JS
+ - Back-End : Flask (Python)
+ - Scraping : Selenium (Python)
+ - DevOps : Docker 
+ - Versioning : Git
+ - Machine Learning : Scikit Learn (Python)
+
 ## Installation avec Docker
 
 Tout d'abord il faut cloner le repo
@@ -37,8 +46,8 @@ git clone https://github.com/Bessouat40/enhanced_ytb_playlist.git
 Puis construire les images 
 
 ```
-   docker-compose build
-   docker-compose -up -d
+docker-compose build
+docker-compose -up -d
 ```
 
 ## Documentation
