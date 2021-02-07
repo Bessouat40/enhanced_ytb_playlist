@@ -70,7 +70,13 @@ function createLikesChart(canva_name,data,container_name){
                           display: false,
                           drawBorder: false,
                         },
-                        ticks: {maxRotation: 0,minRotation: 0},
+                        ticks: {maxRotation: 0,
+                                minRotation: 0,
+                                
+
+                        },
+                       
+                  
                       },
                     ],
                   yAxes: [{

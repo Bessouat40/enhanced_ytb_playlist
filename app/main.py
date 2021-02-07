@@ -6,6 +6,7 @@ import urllib.parse
 from time_tools import sum_duration
 
 import sys
+from datetime import datetime
 
 sys.path.append('.') # Adds higher directory to python modules path.
 from scrap_playlist import get_playlist_data,recup_info
@@ -98,13 +99,36 @@ def livescraper_search(playlist_id):
 	
 	data,videos_data = get_playlist_data(url=None,id_playlist=playlist_id)
 
-	video_info=[]
+	
+	likes = []
+	dislikes = []
+	views = []
+	dates = []
+
+	v_data = []
 
 	for v in videos_data:
-		video_info.append(recup_info(v['_id']))
+		
 
-	data['video_data'] = video_info
-	
+		v_data.append(recup_info(v['_id']))
+
+	newlist=sorted(v_data, key = lambda k:k['post_date'])
+
+	for v in newlist:
+		likes.append(v['likes'])
+		dislikes.append(v['dislikes'])
+		views.append(v['vues'])
+		dates.append(v['post_date'].strftime("%d/%m/%Y"))
+
+	data['videos_data'] = {
+		'dates': dates,
+		'likes' : likes,
+		'dislikes' : dislikes,
+		'views' : views,
+	}
+
+	data['playlist_duration'] = sum_duration(data['video_time'])
+
 	return jsonify(data)
 	
 
