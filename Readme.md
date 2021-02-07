@@ -1,5 +1,7 @@
 # Youtube Playlist Enhanced
 
+![screenshot](https://github.com/Bessouat40/enhanced_ytb_playlist/blob/main/doc/readme_img.PNG?raw=true)
+
 ## Introduction
 
 Nous nous sommes rendus compte que souvent, lorsqu'on veut apprendre un nouveau langage de programmation, notre premier réflexe est d'aller voir sur youtube les différents tutoriels proposés.
