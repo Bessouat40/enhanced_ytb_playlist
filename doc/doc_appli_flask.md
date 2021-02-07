@@ -1,6 +1,6 @@
 ## Flask WebApp
 
-Il s'agit ici d'une Application Web Flask écrite en Python.
+Il s'agit ici d'une application web Flask écrite en Python.
 
 Elle comporte deux types de fonctions :
  - Les views classiques qui permettent de renvoyer un template de page et des données
