@@ -72,7 +72,8 @@ function createLikesChart(canva_name,data,container_name){
                         },
                         ticks: {maxRotation: 0,
                                 minRotation: 0,
-                                
+                                maxTicksLimit: 5,
+                                padding: 1,
 
                         },
                        
@@ -163,7 +164,11 @@ function createViewChart(canva_name,data,container_name){
                           display: false,
                           drawBorder: false,
                         },
-                        ticks: {maxRotation: 0,minRotation: 0},
+                        ticks: {maxRotation: 0,
+                            minRotation: 0,
+                            maxTicksLimit: 5,
+                            padding: 1,
+                        },
                       },
                     ],
                   yAxes: [{
