@@ -30,11 +30,12 @@ Par exemple nous pourrions imaginer d'autres catégories telles que la cuisine, 
 ## Installation avec Docker
 
 Tout d'abord il faut cloner le repo
-.. code-block:: bash
-   git clone https://github.com/Bessouat40/enhanced_ytb_playlist.git 
-.. code-block:: bash
+
+```  git clone https://github.com/Bessouat40/enhanced_ytb_playlist.git 
+```
 
 Puis construire les images 
+
 .. code-block:: bash
    docker-compose build
    docker-compose -up -d
